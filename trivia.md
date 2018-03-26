@@ -32,6 +32,7 @@
     * [4. 关闭死不掉的进程](#4-关闭死不掉的进程)
     * [5. 解压 rar](#5-解压rar)
     * [6. ffmpeg](#6-ffmpeg)
+    * [7.Xcode_xxx.xip 不是来自 apple](#7-Xcode-xxx-xip-不是来自-apple)
 
 * [Github](#github)
     * [1. 关于 gitmodule 子模块的运用](#1-关于-gitmodule-子模块的运用)
@@ -387,6 +388,13 @@ div或者button的样式里面加上
     // ffmpeg -i 视频.mp4 -i 音频.mp3 -c:v copy -c:a 编码格式 生成文件.mp4
     ffmpeg -i vid.mp4 -i out.mp3 -c:v copy -c:a aac done.mp4
 ```
+
+### 7. Xcode_xxx.xip 不是来自 apple
+
+* 终端输入
+ * `sudo spctl --master-disable`
+ * `xattr -d com.apple.quarantine /Users/emerge/Downloads/Xcode_10.1.xip `
+* 修改日期为几年前，如2018
 
 ## Github
 
