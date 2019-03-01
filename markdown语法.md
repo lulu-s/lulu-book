@@ -104,7 +104,11 @@ ___
 [百度](https://www.baidu.com "百度")
 
 ### 参数式
+就是将链接定义为参数，可以直接使用参数名，这样的好处是，当多次使用同一个链接的时候，可以省略字符。
+使用[]存放参数名，类似js字面量的书写，使用:接受参数，参数同行内式，只去掉了括号，也可以将路径用<>括起来。
 
-[lulu]:https://github.com/lulu-s "Github"
+[lulu]: https://github.com/lulu-s "Github"
 
-我是lulu
+使用的时候，需要带上[].
+
+我是[lulu]
