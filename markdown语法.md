@@ -96,6 +96,7 @@ ___
 ## 链接
 ### 行内式
 使用[]放置链接内容，()放置链接地址
-[百度](https://www.baidu.com)
 
+[百度](https://www.baidu.com)
+<a href="https://www.baidu.com" target="_blank">百度</a>
 ### 参数式
