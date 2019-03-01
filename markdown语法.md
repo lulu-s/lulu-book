@@ -50,7 +50,7 @@
  > 1. hello，我是*
  > 2. hi，我是*
  > 3. hello，我是+
- > a. hi，我是+
+ > a hi，我是+
  > b. hello，我是-
  > c. hi，我是-
 
