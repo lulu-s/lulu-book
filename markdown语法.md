@@ -95,8 +95,10 @@ ___
 
 ## 链接
 ### 行内式
-使用[]放置链接内容，()放置链接地址
+使用[]放置链接内容，()放置链接地址，页面内的跳转。
 
 [百度](https://www.baidu.com)
-<a href="https://www.baidu.com" target="_blank">百度</a>
+可以增加title
+
+[百度](https://www.baidu.com "百度")
 ### 参数式
