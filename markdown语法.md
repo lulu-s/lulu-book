@@ -116,7 +116,7 @@ ___
 定义参数：<br>
     * \[lulu\]: https://github.com/lulu-s "Github" <br>
     * \[lulu\]: \<https://github.com/lulu-s \> "Github" <br>
-使用方式：使用的时候，需要带上\[lulu\]。
+使用方式：使用的时候，需要带上方括号\[lulu\]。
 
 [lulu]: https://github.com/lulu-s "Github"
 [lulu]
