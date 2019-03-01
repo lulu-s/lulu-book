@@ -115,7 +115,7 @@ ___
 就是将链接定义为参数，可以直接使用参数名，这样的好处是，当多次使用同一个链接的时候，可以省略字符。<br>
 定义参数：<br>
     * \[lulu\]: https://github.com/lulu-s "Github" <br>
-    * \[lulu\]: \<https://github.com/lulu-s\> "Github" <br>
+    * \[lulu\]: \<https://github.com/lulu-s \> "Github" <br>
 使用方式：使用的时候，需要带上\[lulu\]。
 
 [lulu]: https://github.com/lulu-s "Github"
