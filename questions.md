@@ -50,7 +50,7 @@ doctype的作用是告诉浏览器用哪种文档类型、规范来解析这个�
 
 谷歌（webkit）、IE（trident）、火狐（Gecko）、Safari（webkit）、Opera（Blink）
 
-**10. 写出集中IE6bug的解决办法**
+**10. 写出几种IE6bug的解决办法**
 
 1. css浮动边距加倍问题，使用_display:inline;
 2. 扩展框问题，无法将内容放入固定宽高的框中，内容会增大盒子，而不是溢出，使用overflow:hidden;
@@ -64,7 +64,7 @@ doctype的作用是告诉浏览器用哪种文档类型、规范来解析这个�
 7. 超链接访问后hover不出现问题，改变超链接样式顺序，L-V-H-A，a:link..a:visited..a:hover...a:active
 8. div高度显示问题，IE6默认字体是12~14px之间，当定义一个高度比字体默认高小的时候，IE会固执的认为，这个高度不能小于字体的行高，使用行内样式 style=”height:5px; font: 0pxArial;”或是 style=”height:5px; overflow: hidden;”
 
-**11. <img>上title和alt的区别是？**
+**11. img上title和alt的区别是？**
 
 title: 鼠标划上去显示的提示信息。<br>
 alt: 当图片加载不出来时的替代信息。
