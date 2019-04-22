@@ -52,6 +52,17 @@ doctype的作用是告诉浏览器用哪种文档类型、规范来解析这个�
 
 **10. 写出集中IE6bug的解决办法**
 
+1. css浮动边距加倍问题，使用_display:inline;
+2. 扩展框问题，无法将内容放入固定宽高的框中，内容会增大盒子，而不是溢出，使用overflow:hidden;
+3. png图片不透明。
+```javascript
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="fl.png");
+```
+4. 3像素文本慢移，当线框临近浮动时，线框和浮动边缘会出现3个像素的间距，在内容消除浮动后，文本会向左慢移3个像素，最右边的盒子使用_zoom:1
+5. 在IE6，浮动元素的子元素如果定义了高度，则其子元素的宽度是其上一个不浮动的祖先元素的100%，解决办法是不给子元素设置固定宽度（只设置行高）或者让这个子元素也变成浮动元素。
+6. 空格引发的CSS失效问题，IE处理伪类有-的时候，伪类名称后就需要加一个空格，例如p:nth-child(1){xxx: xxx}是无效的，要改成p:nth-child {xxx: xx}
+7. 超链接访问后hover不出现问题，改变超链接样式顺序，L-V-H-A，a:link..a:visited..a:hover...a:active
+8. div高度显示问题，IE6默认字体是12~14px之间，当定义一个高度比字体默认高小的时候，IE会固执的认为，这个高度不能小于字体的行高，使用行内样式 style=”height:5px; font: 0pxArial;”或是 style=”height:5px; overflow: hidden;”
 
 **11. <img>上title和alt的区别是？**
 
@@ -68,9 +79,23 @@ alt: 当图片加载不出来时的替代信息。
 
 **14.你如何对网站的资源文件进行优化？**
 
+1. 文件合并，将小图片合并，减少http请求<br>
+2. 压缩文件、减少css、js文件体积<br>
+3. 使用CDN托管、降低通信距离<br>
+4. 缓存的使用，添加Expire/Cache-Control头<br>
+5. 避免在CSS中使用表达式<br>
+6. 将CSS放在页面最上面<br>
+7. 将script放在页面最下面
 
 **15.你如何理解语义化？**
 
+1. 在没有CSS时候，也能呈现很好的内容结构，利于浏览器，搜索引擎解析，SEO好。
+2. 使阅读源码的人更容易将网站分块，易于阅读和维护。
 
 **16.清除浮动的几种方式及优缺点？**
 
+1. 在使用浮动标签的后面加个div清除浮动，缺点是影响语义化。
+2. clear: both;，原理是在清理元素的顶部添加足够多的外边距，所以手动添加的margin-top会失效。
+3. 使用伪类clearfix来清楚浮动，.clearfix:after{ content: “”,clear: both, display: block }
+4. 开启BEC，overflow: hidden或者overflow: auto
+5. 双伪元素，.clearfix:after，.clearfix:before { content: “”,clear: both, display: block }
