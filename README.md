@@ -4,3 +4,4 @@
 * [Error](https://github.com/lulu-s/lulu-book/blob/master/Error.md)
 * [面试题](https://github.com/lulu-s/lulu-book/blob/master/questions.md)
 * [mac](https://github.com/lulu-s/lulu-book/blob/master/mac.md)
+* [兼容问题](https://github.com/lulu-s/lulu-book/blob/master/compatible.md)
