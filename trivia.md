@@ -11,6 +11,9 @@
 
 ### 2. 解决Three.js缩放时以整个浏览器为单位。
   ```css
+    body {
+        overflow: hidden;
+    }
     canvas {
         display: block; /* fix necessary to remove space at bottom of canvas */
     }
