@@ -53,3 +53,8 @@
 ### 2. npm权限问题
 参考：https://blog.csdn.net/sinat_36422236/article/details/89675658
 
+## Github
+
+### 1. 关于gitmodule子模块的运用
+正常的使用git clone命令，然后再使用 git submodule init 和git submodule update来获取子模块<br>
+参考：https://blog.csdn.net/xuanwolanxue/article/details/80609986
