@@ -2,4 +2,4 @@
 
 * [markdown语法](https://github.com/lulu-s/lulu-book/blob/master/markdown_grammar.md)
 * [乱七八糟的知识点](https://github.com/lulu-s/lulu-book/blob/master/trivia.md)
-* [命令语法](https://github.com/lulu-s/lulu-book/blob/master/command.md)
+* [命令](https://github.com/lulu-s/lulu-book/blob/master/command.md)
