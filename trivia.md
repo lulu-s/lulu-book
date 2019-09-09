@@ -53,6 +53,9 @@
 ### 2. npm权限问题
 参考：https://blog.csdn.net/sinat_36422236/article/details/89675658
 
+### 3. 查看ip
+参考：https://jingyan.baidu.com/article/b0b63dbf3fefd14a48307013.html
+
 ## Github
 
 ### 1. 关于gitmodule子模块的运用
