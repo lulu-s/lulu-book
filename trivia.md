@@ -36,6 +36,14 @@
   * https://blog.csdn.net/qq_30100043/article/details/80798791
   * https://codeday.me/bug/20190328/844841.html
 
+### 4. div做的button点击出现选中蓝框
+div或者button的样式里面加上
+```
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+```
+参考：https://www.iteye.com/blog/yigang-2235539
+
+
 ## bug
 
 ### 1. Uncaught SyntaxError: Invalid or unexpected token (javascript)
@@ -43,7 +51,6 @@
 
 ### 2. unable to access 'https://github.com/': OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443. (Github)
 注意：打开git bash(命令行)， 敲命令`git config --global http.sslVerify false`
-
 
 ## Mac
 
