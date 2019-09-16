@@ -43,6 +43,20 @@ div或者button的样式里面加上
 ```
 参考：https://www.iteye.com/blog/yigang-2235539
 
+### 5. 去掉span标签的间距
+将span转成块级标签，父元素字体大小设置为0，再设置span字体大小
+```
+    .show_msg {
+        font-size: 0px;
+    }
+
+    .show_msg > span {
+        display: inline-block;
+        font-size: 40px;
+    }
+```
+参考：https://blog.csdn.net/u014627807/article/details/79961951
+
 
 ## bug
 
