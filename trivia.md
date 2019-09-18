@@ -78,7 +78,21 @@ div或者button的样式里面加上
 ```
 参考：https://blog.csdn.net/longzhoufeng/article/details/78224205
 
-
+### 7. js保留两位小数
+以下处理结果会四舍五入:
+```
+    var num = 2.446242342;
+    num = num.toFixed(2);  // 输出结果为 2.45
+```
+以下处理结果不会四舍五入:
+```
+    第一种，先把小数变整数：
+    Math.floor(15.7784514000 * 100) / 100   // 输出结果为 15.77
+    
+    第二种，当作字符串，使用正则匹配：
+    Number(15.7784514000.toString().match(/^\d+(?:\.\d{0,2})?/))   // 输出结果为 15.77,不能用于整数如 10 必须写为10.0000
+```
+参考：https://www.runoob.com/w3cnote/javascript-two-decimal.html
 
 ## bug
 
