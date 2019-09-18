@@ -57,6 +57,28 @@ div或者button的样式里面加上
 ```
 参考：https://blog.csdn.net/u014627807/article/details/79961951
 
+### 6. js对象去重
+```
+    var obj = [
+            {year: '2013-2014', term: '1'},
+            {year: '2013-2014', term: '2'},
+            {year: '2013-2014', term: '3'},
+            {year: '2013-2014', term: '2'},
+            {year: '2014-2015', term: '1'},
+            {year: '2013-2014', term: '2'}
+            ]
+    var unique = {};
+    obj.forEach(function(gpa) {
+        unique[JSON.stringify(gpa)] = gpa
+    });
+    obj = Object.keys(unique).map(function(u) {
+        return JSON.parse(u)
+    });
+    console.log(unique)
+```
+参考：https://blog.csdn.net/longzhoufeng/article/details/78224205
+
+
 
 ## bug
 
