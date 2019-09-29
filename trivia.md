@@ -128,3 +128,41 @@ div或者button的样式里面加上
 ### 1. 关于gitmodule子模块的运用
 正常的使用git clone命令，然后再使用 git submodule init 和git submodule update来获取子模块<br>
 参考：https://blog.csdn.net/xuanwolanxue/article/details/80609986
+
+
+## 手机端
+
+### 1. 兼容所有机型
+```javascript
+    // 会有白边底部
+    var w = window.innerWidth;
+    window.addEventListener("resize", (e) => {
+        document.body.style.zoom = window.innerWidth / w;
+    })
+```
+参考： https://blog.csdn.net/yakson/article/details/78575135
+
+```javascript
+    // 使用rem
+    window.addEventListener("resize", (e) => {
+        initWidth();
+        initFontSize();
+    })
+
+    function initWidth() {
+        scaler.style.width = document.documentElement.clientWidth + 'px'
+    }
+    function initFontSize() {
+        const cw = document.documentElement.clientWidth
+        // width: 375px -> fontSize:16px
+        if (cw == 375) {
+            document.documentElement.style.fontSize = '16px'
+        } else {
+            document.documentElement.style.fontSize = cw / 375 * 16 + 'px'
+        }
+    }
+
+    initWidth();
+    initFontSize(); 
+```
+参考： https://blog.csdn.net/fifteen718/article/details/83039121
