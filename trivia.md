@@ -166,3 +166,27 @@ div或者button的样式里面加上
     initFontSize(); 
 ```
 参考： https://blog.csdn.net/fifteen718/article/details/83039121
+
+### 2. 禁止苹果手机缩放，ios10后的版本
+```javascript
+    // 阻止双击放大
+    var lastTouchEnd = 0;
+    document.addEventListener('touchstart', function(event) {
+        if (event.touches.length > 1) {
+            event.preventDefault();
+        }
+    });
+    document.addEventListener('touchend', function(event) {
+        var now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
+
+    // 阻止双指放大
+    document.addEventListener('gesturestart', function(event) {
+        event.preventDefault();
+    }); 
+```
+参考： https://blog.csdn.net/Terenceno/article/details/96132342
