@@ -94,6 +94,31 @@ div或者button的样式里面加上
 ```
 参考：https://www.runoob.com/w3cnote/javascript-two-decimal.html
 
+### 8. 修改placeholder默认颜色
+```css
+    :-moz-placeholder { 
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: #fff;  
+    }
+
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: #fff;
+    }
+
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        color: #fff;
+    }
+
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        color: #fff;
+    }
+
+```
+参考：http://www.bbs0101.com/archives/116.html
+
+
 ## bug
 
 ### 1. Uncaught SyntaxError: Invalid or unexpected token (javascript)
@@ -101,6 +126,7 @@ div或者button的样式里面加上
 
 ### 2. unable to access 'https://github.com/': OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443. (Github)
 注意：打开git bash(命令行)， 敲命令`git config --global http.sslVerify false`
+
 
 ## Mac
 
