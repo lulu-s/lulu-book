@@ -223,11 +223,9 @@ div或者button的样式里面加上
     window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
         if (window.orientation === 180 || window.orientation === 0) { 
             console.log("竖屏");
-            $(".codeIg_s").removeClass('vercreen');//取消横屏样式
         } 
         if (window.orientation === 90 || window.orientation === -90 ){ 
             console.log("横屏");
-            $(".codeIg_s").addClass('vercreen');//添加横屏样式
         }  
     }, false); 
 ```
