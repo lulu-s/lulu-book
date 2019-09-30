@@ -118,6 +118,31 @@ div或者button的样式里面加上
 ```
 参考：http://www.bbs0101.com/archives/116.html
 
+### 9. radio取消选中并能再次选中
+```javascript
+    var old = null; //用来保存原来的对象
+
+    ao.loop(()=>{
+        if(this.$refs.radio.checked){
+            old = this.$refs.radio; //如果当前对象选中，保存该对象
+        } else {
+            old = null;
+        }
+    })
+
+    this.$refs.radio.addEventListener("click", (e) => {
+        if(this.$refs.radio == old){//如果点击的对象原来是选中的，取消选中
+            this.$refs.radio.checked = false;
+            old = null;
+            console.log(old);
+        } else{
+            old = this.$refs.radio;
+            console.log(old);
+        }
+    })
+```
+参考：https://blog.csdn.net/tutian2000/article/details/80256757
+
 
 ## bug
 
