@@ -38,14 +38,14 @@
 
 ### 4. div做的button点击出现选中蓝框
 div或者button的样式里面加上
-```
+```css
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 ```
 参考：https://www.iteye.com/blog/yigang-2235539
 
 ### 5. 去掉span标签的间距
 将span转成块级标签，父元素字体大小设置为0，再设置span字体大小
-```
+```css
     .show_msg {
         font-size: 0px;
     }
@@ -58,7 +58,7 @@ div或者button的样式里面加上
 参考：https://blog.csdn.net/u014627807/article/details/79961951
 
 ### 6. js对象去重
-```
+```javascript
     var obj = [
             {year: '2013-2014', term: '1'},
             {year: '2013-2014', term: '2'},
@@ -80,12 +80,12 @@ div或者button的样式里面加上
 
 ### 7. js保留两位小数
 以下处理结果会四舍五入:
-```
+```javascript
     var num = 2.446242342;
     num = num.toFixed(2);  // 输出结果为 2.45
 ```
 以下处理结果不会四舍五入:
-```
+```javascript
     第一种，先把小数变整数：
     Math.floor(15.7784514000 * 100) / 100   // 输出结果为 15.77
     
@@ -216,3 +216,19 @@ div或者button的样式里面加上
     }); 
 ```
 参考： https://blog.csdn.net/Terenceno/article/details/96132342
+
+### 3. 判断横竖屏
+```javascript
+    //判断手机横竖屏状态：
+    window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() {
+        if (window.orientation === 180 || window.orientation === 0) { 
+            console.log("竖屏");
+            $(".codeIg_s").removeClass('vercreen');//取消横屏样式
+        } 
+        if (window.orientation === 90 || window.orientation === -90 ){ 
+            console.log("横屏");
+            $(".codeIg_s").addClass('vercreen');//添加横屏样式
+        }  
+    }, false); 
+```
+参考：https://www.cnblogs.com/cdj61/p/9342041.html
