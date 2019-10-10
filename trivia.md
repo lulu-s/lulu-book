@@ -281,6 +281,16 @@ div或者button的样式里面加上
 
 ### 4. ios键盘弹起，body拉长，关闭键盘页面不回弹
 ```javascript
+    // 获取窗口滚动条高度 
+    export function getScrollTop(){  
+        var scrollTop = 0;  
+        if (document.documentElement && document.documentElement.scrollTop){  
+            scrollTop = document.documentElement.scrollTop;  
+        } else if(document.body){  
+            scrollTop = document.body.scrollTop;  
+        }  
+        return scrollTop;  
+    };
     var oldScrollTop = util.getScrollTop() || 0; // 记录当前滚动位置
     document.body.addEventListener('focusin', () => {  //软键盘弹起事件
         console.log("键盘弹起");
