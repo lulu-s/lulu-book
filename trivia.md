@@ -143,6 +143,29 @@ div或者button的样式里面加上
 ```
 参考：https://blog.csdn.net/tutian2000/article/details/80256757
 
+### 10. 生成uuid
+```javascript
+    export function guid() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+            return v.toString(16);
+        });
+    }
+```
+参考：https://www.jianshu.com/p/04ee4396edc3
+
+### 11. 校验手机号
+```javascript
+    export function isPoneAvailable(tel) {
+        var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
+        if (!myreg.test(tel)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+```
+
 
 ## bug
 
@@ -255,3 +278,20 @@ div或者button的样式里面加上
     }, false); 
 ```
 参考：https://www.cnblogs.com/cdj61/p/9342041.html
+
+### 4. ios键盘弹起，body拉长，关闭键盘页面不回弹
+```javascript
+    var oldScrollTop = util.getScrollTop() || 0; // 记录当前滚动位置
+    document.body.addEventListener('focusin', () => {  //软键盘弹起事件
+        console.log("键盘弹起");
+    });
+    document.body.addEventListener('focusout', () => { //软键盘关闭事件
+        console.log("键盘收起");    
+        var ua = window.navigator.userAgent;
+        if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPad') > 0) { //键盘收起页面空白问题
+            document.body.scrollTop = oldScrollTop; 
+            document.documentElement.scrollTop = oldScrollTop; 
+        }
+    });
+```
+参考：https://www.cnblogs.com/xiongzaiqiren/p/10505490.html
