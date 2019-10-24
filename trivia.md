@@ -166,6 +166,15 @@ div或者button的样式里面加上
     }
 ```
 
+### 12. 修改 threeJs 背景色
+```javascript
+    renderer.setClearColor('rgb(135,206,250)',1.0);
+	renderer.setClearColor(0xffffff,1.0);
+	renderer.setClearColor('#428bca',1.0);
+	renderer.setClearColor('rgba(135,206,250,0.5)',1.0);
+```
+参考： https://blog.csdn.net/cc_fys/article/details/72649916
+
 
 ## bug
 
@@ -305,3 +314,13 @@ div或者button的样式里面加上
     });
 ```
 参考：https://www.cnblogs.com/xiongzaiqiren/p/10505490.html
+
+
+
+### 影子dom
+
+Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡中检查影子DOM子树，就如同你检查普通的DOM树一样，所有想要做的东西都可一通过这个特性完美解决：<br>
+
+1. 进入开发者模式按F1进入设置
+2. 在Preferences选项卡中的Elements中把Show user agent shadow DOM前的复选框勾上（并没有找到原文所说的Genral所以按照网上的其他文章重写了这个步骤）
+3. 重启开发者工具
