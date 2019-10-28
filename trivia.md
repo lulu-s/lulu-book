@@ -315,6 +315,19 @@ div或者button的样式里面加上
 ```
 参考：https://www.cnblogs.com/xiongzaiqiren/p/10505490.html
 
+### 5.
+```html
+    <!-- 添加到主屏后的标题(iOS 6+)，是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
+    <meta name=”apple-mobile-web-app-capable” content=”yes”/>
+    <!-- 
+        设置IOS工具栏颜色 
+        default，设置的背景为白色，带有黑色文本和符号。
+        black，具有黑色背景，黑色文本和符号，使其看起来完全是黑色的，默认。
+        black-translucent，设置具有白色文本和符号，并且将采用与Web应用程序正文相同的背景色。
+    -->
+    <meta name=”apple-mobile-web-app-status-bar-style” content=”black”/>
+```
+
 
 
 ### 影子dom
