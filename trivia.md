@@ -315,7 +315,8 @@ div或者button的样式里面加上
 ```
 参考：https://www.cnblogs.com/xiongzaiqiren/p/10505490.html
 
-### 5.
+### 5.修改苹果默认的工具栏和菜单栏
+需要网页"添加到主屏幕"才能测试。
 ```html
     <!-- 添加到主屏后的标题(iOS 6+)，是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
     <meta name=”apple-mobile-web-app-capable” content=”yes”/>
@@ -327,7 +328,7 @@ div或者button的样式里面加上
     -->
     <meta name=”apple-mobile-web-app-status-bar-style” content=”black”/>
 ```
-
+参考：https://medium.com/appscope/changing-the-ios-status-bar-of-your-progressive-web-app-9fc8fbe8e6ab
 
 
 ### 影子dom
