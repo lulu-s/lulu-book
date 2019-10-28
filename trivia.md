@@ -175,6 +175,45 @@ div或者button的样式里面加上
 ```
 参考： https://blog.csdn.net/cc_fys/article/details/72649916
 
+### 13. 解决同时绑定单击和双击事件，会两个都执行的情况
+```javascript
+    //单击延时触发
+    var clickTimeId;
+
+    /*
+    * 页面初始化
+    */
+    function onload() {
+        document.addEventListener('click', onDocumentClick);
+        document.addEventListener('dblclick', onDocumenDblClick);
+    }
+
+    /*
+    * 鼠标单击事件响应
+    * event 鼠标事件对象
+    */
+    function onDocumentClick(event) {
+        // 取消上次延时未执行的方法
+        clearTimeout(clickTimeId);
+        //执行延时
+        clickTimeId = setTimeout(function() {
+            //此处为单击事件要执行的代码
+            console.log("鼠标单击");
+        }, 250);
+    }
+
+    /*
+    * 鼠标双击事件响应
+    * event 鼠标事件对象
+    */
+    function onDocumenDblClick(event) {
+        // 取消上次延时未执行的方法
+        clearTimeout(clickTimeId);
+        console.log("鼠标双击");
+    }
+```
+参考：https://www.hangge.com/blog/cache/detail_1794.html
+
 
 ## bug
 
