@@ -214,6 +214,9 @@ div或者button的样式里面加上
 ```
 参考：https://www.hangge.com/blog/cache/detail_1794.html
 
+### 14. 监测threeJs版本
+在浏览器中按F12，打开开发版输入 `THREE.REVISION`
+
 
 ## bug
 
