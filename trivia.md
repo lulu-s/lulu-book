@@ -373,6 +373,8 @@ div或者button的样式里面加上
 参考：https://medium.com/appscope/changing-the-ios-status-bar-of-your-progressive-web-app-9fc8fbe8e6ab
 
 
+## 常识性知识点
+
 ### 影子dom
 
 Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡中检查影子DOM子树，就如同你检查普通的DOM树一样，所有想要做的东西都可一通过这个特性完美解决：<br>
@@ -380,3 +382,56 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
 1. 进入开发者模式按F1进入设置
 2. 在Preferences选项卡中的Elements中把Show user agent shadow DOM前的复选框勾上（并没有找到原文所说的Genral所以按照网上的其他文章重写了这个步骤）
 3. 重启开发者工具
+
+
+## 数学类
+
+### 1. 粒子画球
+```javascript
+    var radius = 100;
+    
+    // 1
+    var num = 500;
+    for(var i = 0; i < num; i ++){
+        var v = new three.Vector3(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5) 
+        v = v.normalize();
+        v = v.multiplyScalar(radius)
+    }
+
+    // 2
+    var num = 100;
+    for(var x = -num; x < num; x ++){
+        for(var y = -num; y < num; y ++){
+            var vec = convert2d3d(radius, x, y);
+            var v = new three.Vector3(vec.x, vec.y, vec.z) 
+            v.multiplyScalar(radius);
+            pointGeo.vertices.push(v)
+        }
+    }
+    // r*r -> uv -> 3d
+    function convert2d3d(r, x, y) {
+        let lat  = y / r * Math.PI - Math.PI / 2;
+        let long = x / r * 2 * Math.PI - Math.PI;
+        return {
+            x: Math.cos(lat) * Math.cos(long),
+            y: Math.sin(lat),
+            z: Math.cos(lat) * Math.sin(long),
+        }
+    }
+
+    // 3
+    var radius = 100;
+    var pitchSegments = 50;
+    var elevationSegments = pitchSegments / 2;
+    for (var p = 0; p < pitchSegments; p++) {
+        var pitch = Math.PI * 2 * p / pitchSegments ;
+        for (var e = 0; e < elevationSegments; e++) {
+            var elevation = Math.PI  * ((e / elevationSegments) - 0.5)  // 去掉0.5半球
+            var vec = new THREE.Vector3(
+                ( Math.cos(pitch) * Math.cos(elevation) ) * radius,
+                Math.sin(elevation) * radius,
+                ( Math.sin(pitch) * Math.cos(elevation) ) * radius
+            );
+        }
+    }
+```
