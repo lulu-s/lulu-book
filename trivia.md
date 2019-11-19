@@ -389,8 +389,9 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
 ### 1. 粒子画球
 ```javascript
     var radius = 100;
+    var pointGeo = new THREE.Geometry();
     
-    // 1
+    // 1. 随机生成随机3D向量 -> Normalize -> * 半径
     var num = 500;
     for(var i = 0; i < num; i ++){
         var v = new three.Vector3(Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5) 
@@ -398,7 +399,7 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
         v = v.multiplyScalar(radius)
     }
 
-    // 2
+    // 2.1 (n * n) 的形状 -> 经纬度 -> 球坐标
     var num = 100;
     for(var x = -num; x < num; x ++){
         for(var y = -num; y < num; y ++){
@@ -408,7 +409,6 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
             pointGeo.vertices.push(v)
         }
     }
-    // r*r -> uv -> 3d
     function convert2d3d(r, x, y) {
         let lat  = y / r * Math.PI - Math.PI / 2;
         let long = x / r * 2 * Math.PI - Math.PI;
@@ -419,7 +419,29 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
         }
     }
 
-    // 3
+    // 2.2 通过随机经纬度，生成球坐标
+    for (var i = 0; i < 1000; i++) {
+        var lat = GetRandomNum(1, 10) + Math.random();
+        var long = GetRandomNum(1, 10) + Math.random();
+        var vec = convert2d3d(lat, long);
+        pointGeo.vertices.push( new THREE.Vector3(vec.x, vec.y, vec.z).multiplyScalar(radius) );
+    }
+    function GetRandomNum(Min, Max)
+    {   
+        var Range = Max - Min;   
+        var Rand = Math.random();   
+        return(Min + Math.round(Rand * Range));   
+    } 
+    // r*r -> uv -> 3d
+    function convert2d3d(lat, long) {
+        return {
+            x: Math.cos(lat) * Math.cos(long),
+            y: Math.sin(lat),
+            z: Math.cos(lat) * Math.sin(long),
+        }
+    }
+    
+    // 3. 参考：https://codepen.io/gadgetgnome/pen/jbPxwQ
     var radius = 100;
     var pitchSegments = 50;
     var elevationSegments = pitchSegments / 2;
