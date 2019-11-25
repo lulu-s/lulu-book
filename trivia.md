@@ -463,3 +463,40 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
     w = Math.PI * 2 * raidus
     h = 已知
 ```
+
+### 3. 计算图像缩放比例
+```javascript
+    var obj = ratioObj(img.width, img.height, side);
+    ctx.drawImage(img, x * side + (side - obj.w) / 2, y * side + (side - obj.h) / 2, obj.w, obj.h );
+        
+    // s 边 正方块
+    function ratioObj(w, h, s){
+        var dw, dh; // 最终的图像比例
+        if(w > h){
+            // 图片比例 w / h
+            // 当宽大于高的时候，
+            // 1) dw / dh = w / h
+            // 2) dw = s
+            // 3) s / dh = w / h
+            // 4) 公式反过来，dh / s = h / w
+            // 5) dh = h * s / w
+            dw = s;
+            dh = ( h * s ) / w;
+        } else {
+            // 图片比例 h / w
+            // 当高大于宽的时候，
+            // 1) dh / dw = h / w
+            // 2) dh = s
+            // 3) s / dw = h / w
+            // 4) 公式反过来，dw / s = w / h
+            // 5) dh = w / h * s || w * s / h ;
+            dw = ( w / h ) * s;
+            dh = s;
+        }
+        return {
+            w: dw,
+            h: dh
+        }
+    }
+
+```
