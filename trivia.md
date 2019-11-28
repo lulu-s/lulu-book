@@ -217,6 +217,11 @@ div或者button的样式里面加上
 ### 14. 监测threeJs版本
 在浏览器中按F12，打开开发版输入 `THREE.REVISION`
 
+### 15. 保存json
+```
+    JSON.stringify(temp1, 4, "\t")
+```
+
 
 ## bug
 
@@ -247,6 +252,8 @@ div或者button的样式里面加上
 找到进程的PID,使用kill命令：kill -9 PID（进程的PID，如2044），杀死对应的进程
 
 参考 https://blog.csdn.net/nextstudio/article/details/18133963
+
+
 
 ## Github
 
