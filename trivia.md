@@ -222,6 +222,26 @@ div或者button的样式里面加上
     JSON.stringify(temp1, 4, "\t")
 ```
 
+### 16. flex像表格一样布局
+```
+    .parent {
+        width: 100%;
+        height: 150px;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: flex-start;
+   }
+
+   .child {
+        box-sizing: border-box;
+        background-color: white;
+        flex: 0 0 33%;
+        height: 50px;
+        border: 1px solid red;
+   }
+```
+参考： https://blog.csdn.net/webEvelement/article/details/82850370
+
 
 ## bug
 
