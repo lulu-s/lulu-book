@@ -242,6 +242,29 @@ div或者button的样式里面加上
 ```
 参考： https://blog.csdn.net/webEvelement/article/details/82850370
 
+### 17. 下标
+```javascript
+    // 获取二维数组目标下标
+    getArrIndex(arr, ti, tj){
+        var len = 0;
+        for(let i = 0; i < arr.length; i++){
+            for(let j = 0; j < arr[i].length; j++){
+                if(i == ti && j == tj) return len;
+                len++;
+            }
+        }
+    },
+    // 获取下标获取二维数组下标
+    getIndex(arr, index){
+        var len = 0;
+        for(let i = 0; i < arr.length; i++){
+            for(let j = 0; j < arr[i].length; j++){
+                if(len == index) return [i, j];
+                len++;
+            }
+        }
+    }
+```
 
 ## bug
 
