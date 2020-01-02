@@ -3,4 +3,4 @@
 * [markdown语法](https://github.com/lulu-s/lulu-book/blob/master/markdown%20grammar.md)
 * [乱七八糟的知识点](https://github.com/lulu-s/lulu-book/blob/master/trivia.md)
 * [命令行](https://github.com/lulu-s/lulu-book/blob/master/command.md)
-* [命令行](https://github.com/lulu-s/lulu-book/blob/master/arduino.md)
+* [Arduino](https://github.com/lulu-s/lulu-book/blob/master/arduino.md)
