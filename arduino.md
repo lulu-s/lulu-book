@@ -14,8 +14,7 @@
 
 
 ### 2. 软件
-> Arduino IDE：用于将程序上传到Arduino UNO板。
-> Firmata：它是一种协议，用于与计算机，智能手机等设备上的软件与不同的微控制器进行通信。Firmata固件可以加载在任何微控制器板上（例如Arduino，Teensy），并且可以与任何笔记本电脑，PC或智能手机进行通讯。Firmata库随Arduino IDE一起提供，因此无需从任何地方下载。
+> Arduino IDE：用于将程序上传到Arduino UNO板。<br>Firmata：它是一种协议，用于与计算机，智能手机等设备上的软件与不同的微控制器进行通信。Firmata固件可以加载在任何微控制器板上（例如Arduino，Teensy），并且可以与任何笔记本电脑，PC或智能手机进行通讯。Firmata库随Arduino IDE一起提供，因此无需从任何地方下载。<br>Johnny-Five API: http://johnny-five.io/api/led/#api
 
 
 ### 3. 建立xx文件夹， 下载库
