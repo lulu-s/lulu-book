@@ -296,6 +296,9 @@ div或者button的样式里面加上
 
 参考 https://blog.csdn.net/nextstudio/article/details/18133963
 
+### 5. 解压rar
+1. brew install unrar
+2. cd到rar文件目录 `unrar x filename.rar`
 
 
 ## Github
