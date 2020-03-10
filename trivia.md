@@ -266,6 +266,18 @@ div或者button的样式里面加上
     }
 ```
 
+### 18. ffmpeg
+* 视频转音频
+```javascript
+    // ffmpeg -i 视频.mp4 -b:a 192K -vn 生成文件.mp3
+    ffmpeg -i 0031LM3jlx07yuR6REFa01041200fm8C0E010.mp4 -b:a 192K -vn out.mp3
+```
+* 视频和音频合并
+```javascript
+    // ffmpeg -i 视频.mp4 -i 音频.mp3 -c:v copy -c:a 编码格式 生成文件.mp4
+    ffmpeg -i vid.mp4 -i out.mp3 -c:v copy -c:a aac done.mp4
+```
+
 ## bug
 
 ### 1. Uncaught SyntaxError: Invalid or unexpected token (javascript)
