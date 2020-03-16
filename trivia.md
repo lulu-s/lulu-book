@@ -437,6 +437,12 @@ div或者button的样式里面加上
 ```
 参考：https://medium.com/appscope/changing-the-ios-status-bar-of-your-progressive-web-app-9fc8fbe8e6ab
 
+### 6.阻止下拉滑动的效果（橡皮筋效果）
+```javascript
+    document.body.addEventListener('touchmove', function (e) {
+        e.preventDefault(); //阻止默认的处理方式(阻止下拉滑动的效果)
+    }, {passive: false}); //passive 参数不能省略，用来兼容ios和android
+```
 
 ## 常识性知识点
 
