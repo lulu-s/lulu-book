@@ -647,4 +647,19 @@ Page({
 
 
 
-### 3.
+### 3. bindTap 点击事件传参
+* 使用 data-xx / id 进行传递参数
+```html
+    <view bindtap="getSwiperNum" data-item="{{item}}" class="swiper-item {{item}}"></view>
+```
+
+```javascript
+    getSwiperNum: function(event){
+        console.log(event.target);
+        // dataset: {item: "demo-text-1"}
+        // id: ""
+        // offsetLeft: 113
+        // offsetTop: 0
+    }
+```
+参考：https://blog.csdn.net/u013778905/article/details/59129272
