@@ -575,10 +575,12 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
 
 ## 小程序
 
-### 1. 换行(\n)
+### 1. 换行
+* 使用(\n)
 ```html
     <text>LV.1\n点数：00</text>
 ```
+* 使用<view>标签包一下
 
 ### 2. 小程序更新后，不能自动弹出授权，需要用户手动点击(官方推荐button)
 * wxml
@@ -628,14 +630,12 @@ Page({
         top: 10%;
         transform: translateX(-50%);
     }
-
     .user-nick-name {
         position: absolute;
         left: 50%;
         top: 30%;
         transform: translateX(-50%);
     }
-
     .userinfo-btn {
         position: absolute;
         left: 50%;
@@ -643,3 +643,8 @@ Page({
         transform: translateX(-50%);
     }
 ```
+
+
+
+
+### 3.
