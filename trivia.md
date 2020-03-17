@@ -576,9 +576,43 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
 ## 小程序
 
 ### 1. 换行(\n)
-```
+```html
     <text>LV.1\n点数：00</text>
 ```
 
-
-
+### 2. 小程序更新后，不能自动弹出授权，需要用户手动点击(官方推荐button)
+* wxml
+```html
+    <!-- 如果只是展示用户头像昵称，可以使用 <open-data /> 组件 -->
+    <open-data type="userAvatarUrl"></open-data>
+    <open-data type="userNickName"></open-data>
+    <!-- 需要使用 button 来授权登录 -->
+    <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+    <view wx:else>请升级微信版本</view>
+```
+* js
+```javascript
+Page({
+  data: {
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
+  },
+  onLoad: function() {
+    // 查看是否授权
+    wx.getSetting({
+      success (res){
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function(res) {
+              console.log(res.userInfo)
+            }
+          })
+        }
+      }
+    })
+  },
+  bindGetUserInfo (e) {
+    console.log(e.detail.userInfo)
+  }
+})
+```
