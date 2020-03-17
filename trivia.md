@@ -647,7 +647,7 @@ Page({
 
 
 
-### 3. bindTap 点击事件传参
+### 3. bindtap 点击事件传参
 * 使用 data-xx / id 进行传递参数
 ```html
     <view bindtap="getSwiperNum" data-item="{{item}}" class="swiper-item {{item}}"></view>
@@ -663,3 +663,6 @@ Page({
     }
 ```
 参考：https://blog.csdn.net/u013778905/article/details/59129272
+
+### 4. 各种方便链接
+* 分享 / 转发： https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onShareAppMessage-Object-object
