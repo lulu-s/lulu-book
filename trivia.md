@@ -584,10 +584,10 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
 * wxml
 ```html
     <!-- 如果只是展示用户头像昵称，可以使用 <open-data /> 组件 -->
-    <open-data type="userAvatarUrl"></open-data>
-    <open-data type="userNickName"></open-data>
+    <open-data class="user-avatar" type="userAvatarUrl"></open-data>
+    <open-data class="user-nick-name" type="userNickName"></open-data>
     <!-- 需要使用 button 来授权登录 -->
-    <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+    <button class="userinfo-btn" wx:if="{{canIUse}}" type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
     <view wx:else>请升级微信版本</view>
 ```
 * js
@@ -613,6 +613,33 @@ Page({
   },
   bindGetUserInfo (e) {
     console.log(e.detail.userInfo)
+    // 跳转到tab主页面
+    wx.switchTab({
+      url: "../index/index"
+    })
   }
 })
+```
+* wxss
+```css
+    .user-avatar {
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translateX(-50%);
+    }
+
+    .user-nick-name {
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        transform: translateX(-50%);
+    }
+
+    .userinfo-btn {
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        transform: translateX(-50%);
+    }
 ```
