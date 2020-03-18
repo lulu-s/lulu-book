@@ -278,6 +278,15 @@ div或者button的样式里面加上
     ffmpeg -i vid.mp4 -i out.mp3 -c:v copy -c:a aac done.mp4
 ```
 
+### 19. 评级组件
+```javascript
+    // "★★★★★☆☆☆☆☆".slice(5 - rate, 10 - rate)
+    // 9.2 3.4 先 / 2 后四舍五入
+    const rate = Math.round(v.rate / 2)
+    v.rataDisplay = "★★★★★☆☆☆☆☆".slice(5 - rate, 10 - rate)
+```
+参考：https://www.zhihu.com/question/46943112/answer/113583615
+
 ## bug
 
 ### 1. Uncaught SyntaxError: Invalid or unexpected token (javascript)
@@ -619,7 +628,20 @@ Page({
     wx.switchTab({
       url: "../index/index"
     })
-  }
+  },
+  /**
+    * 生命周期函数--监听页面显示
+    */
+  onShow: function () {
+    // 授权页面隐藏home键
+    if (wx.canIUse('hideHomeButton')) {
+      wx.hideHomeButton({
+        success: res => {
+          console.log(res);
+        }
+      })
+    }
+  },
 })
 ```
 * wxss
@@ -643,6 +665,8 @@ Page({
         transform: translateX(-50%);
     }
 ```
+* 设置自定义编译，修改启动页面为授权页面，并隐藏home键。
+
 
 
 
@@ -664,5 +688,5 @@ Page({
 ```
 参考：https://blog.csdn.net/u013778905/article/details/59129272
 
-### 4. 各种方便链接
+### 4. 微信开发文档 / 快速查找
 * 分享 / 转发： https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onShareAppMessage-Object-object
