@@ -1,6 +1,7 @@
 ## 🌸博客自留地，记载学习过程中的小知识、小问题~~🌸
 
-<br>
+<br/>
+
 ### 日常记录
   * [ʚ细碎的小知识ɞ](https://github.com/lulu-s/lulu-book/blob/master/trivia.md)
 
