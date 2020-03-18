@@ -2,48 +2,63 @@
 
 
 * [处理各种奇葩问题](#处理各种奇葩问题)
-    * [1. 解决使用 css3 的 rotate 出现锯齿化的问题](#1-解决使用css3的rotate出现锯齿化的问题)
-    * [2. 解决 Three.js 缩放时以整个浏览器为单位](#2-解决Threejs缩放时以整个浏览器为单位)
-    * [3. Three.js 由 3d 场景坐标转换成 2d 屏幕坐标](#3-Threejs由3d场景坐标转换成2d屏幕坐标)
-    * [4. div 做的 button 点击出现选中蓝框](#4-div做的button点击出现选中蓝框)
-    * [5. 去掉 span 标签的间距](#5-去掉span标签的间距)
-    * [6. js 对象去重](#6-js对象去重)
-    * [7. js 保留两位小数](#7-js保留两位小数)
-    * [8. 修改placeholder默认颜色](#8-修改placeholder默认颜色)
-    * [9. radio 取消选中并能再次选中](#9-radio取消选中并能再次选中)
-    * [10. 生成uuid](#10-生成uuid)
+    * [1. 解决使用 css3 的 rotate 出现锯齿化的问题](#1-解决使用-css3-的-rotate出现锯齿化的问题)
+    * [2. 解决 Three.js 缩放时以整个浏览器为单位](#2-解决-threejs-缩放时以整个浏览器为单位)
+    * [3. Three.js 由 3d 场景坐标转换成 2d 屏幕坐标](#3-threejs-由-3d-场景坐标转换成-2d-屏幕坐标)
+    * [4. div 做的 button 点击出现选中蓝框](#4-div-做的-button-点击出现选中蓝框)
+    * [5. 去掉 span 标签的间距](#5-去掉-span-标签的间距)
+    * [6. js 对象去重](#6-js-对象去重)
+    * [7. js 保留两位小数](#7-js-保留两位小数)
+    * [8. 修改 placeholder 默认颜色](#8-修改-placeholder-默认颜色)
+    * [9. radio 取消选中并能再次选中](#9-radio-取消选中并能再次选中)
+    * [10. 生成 uuid](#10-生成-uuid)
     * [11. 校验手机号](#11-校验手机号)
-    * [12. 修改 Three.js 背景色](#12-修改Threejs背景色)
+    * [12. 修改 Three.js 背景色](#12-修改-threejs-背景色)
     * [13. 解决同时绑定单击和双击事件，会两个都执行的情况](#13-解决同时绑定单击和双击事件，会两个都执行的情况)
-    * [14. 监测 Three.js 版本](#14-监测Threejs版本)
-    * [15. 保存 json](#15-保存json)
-    * [16. flex 像表格一样布局](#16-flex像表格一样布局)
+    * [14. 监测 Three.js 版本](#14-监测-threejs-版本)
+    * [15. 保存 json](#15-保存-json)
+    * [16. flex 像表格一样布局](#16-flex-像表格一样布局)
     * [17. 下标](#17-下标)
     * [18. ffmpeg](#18-ffmpeg)
     * [19. 评级组件](#19-评级组件)
 
 * [bug](#bug)
-    * [1. Uncaught SyntaxError: Invalid or unexpected token (javascript)](#1-UncaughtSyntaxError:Invalidorunexpectedtoken(javascript))
-    * [有序列表](#有序列表)
-    * [无序列表](#无序列表)
-* [列表](#列表)
-    * [有序列表](#有序列表)
-    * [无序列表](#无序列表)
-* [区块引用](#区块引用)
-* [分割线](#分割线)
-* [链接](#链接)
-    * [行内式链接](#行内式链接)
-    * [参数式链接](#参数式链接)
-* [图片](#图片)
-    * [行内式图片](#行内式图片)
-    * [参数式图片](#参数式图片)
-* [代码块](#代码块)
-* [转义](#转义)
-* [强调](#强调)
-* [表格](#表格)
-* [高亮](#高亮)
+    * [1. Uncaught SyntaxError: Invalid or unexpected token (javascript)](#1-uncaught-syntaxerror-invalid-or-unexpected-token-javascript)
+    * [2. unable to access 'https://github.com/': OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443. (Github)](#2-unable-to-access-httpsgithubcom-openssl-ssl_connect-ssl_error_syscall-in-connection-to-githubcom443-github)
 
+* [Mac](#mac)
+    * [1. git 安装](#1-git-安装)
+    * [2. npm 权限问题](#2-npm-权限问题)
+    * [3. 查看 ip](#3-查看-ip)
+    * [4. 关闭死不掉的进程](#4-关闭死不掉的进程)
+    * [5. 解压rar](#5-解压rar)
 
+* [Github](#github)
+    * [1. 关于 gitmodule 子模块的运用](#1-关于-gitmodule-子模块的运用)
+
+* [手机端](#手机端)
+    * [1. 兼容所有机型](#1-兼容所有机型)
+    * [2. 禁止苹果手机缩放，ios10 后的版本](#2-禁止苹果手机缩放ios10后的版本)
+    * [3. 判断横竖屏](#3-判断横竖屏)
+    * [4. ios 键盘弹起，body 拉长，关闭键盘页面不回弹](#4-ios键盘弹起-body拉长-关闭键盘页面不回弹)
+    * [5. 修改苹果默认的工具栏和菜单栏](#5-修改苹果默认的工具栏和菜单栏)
+    * [6. 阻止下拉滑动的效果（橡皮筋效果）](#6-阻止下拉滑动的效果橡皮筋效果)
+
+* [常识性知识点](#常识性知识点)
+    * [影子 DOM](#影子dom)
+
+* [数学类](#数学类)
+    * [1. 粒子画球](#1-粒子画球)
+    * [2. 计算圆柱贴图比例](#2-计算圆柱贴图比例)
+    * [3. 计算图像缩放比例](#3-计算图像缩放比例)
+
+* [小程序](#小程序)
+    * [1. 换行（标签必须是 <text> ?）](#1-换行标签必须是-text-)
+    * [2. 小程序更新后，不能自动弹出授权，需要用户手动点击(官方推荐 button )](#2-小程序更新后不能自动弹出授权需要用户手动点击官方推荐-button-)
+    * [3. bindtap 点击事件传参](#3-bindtap-点击事件传参)
+    * [4. 微信开发文档 / 快速查找](#4-微信开发文档--快速查找)
+    * [5. 组件化](#5-组件化)
+    
 ## 处理各种奇葩问题
 
 ### 1. 解决使用 css3 的 rotate，出现锯齿化的问题。
@@ -342,13 +357,13 @@ div或者button的样式里面加上
 
 ## Mac
 
-### 1. git安装
+### 1. git 安装
 参考：https://www.jianshu.com/p/7edb6b838a2e
 
-### 2. npm权限问题
+### 2. npm 权限问题
 参考：https://blog.csdn.net/sinat_36422236/article/details/89675658
 
-### 3. 查看ip
+### 3. 查看 ip
 参考：https://jingyan.baidu.com/article/b0b63dbf3fefd14a48307013.html
 
 ### 4. 关闭死不掉的进程
@@ -361,14 +376,14 @@ div或者button的样式里面加上
 
 参考 https://blog.csdn.net/nextstudio/article/details/18133963
 
-### 5. 解压rar
+### 5. 解压 rar
 1. brew install unrar
 2. cd到rar文件目录 `unrar x filename.rar`
 
 
 ## Github
 
-### 1. 关于gitmodule子模块的运用
+### 1. 关于 gitmodule 子模块的运用
 正常的使用git clone命令，然后再使用 git submodule init 和git submodule update来获取子模块<br>
 参考：https://blog.csdn.net/xuanwolanxue/article/details/80609986
 
@@ -410,7 +425,7 @@ div或者button的样式里面加上
 ```
 参考： https://blog.csdn.net/fifteen718/article/details/83039121
 
-### 2. 禁止苹果手机缩放，ios10后的版本
+### 2. 禁止苹果手机缩放，ios10 后的版本
 ```javascript
     // 阻止双击放大
     var lastTouchEnd = 0;
@@ -448,7 +463,7 @@ div或者button的样式里面加上
 ```
 参考：https://www.cnblogs.com/cdj61/p/9342041.html
 
-### 4. ios键盘弹起，body拉长，关闭键盘页面不回弹
+### 4. ios 键盘弹起，body 拉长，关闭键盘页面不回弹
 ```javascript
     // 获取窗口滚动条高度 
     export function getScrollTop(){  
@@ -475,7 +490,7 @@ div或者button的样式里面加上
 ```
 参考：https://www.cnblogs.com/xiongzaiqiren/p/10505490.html
 
-### 5.修改苹果默认的工具栏和菜单栏
+### 5. 修改苹果默认的工具栏和菜单栏
 需要网页"添加到主屏幕"才能测试。
 ```html
     <!-- 添加到主屏后的标题(iOS 6+)，是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏 -->
@@ -490,7 +505,7 @@ div或者button的样式里面加上
 ```
 参考：https://medium.com/appscope/changing-the-ios-status-bar-of-your-progressive-web-app-9fc8fbe8e6ab
 
-### 6.阻止下拉滑动的效果（橡皮筋效果）
+### 6. 阻止下拉滑动的效果（橡皮筋效果）
 ```javascript
     document.body.addEventListener('touchmove', function (e) {
         e.preventDefault(); //阻止默认的处理方式(阻止下拉滑动的效果)
@@ -499,7 +514,7 @@ div或者button的样式里面加上
 
 ## 常识性知识点
 
-### 影子dom
+### 影子 DOM
 
 Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡中检查影子DOM子树，就如同你检查普通的DOM树一样，所有想要做的东西都可一通过这个特性完美解决：<br>
 
@@ -635,7 +650,7 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
 ```
 * 使用`<view>`标签包一下
 
-### 2. 小程序更新后，不能自动弹出授权，需要用户手动点击(官方推荐button)
+### 2. 小程序更新后，不能自动弹出授权，需要用户手动点击(官方推荐 button )
 * wxml
 ```html
     <!-- 如果只是展示用户头像昵称，可以使用 <open-data /> 组件 -->
