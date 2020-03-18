@@ -287,6 +287,7 @@ div或者button的样式里面加上
 ```
 参考：https://www.zhihu.com/question/46943112/answer/113583615
 
+
 ## bug
 
 ### 1. Uncaught SyntaxError: Invalid or unexpected token (javascript)
