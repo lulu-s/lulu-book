@@ -2,11 +2,30 @@
 
 
 * [处理各种奇葩问题](#处理各种奇葩问题)
-    * [1. 解决使用css3的rotate，出现锯齿化的问题。](#1. 解决使用css3的rotate，出现锯齿化的问题。)
-    * [无序列表](#无序列表)
+    * [1. 解决使用 css3 的 rotate 出现锯齿化的问题](#1-解决使用css3的rotate出现锯齿化的问题)
+    * [2. 解决 Three.js 缩放时以整个浏览器为单位](#2-解决Threejs缩放时以整个浏览器为单位)
+    * [3. Three.js 由 3d 场景坐标转换成 2d 屏幕坐标](#3-Threejs由3d场景坐标转换成2d屏幕坐标)
+    * [4. div 做的 button 点击出现选中蓝框](#4-div做的button点击出现选中蓝框)
+    * [5. 去掉 span 标签的间距](#5-去掉span标签的间距)
+    * [6. js 对象去重](#6-js对象去重)
+    * [7. js 保留两位小数](#7-js保留两位小数)
+    * [8. 修改placeholder默认颜色](#8-修改placeholder默认颜色)
+    * [9. radio 取消选中并能再次选中](#9-radio取消选中并能再次选中)
+    * [10. 生成uuid](#10-生成uuid)
+    * [11. 校验手机号](#11-校验手机号)
+    * [12. 修改 Three.js 背景色](#12-修改Threejs背景色)
+    * [13. 解决同时绑定单击和双击事件，会两个都执行的情况](#13-解决同时绑定单击和双击事件，会两个都执行的情况)
+    * [14. 监测 Three.js 版本](#14-监测Threejs版本)
+    * [15. 保存 json](#15-保存json)
+    * [16. flex 像表格一样布局](#16-flex像表格一样布局)
+    * [17. 下标](#17-下标)
+    * [18. ffmpeg](#18-ffmpeg)
+    * [19. 评级组件](#19-评级组件)
+
+* [bug](#bug)
+    * [1. Uncaught SyntaxError: Invalid or unexpected token (javascript)](#1-UncaughtSyntaxError:Invalidorunexpectedtoken(javascript))
     * [有序列表](#有序列表)
     * [无序列表](#无序列表)
-* [标题](#标题)
 * [列表](#列表)
     * [有序列表](#有序列表)
     * [无序列表](#无序列表)
@@ -27,13 +46,13 @@
 
 ## 处理各种奇葩问题
 
-### 1. 解决使用css3的rotate，出现锯齿化的问题。
+### 1. 解决使用 css3 的 rotate，出现锯齿化的问题。
   ```css
     -webkit-backface-visibility: hidden;
   ```
 参考：https://code.i-harness.com/zh-TW/q/630f7b
 
-### 2. 解决Three.js缩放时以整个浏览器为单位。
+### 2. 解决 Three.js 缩放时以整个浏览器为单位。
   ```css
     body {
         overflow: hidden;
@@ -44,7 +63,7 @@
   ```
 参考：https://stackoverflow.com/questions/10425310/three-js-full-screen-issue
 
-### 3. Three.js由3d场景坐标转换成2d屏幕坐标
+### 3. Three.js 由 3d 场景坐标转换成 2d 屏幕坐标
   ```javascript
     // 首先需要通过某个场景组Group里面的模型的位置坐标，不输入具体坐标则为该组内位置坐标全部转换 group.localToWorld()
     var pos = group.localToWorld( new three.Vector3(x, y, z) );
@@ -60,14 +79,14 @@
   * https://blog.csdn.net/qq_30100043/article/details/80798791
   * https://codeday.me/bug/20190328/844841.html
 
-### 4. div做的button点击出现选中蓝框
+### 4. div 做的 button 点击出现选中蓝框
 div或者button的样式里面加上
 ```css
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 ```
 参考：https://www.iteye.com/blog/yigang-2235539
 
-### 5. 去掉span标签的间距
+### 5. 去掉 span 标签的间距
 将span转成块级标签，父元素字体大小设置为0，再设置span字体大小
 ```css
     .show_msg {
@@ -81,7 +100,7 @@ div或者button的样式里面加上
 ```
 参考：https://blog.csdn.net/u014627807/article/details/79961951
 
-### 6. js对象去重
+### 6. js 对象去重
 ```javascript
     var obj = [
             {year: '2013-2014', term: '1'},
@@ -102,7 +121,7 @@ div或者button的样式里面加上
 ```
 参考：https://blog.csdn.net/longzhoufeng/article/details/78224205
 
-### 7. js保留两位小数
+### 7. js 保留两位小数
 以下处理结果会四舍五入:
 ```javascript
     var num = 2.446242342;
@@ -118,7 +137,7 @@ div或者button的样式里面加上
 ```
 参考：https://www.runoob.com/w3cnote/javascript-two-decimal.html
 
-### 8. 修改placeholder默认颜色
+### 8. 修改 placeholder 默认颜色
 ```css
     :-moz-placeholder { 
         :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
@@ -142,7 +161,7 @@ div或者button的样式里面加上
 ```
 参考：http://www.bbs0101.com/archives/116.html
 
-### 9. radio取消选中并能再次选中
+### 9. radio 取消选中并能再次选中
 ```javascript
     var old = null; //用来保存原来的对象
 
@@ -167,7 +186,7 @@ div或者button的样式里面加上
 ```
 参考：https://blog.csdn.net/tutian2000/article/details/80256757
 
-### 10. 生成uuid
+### 10. 生成 uuid
 ```javascript
     export function guid() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -190,7 +209,7 @@ div或者button的样式里面加上
     }
 ```
 
-### 12. 修改 threeJs 背景色
+### 12. 修改 Three.js 背景色
 ```javascript
     renderer.setClearColor('rgb(135,206,250)',1.0);
 	renderer.setClearColor(0xffffff,1.0);
@@ -238,15 +257,15 @@ div或者button的样式里面加上
 ```
 参考：https://www.hangge.com/blog/cache/detail_1794.html
 
-### 14. 监测threeJs版本
+### 14. 监测 Three.js 版本
 在浏览器中按F12，打开开发版输入 `THREE.REVISION`
 
-### 15. 保存json
+### 15. 保存 json
 ```
     JSON.stringify(temp1, 4, "\t")
 ```
 
-### 16. flex像表格一样布局
+### 16. flex 像表格一样布局
 ```
     .parent {
         width: 100%;
