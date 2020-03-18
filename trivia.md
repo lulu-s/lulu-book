@@ -668,10 +668,6 @@ Page({
 ```
 * 设置自定义编译，修改启动页面为授权页面，并隐藏home键。
 
-
-
-
-
 ### 3. bindtap 点击事件传参
 * 使用 data-xx / id 进行传递参数
 ```html
@@ -691,6 +687,7 @@ Page({
 
 ### 4. 微信开发文档 / 快速查找
 * 分享 / 转发： https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onShareAppMessage-Object-object
+* 路由： https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.navigateTo.html
 
 ### 5. 组件化
 
