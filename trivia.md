@@ -804,7 +804,6 @@ Page({
 ```html
     <component-name property="" />
 ```
-参考： https://juejin.im/post/5b64744df265da0f6d72f4d7
 
 * template
 参考： https://juejin.im/post/5b64744df265da0f6d72f4d7
