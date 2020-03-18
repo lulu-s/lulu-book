@@ -691,3 +691,63 @@ Page({
 
 ### 4. 微信开发文档 / 快速查找
 * 分享 / 转发： https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onShareAppMessage-Object-object
+
+### 5. 组件化
+
+#### component（自定义组件）
+
+> properties：是组件对外开放的属性，当在使用者 xml 文件中使用该组件时，可以为这些属性传值达到改变组件的目的
+> data：内部数据，和 page 的 data 一样，和 properties 不同的是它是对内的
+> mthods：组件的自定义方法都定义在其内部，亲测定义在外部无法识别
+> externalClasses：组件外部样式，组件内部的样式是不受 app 和 使用者的 css 影响的，如果有组件内部有一些样式希望在使用者使用时才决定，那么久可以通过 externalClasses 去实现
+> behaviors：用于组件间的引用（详情：文档-组件间的关系)
+> 生命周期 ：created()、attached()、ready()、moved()、dettach()
+
+* 新建目录，在目录下新建component
+```javascript
+    Component({
+        //选项
+        options: {
+            multipleSlots: true // 启用多slot（插槽）支持
+        },
+        properties: {
+            //外部属性
+            text: {
+                type: String, //类型
+                value: 'default value', //默认值
+                observer: '方法名' //当数据发生变化时调用
+            }
+        },
+        //外部样式
+        externalClasses: ['text-class'],
+        data: {
+            // 内部数据
+            someData: {}
+        },
+        //生命周期
+        attached: function(){},
+        moved: function(){},
+        detached: function(){},
+        methods: {
+            // 自定义方法
+            customMethod: function(){}
+        }
+    })
+```
+* 使用者在 json 内添加调用关系
+```json
+    {
+        "usingComponents": {
+            // 组件名 : 路径
+            "component-name": "component-path",
+        }
+    }
+```
+* 使用者在 wxml 内添加组件，属性名 = 属性值
+```html
+    <component-name property="" />
+```
+参考： https://juejin.im/post/5b64744df265da0f6d72f4d7
+
+* template
+参考： https://juejin.im/post/5b64744df265da0f6d72f4d7
