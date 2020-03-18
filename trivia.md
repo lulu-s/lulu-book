@@ -585,12 +585,12 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
 
 ## 小程序
 
-### 1. 换行
+### 1. 换行（标签必须是 `<text>` ?）
 * 使用(\n)
 ```html
     <text>LV.1\n点数：00</text>
 ```
-* 使用<view>标签包一下
+* 使用`<view>`标签包一下
 
 ### 2. 小程序更新后，不能自动弹出授权，需要用户手动点击(官方推荐button)
 * wxml
@@ -693,12 +693,14 @@ Page({
 
 #### component（自定义组件）
 
-> properties：是组件对外开放的属性，当在使用者 xml 文件中使用该组件时，可以为这些属性传值达到改变组件的目的
-> data：内部数据，和 page 的 data 一样，和 properties 不同的是它是对内的
-> mthods：组件的自定义方法都定义在其内部，亲测定义在外部无法识别
-> externalClasses：组件外部样式，组件内部的样式是不受 app 和 使用者的 css 影响的，如果有组件内部有一些样式希望在使用者使用时才决定，那么久可以通过 externalClasses 去实现
-> behaviors：用于组件间的引用（详情：文档-组件间的关系)
-> 生命周期 ：created()、attached()、ready()、moved()、dettach()
+
+* 介绍
+> * properties：是组件对外开放的属性，当在使用者 xml 文件中使用该组件时，可以为这些属性传值达到改变组件的目的
+> * data：内部数据，和 page 的 data 一样，和 properties 不同的是它是对内的
+> * mthods：组件的自定义方法都定义在其内部，亲测定义在外部无法识别
+> * externalClasses：组件外部样式，组件内部的样式是不受 app 和 使用者的 css 影响的，如果有组件内部有一些样式希望在使用者使用时才决定，那么久可以通过 externalClasses 去实现
+> * behaviors：用于组件间的引用（详情：文档-组件间的关系)
+> * 生命周期 ：created()、attached()、ready()、moved()、dettach()
 
 * 新建目录，在目录下新建component
 ```javascript
