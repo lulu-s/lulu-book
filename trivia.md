@@ -14,13 +14,12 @@
     * [10. 生成 uuid](#10-生成-uuid)
     * [11. 校验手机号](#11-校验手机号)
     * [12. 修改 Three.js 背景色](#12-修改-threejs-背景色)
-    * [13. 解决同时绑定单击和双击事件，会两个都执行的情况](#13-解决同时绑定单击和双击事件，会两个都执行的情况)
+    * [13. 解决同时绑定单击和双击事件，会两个都执行的情况](#13-解决同时绑定单击和双击事件-会两个都执行的情况)
     * [14. 监测 Three.js 版本](#14-监测-threejs-版本)
     * [15. 保存 json](#15-保存-json)
     * [16. flex 像表格一样布局](#16-flex-像表格一样布局)
     * [17. 下标](#17-下标)
-    * [18. ffmpeg](#18-ffmpeg)
-    * [19. 评级组件](#19-评级组件)
+    * [18. 评级组件](#19-评级组件)
 
 * [bug](#bug)
     * [1. Uncaught SyntaxError: Invalid or unexpected token (javascript)](#1-uncaught-syntaxerror-invalid-or-unexpected-token-javascript)
@@ -31,7 +30,8 @@
     * [2. npm 权限问题](#2-npm-权限问题)
     * [3. 查看 ip](#3-查看-ip)
     * [4. 关闭死不掉的进程](#4-关闭死不掉的进程)
-    * [5. 解压rar](#5-解压rar)
+    * [5. 解压 rar](#5-解压rar)
+    * [6. ffmpeg](#6-ffmpeg)
 
 * [Github](#github)
     * [1. 关于 gitmodule 子模块的运用](#1-关于-gitmodule-子模块的运用)
@@ -53,7 +53,7 @@
     * [3. 计算图像缩放比例](#3-计算图像缩放比例)
 
 * [小程序](#小程序)
-    * [1. 换行（标签必须是 <text> ?）](#1-换行标签必须是-text-)
+    * [1. 换行（标签必须是 `<text>` ?）](#1-换行标签必须是-text-)
     * [2. 小程序更新后，不能自动弹出授权，需要用户手动点击(官方推荐 button )](#2-小程序更新后不能自动弹出授权需要用户手动点击官方推荐-button-)
     * [3. bindtap 点击事件传参](#3-bindtap-点击事件传参)
     * [4. 微信开发文档 / 快速查找](#4-微信开发文档--快速查找)
@@ -324,19 +324,9 @@ div或者button的样式里面加上
     }
 ```
 
-### 18. ffmpeg
-* 视频转音频
-```javascript
-    // ffmpeg -i 视频.mp4 -b:a 192K -vn 生成文件.mp3
-    ffmpeg -i 0031LM3jlx07yuR6REFa01041200fm8C0E010.mp4 -b:a 192K -vn out.mp3
-```
-* 视频和音频合并
-```javascript
-    // ffmpeg -i 视频.mp4 -i 音频.mp3 -c:v copy -c:a 编码格式 生成文件.mp4
-    ffmpeg -i vid.mp4 -i out.mp3 -c:v copy -c:a aac done.mp4
-```
 
-### 19. 评级组件
+
+### 18. 评级组件
 ```javascript
     // "★★★★★☆☆☆☆☆".slice(5 - rate, 10 - rate)
     // 9.2 3.4 先 / 2 后四舍五入
@@ -380,6 +370,17 @@ div或者button的样式里面加上
 1. brew install unrar
 2. cd到rar文件目录 `unrar x filename.rar`
 
+### 6. ffmpeg
+* 视频转音频
+```javascript
+    // ffmpeg -i 视频.mp4 -b:a 192K -vn 生成文件.mp3
+    ffmpeg -i 0031LM3jlx07yuR6REFa01041200fm8C0E010.mp4 -b:a 192K -vn out.mp3
+```
+* 视频和音频合并
+```javascript
+    // ffmpeg -i 视频.mp4 -i 音频.mp3 -c:v copy -c:a 编码格式 生成文件.mp4
+    ffmpeg -i vid.mp4 -i out.mp3 -c:v copy -c:a aac done.mp4
+```
 
 ## Github
 
