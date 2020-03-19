@@ -58,6 +58,7 @@
     * [3. bindtap 点击事件传参](#3-bindtap-点击事件传参)
     * [4. 微信开发文档 / 快速查找](#4-微信开发文档--快速查找)
     * [5. 组件化](#5-组件化)
+    * [6. 生命周期](#6-生命周期)
 
 ## 处理各种奇葩问题
 
@@ -866,3 +867,4 @@ Page({
         }
     })
 ```
+参考： https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html
