@@ -915,12 +915,12 @@ Page({
 * 1. 个人账号不能使用 web-view，可以通过以下设置，本地测试。
 > 详情(开发者工具右上角) -> 本地设置 -> 不效验合法域名、web-view（业务域名）、TLS版本以及HTTPS证书
 * 2. 参考官方文档
-```
+```html
     <web-view src="http://emerge.cc/inspire/?topic=stepper&nsukey=dBSEbpjeCFJ%2FLCqMNpU06ugvCEMSSbi37wubNK3ubE3tJ48V2OEEk%2FZWgst3dnIK2gRd94IfNUfQqCnbdfc5Tis9LO19C01bsUsFyRE71KnagCmAAYKu9yvkZt%2ByyIjOS8%2F9%2B%2BCovplBqyZuk%2FJztx%2BFErEDI%2BITwJPTDtmafAF4ngqBZZM6%2FtOLrd25mQuFiil8IhfX2VIoxjATWix6MQ%3D%3D"></web-view>
 ```
 ### 10. 父调用子组件，参数变化不刷新的问题
 * 在 `onLoad / onShow` 中调用 `setData`
-```
+```js
   /**
    * 生命周期函数--监听页面显示
    */
