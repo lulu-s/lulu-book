@@ -750,6 +750,7 @@ Page({
 ### 4. 微信开发文档 / 快速查找
 * 分享 / 转发： https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onShareAppMessage-Object-object
 * 路由： https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.navigateTo.html
+* web-view: https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html
 
 ### 5. 组件化
 
@@ -906,3 +907,11 @@ Page({
     <text decode="{{true}}">&nbsp;&nbsp;</text>
 ```
 参考：https://blog.csdn.net/llixiangjian/article/details/78457536
+
+### 9. web-view 的使用
+* 1. 个人账号不能使用 web-view，可以通过以下设置，本地测试。
+> 详情(开发者工具右上角) -> 本地设置 -> 不效验合法域名、web-view（业务域名）、TLS版本以及HTTPS证书
+* 2. 参考官方文档
+```
+    <web-view src="http://emerge.cc/inspire/?topic=stepper&nsukey=dBSEbpjeCFJ%2FLCqMNpU06ugvCEMSSbi37wubNK3ubE3tJ48V2OEEk%2FZWgst3dnIK2gRd94IfNUfQqCnbdfc5Tis9LO19C01bsUsFyRE71KnagCmAAYKu9yvkZt%2ByyIjOS8%2F9%2B%2BCovplBqyZuk%2FJztx%2BFErEDI%2BITwJPTDtmafAF4ngqBZZM6%2FtOLrd25mQuFiil8IhfX2VIoxjATWix6MQ%3D%3D"></web-view>
+```
