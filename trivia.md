@@ -60,7 +60,10 @@
     * [5. 组件化](#5-组件化)
     * [6. 生命周期](#6-生命周期)
     * [7. 自定义导航栏](#7-自定义导航栏)
-    * [8. text 空格](#7-text-空格)
+    * [8. text 显示空格](#7-text-显示空格)
+    * [9. web-view 的使用](9-web-view-的使用)
+    * [10. 想要子组件刷新，需要调用 setData](10-想要子组件刷新-需要调用-setData)
+
 
 ## 处理各种奇葩问题
 
@@ -901,7 +904,7 @@ Page({
     })
 ```
 
-### 8. text 空格
+### 8. text 显示空格
 ```html
     <!-- 权限 decode="{{true}}"，空格 &nbsp; -->
     <text decode="{{true}}">&nbsp;&nbsp;</text>
@@ -914,4 +917,16 @@ Page({
 * 2. 参考官方文档
 ```
     <web-view src="http://emerge.cc/inspire/?topic=stepper&nsukey=dBSEbpjeCFJ%2FLCqMNpU06ugvCEMSSbi37wubNK3ubE3tJ48V2OEEk%2FZWgst3dnIK2gRd94IfNUfQqCnbdfc5Tis9LO19C01bsUsFyRE71KnagCmAAYKu9yvkZt%2ByyIjOS8%2F9%2B%2BCovplBqyZuk%2FJztx%2BFErEDI%2BITwJPTDtmafAF4ngqBZZM6%2FtOLrd25mQuFiil8IhfX2VIoxjATWix6MQ%3D%3D"></web-view>
+```
+### 10. 想要子组件刷新，需要调用 setData
+* 在 `onLoad / onShow` 中调用
+```
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    this.setData({
+      money: app.globalData.money
+    })
+  }
 ```
