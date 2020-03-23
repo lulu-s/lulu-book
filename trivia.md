@@ -59,6 +59,8 @@
     * [4. 微信开发文档 / 快速查找](#4-微信开发文档--快速查找)
     * [5. 组件化](#5-组件化)
     * [6. 生命周期](#6-生命周期)
+    * [7. 自定义导航栏](#7-自定义导航栏)
+    * [8. text 空格](#7-text-空格)
 
 ## 处理各种奇葩问题
 
@@ -868,3 +870,39 @@ Page({
     })
 ```
 参考： https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html
+
+### 7. 自定义导航栏
+
+1. 首先取得控制权，在 app.json 内配置后，只会保留右上角的胶囊
+```json
+    "window": {
+        "navigationStyle": "custom"
+    }
+```
+
+2. 在 app.js 内获取设备信息
+```javascript
+    App({
+        onLaunch: function () {
+            this.globalData = {
+                systeminfo: {}, // 系统信息
+                headerBtnPosi: {} // 胶囊按钮位置信息
+            }
+            wx.getSystemInfo({ // 获取设备信息
+                success: (res) => {
+                    this.globalData.systeminfo = res
+                },
+            })
+            // 获得胶囊按钮位置信息
+            // wx.getMenuButtonBoundingClientRect() 像对象一样使用
+            this.globalData.headerBtnPosi = wx.getMenuButtonBoundingClientRect()
+        }
+    })
+```
+
+### 8. text 空格
+```html
+    <!-- 权限 decode="{{true}}"，空格 &nbsp; -->
+    <text decode="{{true}}">&nbsp;&nbsp;</text>
+```
+参考：https://blog.csdn.net/llixiangjian/article/details/78457536
