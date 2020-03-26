@@ -24,6 +24,7 @@
 * [bug](#bug)
     * [1. Uncaught SyntaxError: Invalid or unexpected token (javascript)](#1-uncaught-syntaxerror-invalid-or-unexpected-token-javascript)
     * [2. unable to access 'https://github.com/': OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443. (Github)](#2-unable-to-access-httpsgithubcom-openssl-ssl_connect-ssl_error_syscall-in-connection-to-githubcom443-github)
+    * [3. Update the Pi 出错](#3-Update-the-Pi-出错)
 
 * [Mac](#mac)
     * [1. git 安装](#1-git-安装)
