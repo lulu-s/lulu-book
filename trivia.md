@@ -66,6 +66,13 @@
     * [9. web-view 的使用](#9-web-view-的使用)
     * [10. 父调用子组件，参数变化不刷新的问题](#10-父调用子组件-参数变化不刷新的问题)
 
+* [linux](#linux)
+    * [1. raspberry pi (树莓派) 清华源](#1-raspberry-pi-(树莓派)-清华源)
+    * [2. nodejs 最新版本下载 (Debian)](#2-nodejs-最新版本下载-(Debian))
+
+
+
+
 
 ## 处理各种奇葩问题
 
@@ -935,6 +942,8 @@ Page({
 ```html
     <web-view src="http://emerge.cc/inspire/?topic=stepper&nsukey=dBSEbpjeCFJ%2FLCqMNpU06ugvCEMSSbi37wubNK3ubE3tJ48V2OEEk%2FZWgst3dnIK2gRd94IfNUfQqCnbdfc5Tis9LO19C01bsUsFyRE71KnagCmAAYKu9yvkZt%2ByyIjOS8%2F9%2B%2BCovplBqyZuk%2FJztx%2BFErEDI%2BITwJPTDtmafAF4ngqBZZM6%2FtOLrd25mQuFiil8IhfX2VIoxjATWix6MQ%3D%3D"></web-view>
 ```
+
+
 ### 10. 父调用子组件，参数变化不刷新的问题
 * 在 `onLoad / onShow` 中调用 `setData`
 ```js
@@ -947,3 +956,25 @@ Page({
     })
   }
 ```
+
+
+
+
+
+## linux
+
+### 1. raspberry pi (树莓派) 清华源
+```
+    sudo sed -i 's#://raspbian.raspberrypi.org#s://mirrors.ustc.edu.cn/raspbian#g' /etc/apt/sources.list 
+    sudo sed -i 's#://archive.raspberrypi.org/debian#s://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian#g' /etc/apt/sources.list.d/raspi.list
+```
+参考：https://www.jianshu.com/p/67b9e6ebf8a0
+
+### 2. nodejs 最新版本下载 (Debian)
+* Node.js v13.x:
+```
+    # Using Debian, as root
+    curl -sL https://deb.nodesource.com/setup_13.x | bash -
+    apt-get install -y nodejs
+```
+参考：https://github.com/nodesource/distributions/blob/master/README.md
