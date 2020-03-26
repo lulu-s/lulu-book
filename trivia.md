@@ -351,6 +351,14 @@ div或者button的样式里面加上
 ### 2. unable to access 'https://github.com/': OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443. (Github)
 注意：打开git bash(命令行)， 敲命令`git config --global http.sslVerify false`
 
+### 3. Update the Pi 出错
+> Failed to fetch http://raspbian.raspberrypi.org/raspbian/dists/buster/main/binary-armhf/Packages
+* 解决办法
+```
+    sudo rm /var/lib/apt/lists/* -vf
+    sudo apt-get update
+```
+参考： https://raspberrypi.stackexchange.com/questions/81940/raspbian-jessie-apt-get-update-fails-error-hash-sum-mismatch
 
 ## Mac
 
