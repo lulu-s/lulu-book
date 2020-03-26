@@ -33,7 +33,7 @@
     * [4. 关闭死不掉的进程](#4-关闭死不掉的进程)
     * [5. 解压 rar](#5-解压rar)
     * [6. ffmpeg](#6-ffmpeg)
-    * [7.Xcode_xxx.xip 不是来自 apple](#7-Xcode-xxx-xip-不是来自-apple)
+    * [7. Xcode_xxx.xip 不是来自 apple](#7-Xcode-xxx-xip-不是来自-apple)
 
 * [Github](#github)
     * [1. 关于 gitmodule 子模块的运用](#1-关于-gitmodule-子模块的运用)
