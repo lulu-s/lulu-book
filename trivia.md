@@ -34,6 +34,7 @@
     * [5. 解压 rar](#5-解压rar)
     * [6. ffmpeg](#6-ffmpeg)
     * [7. Xcode_xxx.xip 不是来自 apple](#7-Xcode-xxx-xip-不是来自-apple)
+    * [8. mac 解压 .rar 文件出现中文乱码](#8-mac-解压-rar-文件出现中文乱码)
 
 * [Github](#github)
     * [1. 关于 gitmodule 子模块的运用](#1-关于-gitmodule-子模块的运用)
@@ -411,6 +412,8 @@ div或者button的样式里面加上
  * `sudo spctl --master-disable`
  * `xattr -d com.apple.quarantine /Users/emerge/Downloads/Xcode_10.1.xip `
 * 修改日期为几年前，如2018
+
+### 8. mac 解压 .rar 文件出现中文乱码
 
 ## Github
 
