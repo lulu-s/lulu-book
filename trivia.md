@@ -414,6 +414,8 @@ div或者button的样式里面加上
 * 修改日期为几年前，如2018
 
 ### 8. mac 解压 .rar 文件出现中文乱码
+1. `brew install unar`
+2. 中文（ GBK 或 GB18030 ）或简体中文（ GB 2312 或 windows，Dos ）`unar -encoding GBK 文件名.后缀名`
 
 ## Github
 
