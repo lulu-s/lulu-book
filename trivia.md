@@ -71,8 +71,20 @@
     * [1. raspberry pi (树莓派) 清华源](#1-raspberry-pi-(树莓派)-清华源)
     * [2. nodejs 最新版本下载 (Debian)](#2-nodejs-最新版本下载-(Debian))
 
+* [WScript](#WScript)
+    * [1. VB脚本](#1-VB脚本)
 
 
+* [Electron](#Electron)
+    * [1. 窗口全屏退出快捷键](#1-窗口全屏退出快捷键)
+
+## Electron
+
+### 1. 窗口全屏退出快捷键
+```
+    windows： Alt+F4
+    macOS：command+Q
+```
 
 
 ## 处理各种奇葩问题
@@ -983,3 +995,10 @@ Page({
     apt-get install -y nodejs
 ```
 参考：https://github.com/nodesource/distributions/blob/master/README.md
+
+
+
+## WScript
+
+### 1. VB脚本
+* 1. WScript.Sleep(mm) 将当前脚本的执行暂停指定的毫秒数(单位毫秒)。
