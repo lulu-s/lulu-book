@@ -78,13 +78,7 @@
 * [Electron](#Electron)
     * [1. 窗口全屏退出快捷键](#1-窗口全屏退出快捷键)
 
-## Electron
 
-### 1. 窗口全屏退出快捷键
-```
-    windows： Alt+F4
-    macOS：command+Q
-```
 
 
 ## 处理各种奇葩问题
@@ -1002,3 +996,12 @@ Page({
 
 ### 1. VB脚本
 * 1. WScript.Sleep(mm) 将当前脚本的执行暂停指定的毫秒数(单位毫秒)。
+
+
+## Electron
+
+### 1. 窗口全屏退出快捷键
+```
+    windows： Alt+F4
+    macOS：command+Q
+```
