@@ -96,12 +96,12 @@
     $ openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
 ```
 输入的信息，仅供参考
-> Country Name (2 letter code) []:CN
-> State or Province Name (full name) []:Province
-> Locality Name (eg, city) []:City
-> Organization Name (eg, company) []:WIZ Technology Co. Ltd.
-> Organizational Unit Name (eg, section) []:WIZ Technology Co. Ltd.
-> Common Name (eg, fully qualified host name) []:WIZ Technology Root CA
+> Country Name (2 letter code) []:CN <br>
+> State or Province Name (full name) []:Province <br>
+> Locality Name (eg, city) []:City <br>
+> Organization Name (eg, company) []:WIZ Technology Co. Ltd. <br>
+> Organizational Unit Name (eg, section) []:WIZ Technology Co. Ltd. <br>
+> Common Name (eg, fully qualified host name) []:WIZ Technology Root CA <br>
 
 #### 2. 信任根证书
 打开【钥匙串访问】，左侧【钥匙串】选择【系统】，【种类】选择【证书】，然后把刚才生成的根证书导入进来（根证书是rootCA.pem），双击此证书，在【信任】设置中，SSL和X.509基本策略两项选择【始终信任】。
