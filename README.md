@@ -5,8 +5,9 @@
 ### 日常记录
   * [ʚ细碎的小知识ɞ](https://github.com/lulu-s/lulu-book/blob/master/trivia.md)
 
-### 语法
+### 其他
   * [markdown语法](https://github.com/lulu-s/lulu-book/blob/master/markdown%20grammar.md)
   * [命令行](https://github.com/lulu-s/lulu-book/blob/master/command.md)
   * [Arduino](https://github.com/lulu-s/lulu-book/blob/master/arduino.md)
   * [taro](https://github.com/lulu-s/lulu-book/blob/master/taro.md)
+  * [树莓派调试jauns](https://github.com/lulu-s/lulu-book/blob/master/pi.md)
