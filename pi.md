@@ -52,6 +52,7 @@
 ```
     $ cd janus-gateway
     $ ./janus -F /opt/janus/etc/janus/ -d 7
+    $  pi@raspberrypi:/opt/janus/share/janus/demos $ sudo http-server -p 80
 ```
 
 ### dns 配置
