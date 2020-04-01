@@ -99,8 +99,8 @@
 > Country Name (2 letter code) []:CN
 > State or Province Name (full name) []:Province
 > Locality Name (eg, city) []:City
-> > Organization Name (eg, company) []:WIZ Technology Co. Ltd.
-Organizational Unit Name (eg, section) []:WIZ Technology Co. Ltd.
+> Organization Name (eg, company) []:WIZ Technology Co. Ltd.
+> Organizational Unit Name (eg, section) []:WIZ Technology Co. Ltd.
 > Common Name (eg, fully qualified host name) []:WIZ Technology Root CA
 
 #### 2. 信任根证书
@@ -159,13 +159,14 @@ Organizational Unit Name (eg, section) []:WIZ Technology Co. Ltd.
     $ sudo /etc/init.d/nginx stop 
     $ sudo /etc/init.d/nginx start
     $ sudo /etc/init.d/nginx reload 
+    $ sudo nginx -V
 ```
 
-参考： 
-    * 安装 jauns(new)：https://www.rs-online.com/designspark/building-a-raspberry-pi-2-webrtc-camera
-    * 安装 jauns：https://planb.nicecupoftea.org/2015/10/17/hackspace-hat-quick-install-or-audio-and-video-streaming-from-a-raspberry-pi-to-a-remote-or-local-webrtc-compatible-browser/
-    * jauns配置nginx：https://blog.csdn.net/cgs1999/article/details/89881733
-    * dns拦截: https://www.npmjs.com/package/dns-proxy
-    * https证书： 
-        * https://juejin.im/post/5a6db896518825732d7fd8e0
-        * https://lamjack.github.io/2018/05/17/openssl-localhost-https/?nsukey=l4wVj8Of0bJiT%2Bu2A5iFrbNSRb5ElM7s3dm0Trij%2FfZ7XaTG86gvXJ6mRpNezhul0bRK9meBs8VuvqPxkUGB3VciSSSPpXIGlzb46rGQ%2FFewuXrP80HdoCWcNwzYk3WStmw46CWFqZMY0%2BgfLUji%2F%2BGqC3J%2FJ5X31EC8gJSepb8P%2FLbSeyQgWzQLkMGmxbktr8yBlV%2BrzMFsoF8sz%2F2GUw%3D%3D
+### 参考
+* 安装 jauns(new)：https://www.rs-online.com/designspark/building-a-raspberry-pi-2-webrtc-camera
+* 安装 jauns：https://planb.nicecupoftea.org/2015/10/17/hackspace-hat-quick-install-or-audio-and-video-streaming-from-a-raspberry-pi-to-a-remote-or-local-webrtc-compatible-browser/
+* jauns配置nginx：https://blog.csdn.net/cgs1999/article/details/89881733
+* dns拦截: https://www.npmjs.com/package/dns-proxy
+* https证书： 
+    * https://juejin.im/post/5a6db896518825732d7fd8e0
+    * https://lamjack.github.io/2018/05/17/openssl-localhost-https/?nsukey=l4wVj8Of0bJiT%2Bu2A5iFrbNSRb5ElM7s3dm0Trij%2FfZ7XaTG86gvXJ6mRpNezhul0bRK9meBs8VuvqPxkUGB3VciSSSPpXIGlzb46rGQ%2FFewuXrP80HdoCWcNwzYk3WStmw46CWFqZMY0%2BgfLUji%2F%2BGqC3J%2FJ5X31EC8gJSepb8P%2FLbSeyQgWzQLkMGmxbktr8yBlV%2BrzMFsoF8sz%2F2GUw%3D%3D
