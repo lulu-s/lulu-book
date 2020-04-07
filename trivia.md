@@ -25,6 +25,7 @@
     * [1. Uncaught SyntaxError: Invalid or unexpected token (javascript)](#1-uncaught-syntaxerror-invalid-or-unexpected-token-javascript)
     * [2. unable to access 'https://github.com/': OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443. (Github)](#2-unable-to-access-httpsgithubcom-openssl-ssl_connect-ssl_error_syscall-in-connection-to-githubcom443-github)
     * [3. Update the Pi 出错](#3-Update-the-Pi-出错)
+    *
 
 * [Mac](#mac)
     * [1. git 安装](#1-git-安装)
@@ -374,6 +375,18 @@ div或者button的样式里面加上
     sudo apt-get update
 ```
 参考： https://raspberrypi.stackexchange.com/questions/81940/raspbian-jessie-apt-get-update-fails-error-hash-sum-mismatch
+
+### 4. vue-router 导致报错 [Vue warn]: Failed to mount component: template or render function not defined.
+> vue router 里有一个模式叫做`命名视图`，本来一个页面里面只能有一个路由视图对应一个组件，现在可以多个路由视图对应多个组件。
+解决办法： 将路由中的加载模块修改为 component -> components 
+```
+    routes.push({
+        path: `/${sub.component}`,
+        name: sub.name,
+        components: componentName[sub.component] // resolve => require([`../Layout/${sub.component}`], resolve)
+    })
+```
+参考：https://www.cnblogs.com/jianxian/p/11063738.html
 
 ## Mac
 
