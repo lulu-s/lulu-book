@@ -363,7 +363,11 @@ div或者button的样式里面加上
 ```
     this.$set(target, projectName, value)
 ```
-参考
+
+### 20. 分页
+```javascript
+    array.filter((item, index) => index < limit * page && index >= limit * (page - 1))
+```
 
 ## bug
 
