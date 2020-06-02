@@ -15,11 +15,14 @@
     * [11. 校验手机号](#11-校验手机号)
     * [12. 修改 Three.js 背景色](#12-修改-threejs-背景色)
     * [13. 解决同时绑定单击和双击事件，会两个都执行的情况](#13-解决同时绑定单击和双击事件-会两个都执行的情况)
-    * [14. 监测 Three.js 版本](#14-监测-threejs-版本)
+    * [14. 查看 Three.js 版本](#14-查看-threejs-版本)
     * [15. 保存 json](#15-保存-json)
     * [16. flex 像表格一样布局](#16-flex-像表格一样布局)
-    * [17. 下标](#17-下标)
-    * [18. 评级组件](#19-评级组件)
+    * [17. 二维数组位置查询](#17-二维数组位置查询)
+    * [18. 评级组件](#18-评级组件)
+    * [19. Vue 更改对象属性不刷新页面](#19-Vue-更改对象属性不刷新页面)
+   
+    
 
 * [bug](#bug)
     * [1. Uncaught SyntaxError: Invalid or unexpected token (javascript)](#1-uncaught-syntaxerror-invalid-or-unexpected-token-javascript)
@@ -49,12 +52,14 @@
     * [6. 阻止下拉滑动的效果（橡皮筋效果）](#6-阻止下拉滑动的效果橡皮筋效果)
 
 * [常识性知识点](#常识性知识点)
-    * [影子 DOM](#影子dom)
+    * [1. 影子 DOM](#1-影子dom)
+    * [2. 查看 http 请求是否跨域](#2-查看-http-请求是否跨域)
 
 * [数学类](#数学类)
     * [1. 粒子画球](#1-粒子画球)
     * [2. 计算圆柱贴图比例](#2-计算圆柱贴图比例)
     * [3. 计算图像缩放比例](#3-计算图像缩放比例)
+    * [4. 分页](#4-分页)
 
 * [小程序](#小程序)
     * [1. 换行（标签必须是 `<text>` ?）](#1-换行标签必须是-text-)
@@ -295,11 +300,12 @@ div或者button的样式里面加上
 ```
 参考：https://www.hangge.com/blog/cache/detail_1794.html
 
-### 14. 监测 Three.js 版本
+### 14. 查看 Three.js 版本
 在浏览器中按F12，打开开发版输入 `THREE.REVISION`
 
 ### 15. 保存 json
-```
+```javascript
+    // 在谷歌 - 开发者工具 - console中输入以下内容 - Store as global variable - 保存
     JSON.stringify(temp1, 4, "\t")
 ```
 
@@ -323,7 +329,7 @@ div或者button的样式里面加上
 ```
 参考： https://blog.csdn.net/webEvelement/article/details/82850370
 
-### 17. 下标
+### 17. 二维数组位置查询
 ```javascript
     // 获取二维数组目标下标
     getArrIndex(arr, ti, tj){
@@ -335,7 +341,7 @@ div或者button的样式里面加上
             }
         }
     },
-    // 获取下标获取二维数组下标
+    // 从一维数组的随机下标，返回一维数组构成的二维数组下标
     getIndex(arr, index){
         var len = 0;
         for(let i = 0; i < arr.length; i++){
@@ -346,8 +352,6 @@ div或者button的样式里面加上
         }
     }
 ```
-
-
 
 ### 18. 评级组件
 ```javascript
@@ -364,10 +368,9 @@ div或者button的样式里面加上
     this.$set(target, projectName, value)
 ```
 
-### 20. 分页
-```javascript
-    array.filter((item, index) => index < limit * page && index >= limit * (page - 1))
-```
+
+
+
 
 ## bug
 
@@ -579,13 +582,21 @@ div或者button的样式里面加上
 
 ## 常识性知识点
 
-### 影子 DOM
+### 1. 影子 DOM
 
 Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡中检查影子DOM子树，就如同你检查普通的DOM树一样，所有想要做的东西都可一通过这个特性完美解决：<br>
 
 1. 进入开发者模式按F1进入设置
 2. 在Preferences选项卡中的Elements中把Show user agent shadow DOM前的复选框勾上（并没有找到原文所说的Genral所以按照网上的其他文章重写了这个步骤）
 3. 重启开发者工具
+
+### 2. 查看 http 请求是否跨域
+* 1. 找到 `浏览器 - 开发者工具 - network - 随便选择某个文件，查看Headers - Response Headers`
+* 2. 有 `Access-Control-Allow-Origin：*` 或者 * 为与请求源相同的地址。即服务器支持浏览器跨域访问。
+* 3. 若不包含需修改服务器端，允许cors。如不能修改，需要在本地 node 搭中间件 或 使用 nginx
+
+
+参考： https://blog.csdn.net/gdp12315/article/details/66479524
 
 
 ## 数学类
@@ -704,6 +715,13 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
     }
 
 ```
+
+### 4. 分页
+```javascript
+    // index 条数 ， page 页玛， limit 限制条数
+    array.filter((item, index) => index < limit * page && index >= limit * (page - 1))
+```
+
 
 
 ## 小程序
@@ -1019,6 +1037,7 @@ Page({
 
 ### 1. VB脚本
 * 1. WScript.Sleep(mm) 将当前脚本的执行暂停指定的毫秒数(单位毫秒)。
+
 
 
 ## Electron
