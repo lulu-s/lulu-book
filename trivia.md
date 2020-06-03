@@ -595,8 +595,19 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
 * 2. 有 `Access-Control-Allow-Origin：*` 或者 * 为与请求源相同的地址。即服务器支持浏览器跨域访问。
 * 3. 若不包含需修改服务器端，允许cors。如不能修改，需要在本地 node 搭中间件 或 使用 nginx
 
-
 参考： https://blog.csdn.net/gdp12315/article/details/66479524
+
+
+### 3. 文字竖排的方式
+```css
+    p {
+        writing-mode: vertical-rl; /* 竖排 从右向左*/
+        writing-mode: vertical-lr; /* 竖排 从左向右*/
+    }
+```
+参考：
+    * https://juejin.im/entry/595f0efc5188250d8b65e1e8
+    * MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode
 
 
 ## 数学类
