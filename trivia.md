@@ -21,7 +21,7 @@
     * [17. 二维数组位置查询](#17-二维数组位置查询)
     * [18. 评级组件](#18-评级组件)
     * [19. Vue 更改对象属性不刷新页面](#19-Vue-更改对象属性不刷新页面)
-   
+    * [20. 解决 canvas 绘制在移动端模糊的问题](#20-解决-canvas-绘制在移动端模糊的问题)
     
 
 * [bug](#bug)
@@ -369,8 +369,8 @@ div或者button的样式里面加上
     this.$set(target, projectName, value)
 ```
 
-
-
+### 20. 解决 canvas 绘制在移动端模糊的问题
+参考： https://juejin.im/post/5cbdda7bf265da036504fb46
 
 
 ## bug
