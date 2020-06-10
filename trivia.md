@@ -22,7 +22,7 @@
     * [18. 评级组件](#18-评级组件)
     * [19. Vue 更改对象属性不刷新页面](#19-Vue-更改对象属性不刷新页面)
     * [20. 解决 canvas 绘制在移动端模糊的问题](#20-解决-canvas-绘制在移动端模糊的问题)
-    
+    * [21. css 中获取 class 的第 n 个元素](#21-css-中获取-class-的第-n-个元素)
 
 * [bug](#bug)
     * [1. Uncaught SyntaxError: Invalid or unexpected token (javascript)](#1-uncaught-syntaxerror-invalid-or-unexpected-token-javascript)
@@ -372,6 +372,19 @@ div或者button的样式里面加上
 ### 20. 解决 canvas 绘制在移动端模糊的问题
 参考： https://juejin.im/post/5cbdda7bf265da036504fb46
 
+
+### 21. css 中获取 class 的第 n 个元素
+```css
+    .poem_replace:nth-of-type(1) {
+        bottom: 4.5rem;
+    }
+    .poem_replace:nth-of-type(2) {
+        bottom: 1.5rem;
+    }
+```
+参考： 
+* https://blog.csdn.net/hh1197787867/article/details/82182069
+* MDN: https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-of-type
 
 ## bug
 
