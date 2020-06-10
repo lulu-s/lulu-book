@@ -23,7 +23,8 @@
     * [19. Vue 更改对象属性不刷新页面](#19-Vue-更改对象属性不刷新页面)
     * [20. 解决 canvas 绘制在移动端模糊的问题](#20-解决-canvas-绘制在移动端模糊的问题)
     * [21. css 中获取 class 的第 n 个元素](#21-css-中获取-class-的第-n-个元素)
-    * [22. css 动画在结束后保持该状态不变](#21-css-动画在结束后保持该状态不变)
+    * [22. css 动画在结束后保持该状态不变](#22-css-动画在结束后保持该状态不变)
+    * [23. 获取 class 内的样式元素](#23-获取-class-内的样式元素)
 
 * [bug](#bug)
     * [1. Uncaught SyntaxError: Invalid or unexpected token (javascript)](#1-uncaught-syntaxerror-invalid-or-unexpected-token-javascript)
@@ -394,6 +395,26 @@ div或者button的样式里面加上
     }
 ```
 参考：https://blog.csdn.net/lp2659359879/article/details/52523888
+
+### 23. 获取 class 内的样式元素
+```js
+    // 获取 class 内的样式元素
+    export function getStyle(obj, attr) {
+        var ie = !+"\v1";//简单判断ie6~8
+        if (attr == "backgroundPosition") {//IE6~8不兼容backgroundPosition写法，识别backgroundPositionX/Y
+            if (ie) {
+                return obj.currentStyle.backgroundPositionX + " " + obj.currentStyle.backgroundPositionY;
+            }
+        }
+        if (obj.currentStyle) {
+            return obj.currentStyle[attr];
+        }
+        else {
+            return document.defaultView.getComputedStyle(obj, null)[attr];
+        }
+    }
+```
+参考：https://blog.csdn.net/dragoo1/article/details/48153391
 
 ## bug
 
