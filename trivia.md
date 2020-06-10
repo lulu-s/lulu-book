@@ -620,8 +620,8 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
     }
 ```
 参考：
-    * https://juejin.im/entry/595f0efc5188250d8b65e1e8
-    * MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode
+* https://juejin.im/entry/595f0efc5188250d8b65e1e8
+* MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode
 
 
 ## 数学类
