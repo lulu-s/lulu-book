@@ -23,6 +23,7 @@
     * [19. Vue 更改对象属性不刷新页面](#19-Vue-更改对象属性不刷新页面)
     * [20. 解决 canvas 绘制在移动端模糊的问题](#20-解决-canvas-绘制在移动端模糊的问题)
     * [21. css 中获取 class 的第 n 个元素](#21-css-中获取-class-的第-n-个元素)
+    * [22. css 动画在结束后保持该状态不变](#21-css-动画在结束后保持该状态不变)
 
 * [bug](#bug)
     * [1. Uncaught SyntaxError: Invalid or unexpected token (javascript)](#1-uncaught-syntaxerror-invalid-or-unexpected-token-javascript)
@@ -385,6 +386,14 @@ div或者button的样式里面加上
 参考： 
 * https://blog.csdn.net/hh1197787867/article/details/82182069
 * MDN: https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-of-type
+
+### 22. css 动画在结束后保持该状态不变
+```css
+    .line_1 {
+        animation: line_width_to_enter 1s ease forwards;
+    }
+```
+参考：https://blog.csdn.net/lp2659359879/article/details/52523888
 
 ## bug
 
