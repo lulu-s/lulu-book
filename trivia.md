@@ -25,12 +25,15 @@
     * [21. css 中获取 class 的第 n 个元素](#21-css-中获取-class-的第-n-个元素)
     * [22. css 动画在结束后保持该状态不变](#22-css-动画在结束后保持该状态不变)
     * [23. 获取 class 内的样式元素](#23-获取-class-内的样式元素)
+    * [24. 实现 blob 与 base64 互转](#24-实现-blob-与-base64-互转)
+    * [25. js 正则表达式提取汉字和去掉汉字](#25-js-正则表达式提取汉字和去掉汉字)
 
 * [bug](#bug)
     * [1. Uncaught SyntaxError: Invalid or unexpected token (javascript)](#1-uncaught-syntaxerror-invalid-or-unexpected-token-javascript)
     * [2. unable to access 'https://github.com/': OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443. (Github)](#2-unable-to-access-httpsgithubcom-openssl-ssl_connect-ssl_error_syscall-in-connection-to-githubcom443-github)
     * [3. Update the Pi 出错](#3-Update-the-Pi-出错)
-    *
+    * [4. vue-router 导致报错 [Vue warn]: Failed to mount component: template or render function not defined.](#4-vue-router-导致报错-Vue-warn-Failed-to-mount-component-template-or-render-function-not-defined)
+    * [5. Uncaught TypeError: a[b].target.className.indexOf is not a function](#5-Uncaught-TypeError-a[b]-target-className-indexOf-is-not-a-function)
 
 * [Mac](#mac)
     * [1. git 安装](#1-git-安装)
@@ -57,12 +60,14 @@
     * [1. 影子 DOM](#1-影子dom)
     * [2. 查看 http 请求是否跨域](#2-查看-http-请求是否跨域)
     * [3. 文字竖排的方式](#3-文字竖排的方式)
+    * [4. Data URL 格式](#4-Data-URL-格式)
 
 * [数学类](#数学类)
     * [1. 粒子画球](#1-粒子画球)
     * [2. 计算圆柱贴图比例](#2-计算圆柱贴图比例)
     * [3. 计算图像缩放比例](#3-计算图像缩放比例)
     * [4. 分页](#4-分页)
+    * [5. canvas arc 绘制圆角矩形](#5-canvas-arc-绘制圆角矩形)
 
 * [小程序](#小程序)
     * [1. 换行（标签必须是 `<text>` ?）](#1-换行标签必须是-text-)
@@ -416,6 +421,74 @@ div或者button的样式里面加上
 ```
 参考：https://blog.csdn.net/dragoo1/article/details/48153391
 
+### 24. 实现 blob 与 base64 互转
+```javascript
+    /**
+     * base64  to blob二进制
+     */
+    function dataURItoBlob(dataURI) {
+        var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]; // mime类型
+        var byteString = atob(dataURI.split(',')[1]); //base64 解码
+        var arrayBuffer = new ArrayBuffer(byteString.length); //创建缓冲数组
+        var intArray = new Uint8Array(arrayBuffer); //创建视图
+
+        for (var i = 0; i < byteString.length; i++) {
+            intArray[i] = byteString.charCodeAt(i);
+        }
+        return new Blob([intArray], {type: mimeString});
+    }
+
+    /**
+     * 
+     * blob二进制 to base64
+     **/
+    function blobToDataURI(blob, callback) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            callback(e.target.result);
+        }
+        reader.readAsDataURL(blob);
+    }
+
+    // example
+    
+    // blob 转 base64
+    blobToDataURI(blob, function (data) {
+        console.log(data);
+    });
+
+    // base64 转blob 伪代码
+    var base64Str = 'base64 url';
+    var blob = dataURItoBlob(base64Str);
+    console.log(blob);
+```
+参考： https://www.cnblogs.com/dcb3688/p/4608062.html
+
+
+### 25. js 正则表达式提取汉字和去掉汉字
+```javascript
+    //只提取汉字  
+    function GetChinese(strValue) {  
+        if(strValue!= null && strValue!= ""){  
+            var reg = /[\u4e00-\u9fa5]/g;   
+            return strValue.match(reg).join("");  
+        }  
+        else  
+            return "";  
+    }  
+     //去掉汉字  
+    function RemoveChinese(strValue) {  
+        if(strValue!= null && strValue != ""){  
+            var reg = /[\u4e00-\u9fa5]/g;   
+           return strValue.replace(reg, "");   
+        }  
+        else  
+            return "";  
+    }  
+```
+参考： https://blog.csdn.net/yelin042/article/details/76982683
+
+
 ## bug
 
 ### 1. Uncaught SyntaxError: Invalid or unexpected token (javascript)
@@ -444,6 +517,11 @@ div或者button的样式里面加上
     })
 ```
 参考：https://www.cnblogs.com/jianxian/p/11063738.html
+
+### 5. Uncaught TypeError: a[b].target.className.indexOf is not a function
+关闭谷歌浏览器的自动翻译即可，目测我出现这个问题是和语音相关的api冲突了。
+
+* 参考：https://blog.csdn.net/m0_37688284/article/details/88947719
 
 ## Mac
 
@@ -653,6 +731,28 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
 * https://juejin.im/entry/595f0efc5188250d8b65e1e8
 * MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode
 
+### 4. Data URL 格式
+Data URI 的格式: `data:[<mime type>][;charset=<charset>][;base64],<encoded data>`
+
+* 第一部分是 data: 协议头，它标识这个内容为一个 data URI 资源。
+* 第二部分是 MIME 类型，表示这串内容的展现方式，比如：text/plain，则以文本类型展示，image/jpeg，以 jpeg 图片形式展示，同样，客户端也会以这个 MIME 类型来解析数据。
+* 第三部分是编码设置，默认编码是 charset=US-ASCII, 即数据部分的每个字符都会自动编码为 %xx，关于编码的测试，可以在浏览器地址框输入分别输入下面两串内容，查看效果：
+```
+    // output: ä½ å¥½ -> 使用默认的编码展示，故乱码
+    data:text/html,你好  
+    // output: 你好 -> 使用 UTF-8 展示
+    data:text/html;charset=UTF-8,你好 
+    // output: 浣犲ソ -> 使用 gbk 展示（浏览器默认编码 UTF-8，故乱码）
+    data:text/html;charset=gbk,你好 
+    // output: 你好 -> UTF-8 编码，内容先使用 base64 解码，然后展示
+    data:text/html;charset=UTF-8;base64,5L2g5aW9 
+```
+* 第四部分是 base64 编码设定，这是一个可选项，base64 编码中仅包含 0-9,a-z,A-Z,+,/,=，其中 = 是用来编码补白的。
+* 最后一部分为这个 Data URI 承载的内容，它可以是纯文本编写的内容，也可以是经过 base64编码 的内容。
+
+参考： 
+* 原作者： https://www.cnblogs.com/hustskyking/p/data-uri.html 
+* https://www.cnblogs.com/dcb3688/p/4608062.html
 
 ## 数学类
 
@@ -777,7 +877,39 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
     array.filter((item, index) => index < limit * page && index >= limit * (page - 1))
 ```
 
+### 5. canvas arc 绘制圆角矩形
+```javascript
+    function Rect(x, y, w, h) {
+        return {x:x, y:y, width:w, height:h};
+    }
 
+    var Point = function(x, y) {
+        return {x:x, y:y};
+    };
+    
+    var rect = Rect(50, 50, 300, 200);
+
+    drawRoundedRect(rect, 25, ctx);
+
+    function drawRoundedRect(rect, r, ctx) {
+        var ptA = Point(rect.x + r, rect.y);
+        var ptB = Point(rect.x + rect.width, rect.y);
+        var ptC = Point(rect.x + rect.width, rect.y + rect.height);
+        var ptD = Point(rect.x, rect.y + rect.height);
+        var ptE = Point(rect.x, rect.y);
+        
+        ctx.beginPath();
+        
+        ctx.moveTo(ptA.x, ptA.y);
+        ctx.arcTo(ptB.x, ptB.y, ptC.x, ptC.y, r);
+        ctx.arcTo(ptC.x, ptC.y, ptD.x, ptD.y, r);
+        ctx.arcTo(ptD.x, ptD.y, ptE.x, ptE.y, r);
+        ctx.arcTo(ptE.x, ptE.y, ptA.x, ptA.y, r);
+    
+        ctx.stroke();
+    }
+```
+参考： https://blog.csdn.net/tanghw/article/details/49793531
 
 ## 小程序
 
