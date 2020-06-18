@@ -58,7 +58,7 @@
 
 * [常识性知识点](#常识性知识点)
     * [1. 影子 DOM](#1-影子dom)
-    * [2. 查看 http 请求是否跨域](#2-查看-http-请求是否跨域)
+    * [2. 查看 http 请求是否可以跨域](#2-查看-http-请求是否可以跨域)
     * [3. 文字竖排的方式](#3-文字竖排的方式)
     * [4. Data URL 格式](#4-Data-URL-格式)
 
@@ -730,7 +730,7 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
 2. 在Preferences选项卡中的Elements中把Show user agent shadow DOM前的复选框勾上（并没有找到原文所说的Genral所以按照网上的其他文章重写了这个步骤）
 3. 重启开发者工具
 
-### 2. 查看 http 请求是否跨域
+### 2. 查看 http 请求是否可以跨域
 * 1. 找到 `浏览器 - 开发者工具 - network - 随便选择某个文件，查看Headers - Response Headers`
 * 2. 有 `Access-Control-Allow-Origin：*` 或者 * 为与请求源相同的地址。即服务器支持浏览器跨域访问。
 * 3. 若不包含需修改服务器端，允许cors。如不能修改，需要在本地 node 搭中间件 或 使用 nginx
