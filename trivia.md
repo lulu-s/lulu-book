@@ -521,7 +521,7 @@ div或者button的样式里面加上
 ### 5. Uncaught TypeError: a[b].target.className.indexOf is not a function
 关闭谷歌浏览器的自动翻译即可，目测我出现这个问题是和语音相关的api冲突了。
 
-* 参考：https://blog.csdn.net/m0_37688284/article/details/88947719
+参考：https://blog.csdn.net/m0_37688284/article/details/88947719
 
 ## Mac
 
