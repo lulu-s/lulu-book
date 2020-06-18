@@ -732,7 +732,7 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
 * MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode
 
 ### 4. Data URL 格式
-Data URI 的格式: `data:[<mime type>][;charset=<charset>][;base64],<encoded data>`
+> Data URI 的格式: `data:[<mime type>][;charset=<charset>][;base64],<encoded data>`
 
 * 第一部分是 data: 协议头，它标识这个内容为一个 data URI 资源。
 * 第二部分是 MIME 类型，表示这串内容的展现方式，比如：text/plain，则以文本类型展示，image/jpeg，以 jpeg 图片形式展示，同样，客户端也会以这个 MIME 类型来解析数据。
