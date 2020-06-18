@@ -10,4 +10,4 @@
   * [命令行](https://github.com/lulu-s/lulu-book/blob/master/command.md)
   * [Arduino](https://github.com/lulu-s/lulu-book/blob/master/arduino.md)
   * [taro](https://github.com/lulu-s/lulu-book/blob/master/taro.md)
-  * [树莓派调试jauns](https://github.com/lulu-s/lulu-book/blob/master/pi.md)
+  * [树莓派调试jauns(包含https证书配置)](https://github.com/lulu-s/lulu-book/blob/master/pi.md) 
