@@ -30,7 +30,7 @@
     
 * [Node](#Node)  
     * [1. express 接收 post 请求参数](#1-express-接收-post-请求参数)
-
+    * [2. 跨域问题](#2-跨域问题)
 
 * [bug](#bug)
     * [1. Uncaught SyntaxError: Invalid or unexpected token (javascript)](#1-uncaught-syntaxerror-invalid-or-unexpected-token-javascript)
@@ -518,6 +518,8 @@ div或者button的样式里面加上
 ### 1. express 接收 post 请求参数
 ```javascript
     // 伪代码
+    
+    // node
     // 安装依赖：npm install body-parser express --save-dev
     var express = require("express");
     var bodyParser = require('body-parser');//解析, 用req.body获取post参数
@@ -534,8 +536,9 @@ div或者button的样式里面加上
     console.log(`Server running at http://${hostname}:${port}/`);
     });
 
-    let url = "http://hostname:port"
+
     // 前端请求
+    let url = "http://hostname:port"
     fetch(url + "/test", {
         method: 'POST',
         mode: 'cors',// 避免cors攻击
@@ -552,6 +555,17 @@ div或者button的样式里面加上
         console.log(res)
     })
     .catch(err => console.log("err : ", err));
+```
+参考： https://www.jianshu.com/p/34ca30e71494
+
+
+### 2. 跨域问题
+```javascript
+    // 安装依赖：npm install express cors  --save-dev
+    const express = require("express");
+    const cors = require('cors');
+    const app = express();
+    app.use(cors());    
 ```
 
 ## bug
@@ -614,7 +628,7 @@ div或者button的样式里面加上
 2. kill进程
 找到进程的PID,使用kill命令：kill -9 PID（进程的PID，如2044），杀死对应的进程
 
-参考 https://blog.csdn.net/nextstudio/article/details/18133963
+参考: https://blog.csdn.net/nextstudio/article/details/18133963
 
 ### 5. 解压 rar
 1. brew install unrar
