@@ -38,6 +38,7 @@
     * [3. Update the Pi 出错](#3-Update-the-Pi-出错)
     * [4. vue-router 导致报错 [Vue warn]: Failed to mount component: template or render function not defined.](#4-vue-router-导致报错-vue-warn-failed-to-mount-component-template-or-render-function-not-defined)
     * [5. Uncaught TypeError: a[b].target.className.indexOf is not a function](#5-uncaught-typeerror-abtargetclassnameindexof-is-not-a-function)
+    * [6. PayloadTooLargeError: request entity too larg](#6-PayloadTooLargeError: request entity too larg)
 
 * [Mac](#mac)
     * [1. git 安装](#1-git-安装)
@@ -586,6 +587,13 @@ div或者button的样式里面加上
 关闭谷歌浏览器的自动翻译即可，目测我出现这个问题是和语音相关的api冲突了。
 
 参考：https://blog.csdn.net/m0_37688284/article/details/88947719
+
+### 6. PayloadTooLargeError: request entity too larg
+```javascript
+    app.use(bodyParser.json({'limit': '10mb',extended: true}));
+    app.use(bodyParser.urlencoded({'limit': '10mb',extended: true}));
+```
+参考：https://github.com/apostrophecms/apostrophe/issues/1291
 
 ## Mac
 
