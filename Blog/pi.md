@@ -1,18 +1,20 @@
 ## 树莓派调试jauns
 
 ### 安装阶段
-* 1. 连接树莓派
+
+
+#### 1. 连接树莓派
 ```
     $ ssh pi@192.168.1.149
     $ pi@192.168.1.149's password: 密码
 ```
-* 2. 更新 apt-get
+#### 2. 更新 apt-get
 ```
     $ sudo apt-get update -y && sudo apt-get upgrade -y
 ```
-* 3. 安装 gstreamer，版本不对就找最新版安装。
+#### 3. 安装 gstreamer，版本不对就找最新版安装。
 
-* 4. 安装jauns
+#### 4. 安装jauns
 ```
     $ git clone https://github.com/meetecho/janus-gateway.git
     $ cd janus-gateway
@@ -37,7 +39,7 @@
     videofmtp = profile-level-id=42e028\;packetization-mode=1
 ```
 
-* 5. 发送视频流
+#### 5. 发送视频流
 ```
     $ gst-launch-1.0 rpicamsrc brightness=85 contrast=40 awb-mode=6 exposure-mode=0 ! video/x-raw,width=640,height=480 ! x264enc speed-preset=ultrafast tune=zerolatency byte-stream=true bitrate=200 threads=1 ! h264parse config-interval=1 ! rtph264pay ! udpsink host=127.0.0.1 port=8004 sync=false
 
@@ -48,7 +50,7 @@
     $ raspivid --verbose --nopreview -hf -vf --width 640 --height 480 --framerate 15 --bitrate 1000000 --profile baseline --timeout 0 -o - | gst-launch-1.0 -v fdsrc ! h264parse ! rtph264pay config-interval=1 pt=96 ! udpsink host=ip port=8004
 ```
 
-* 6. 启动
+#### 6. 启动
 ```
     $ cd janus-gateway
     $ ./janus -F /opt/janus/etc/janus/ -d 7
@@ -56,11 +58,12 @@
 ```
 
 ### dns 配置
-* 1. 安装dns-proxy
+
+#### 1. 安装dns-proxy
 ```
     $ npm i dns-proxy -g
 ```
-* 2. 配置 dns, 新建 congif.json 文件，终端输入`nano config.json`，将下面的代码粘贴进去，修改域名配对关系即可。
+#### 2. 配置 dns, 新建 congif.json 文件，终端输入`nano config.json`，将下面的代码粘贴进去，修改域名配对关系即可。
 ```
     {
         "port": 53,
@@ -81,7 +84,7 @@
         }
     }
 ```
-* 3. 启动，记得调试完将dns修改回来
+#### 3. 启动，记得调试完将dns修改回来
 ```
     sudo dns-proxy --config=config.json --debug
 ```
@@ -111,7 +114,8 @@
 第二步，【通用】选择【关于本机】，滑动到页面底端，选择【证书信任设置】，勾选你的证书。
 
 #### 4. 域SSL证书
-* 1. 创建 server.csr.cnf 文件， 将文本粘贴进去，修改 CN 为自己的域名，emailAddress 为邮箱
+
+##### 1. 创建 server.csr.cnf 文件， 将文本粘贴进去，修改 CN 为自己的域名，emailAddress 为邮箱
 ```
     $ sudo nano server.csr.cnf
 
@@ -131,7 +135,7 @@
     CN = localhost
 ```
 
-* 2. 创建一个v3.ext文件，修改 DNS.1 为自己的域名
+##### 2. 创建一个v3.ext文件，修改 DNS.1 为自己的域名
 ```
     authorityKeyIdentifier=keyid,issuer
     basicConstraints=CA:FALSE
@@ -141,7 +145,7 @@
     [alt_names]
     DNS.1 = localhost
 ```
-* 3. 创建证书密钥以localhost使用存储在其中的配置设置server.csr.cnf。该密钥存储在server.key。 <br>
+##### 3. 创建证书密钥以localhost使用存储在其中的配置设置server.csr.cnf。该密钥存储在server.key。 <br>
      证书签名请求通过我们之前创建的根SSL证书颁发，创建出一个localhost的域名证书。输出是一个名为的证书文件server.crt。
 ```
     $ openssl req -new -sha256 -nodes -out server.csr -newkey rsa：2048 -keyout server.key -config <（cat server.csr.cnf）
@@ -154,7 +158,7 @@
 
 ### nginx 配置
 > 根据参考中的 "jauns配置nginx" 进行配置 
-* 1. 命令 (停止 | 开启 | 重启)
+#### 1. 命令 (停止 | 开启 | 重启)
 ```
     $ sudo /etc/init.d/nginx stop 
     $ sudo /etc/init.d/nginx start
