@@ -30,6 +30,7 @@
     * [26. js 实现文本的语音朗读](#26-js-实现文本的语音朗读)
     * [27. 校验是否为中文](27-校验是否为中文)
     * [28. 鼠标 / 手指位置转换 canvas 坐标](28-鼠标-手指位置转换-canvas-坐标)
+    * [29. 移动端软键盘弹起](29-移动端软键盘弹起)
     
 * [Node](#Node)  
     * [1. express 接收 post 请求参数](#1-express-接收-post-请求参数)
@@ -632,6 +633,21 @@ div或者button的样式里面加上
     }
 
 ```
+
+### 29. 移动端软键盘弹起
+```javascript
+    var winHeight = window.innerHeight;
+    window.addEventListener("resize", ()=>{
+        var thisHeight = window.innerHeight;
+        if ( winHeight - thisHeight > 140 ) {
+            //键盘弹出
+        } else {
+            //键盘收起
+        }
+    })
+    
+```
+参考： https://www.cnblogs.com/wangyihong/p/7514304.html
 
 ## Node
 
