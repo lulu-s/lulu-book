@@ -635,6 +635,7 @@ div或者button的样式里面加上
 ```
 
 ### 29. 移动端软键盘弹起
+140是一个预估值的阀值，用来排除其他的resize操作。仅resize的高度差大于140时，才被识别为软键盘交互，否则不是。如浏览器的工具栏、搜索栏的隐藏，window的窗口页会有一个较小的变化。
 ```javascript
     var winHeight = window.innerHeight;
     window.addEventListener("resize", ()=>{
