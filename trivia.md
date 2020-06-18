@@ -26,7 +26,8 @@
     * [22. 获取 class 内的样式元素](#22-获取-class-内的样式元素)
     * [23. 实现 blob 与 base64 互转](#23-实现-blob-与-base64-互转)
     * [24. js 正则表达式提取汉字和去掉汉字](#24-js-正则表达式提取汉字和去掉汉字)
-
+    * [25. js 实现 canvas 保存图片并下载到本地](#25-js-实现-canvas-保存图片并下载到本地)
+    * [26. js 实现文本的语音朗读](#26-js-实现文本的语音朗读)
     
 * [Node](#Node)  
     * [1. express 接收 post 请求参数](#1-express-接收-post-请求参数)
@@ -512,6 +513,76 @@ div或者button的样式里面加上
 ```
 参考： https://blog.csdn.net/yelin042/article/details/76982683
 
+### 25. js 实现 canvas 保存图片并下载到本地
+```javascript
+    function exportCanvasAsPNG(id, fileName) {
+
+        var canvasElement = document.getElementById(id);
+
+        var MIME_TYPE = "image/png";
+
+        var imgURL = canvasElement.toDataURL(MIME_TYPE);
+
+        var dlLink = document.createElement('a');
+        dlLink.download = fileName;
+        dlLink.href = imgURL;
+        dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
+
+        document.body.appendChild(dlLink);
+        dlLink.click();
+        document.body.removeChild(dlLink);
+    }
+```
+参考：
+* https://www.jianshu.com/p/1707a45198c5
+* (三种)： https://blog.csdn.net/wogieni/article/details/97416465
+
+### 26. js 实现文本的语音朗读
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>百度语音测试</title>
+		<script type="text/javascript"> 
+		function doTTS(){
+			var ttsDiv = document.getElementById('bdtts_div_id');
+			var ttsAudio = document.getElementById('tts_autio_id');
+			var ttsText = document.getElementById('ttsText').value;
+			
+			// 这样为什么替换不了播放内容
+			/*var ssrcc = 'http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd=10&text='+ttsText;
+			document.getElementById('tts_source_id').src=ssrcc;*/
+			
+			// 这样就可实现播放内容的替换了
+			ttsDiv.removeChild(ttsAudio);
+			var au1 = '<audio id="tts_autio_id" autoplay="autoplay">';
+			var sss = '<source id="tts_source_id" src="http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd=9&text='+ttsText+'" type="audio/mpeg">';
+			var eee = '<embed id="tts_embed_id" height="0" width="0" src="">';
+			var au2 = '</audio>';
+			ttsDiv.innerHTML = au1 + sss + eee + au2;
+			
+			ttsAudio = document.getElementById('tts_autio_id');
+			
+			ttsAudio.play();
+		}
+		</script>
+	</head>
+	<body>
+		<div>
+			<input type="text" id="ttsText">
+			<input type="button" id="tts_btn" onclick="doTTS()" value="播放">
+		</div>
+		<div id="bdtts_div_id">
+			<audio id="tts_autio_id" autoplay="autoplay">
+				<source id="tts_source_id" src="http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd=9&text=播报内容" type="audio/mpeg">
+				<embed id="tts_embed_id" height="0" width="0" src="">
+			</audio>
+		</div>
+	</body>
+</html>
+```
+参考: http://www.oicqzone.com/pc/2019061324570.html
 
 ## Node
 

@@ -22,3 +22,5 @@
 ### 库存
   * [taro / 小程序框架](https://nervjs.github.io/taro/docs/GETTING-STARTED.html)
   * [Recorder / 录音](https://github.com/xiangyuecn/Recorder)
+  * [md5 / 签名](https://www.npmjs.com/package/md5)
+  * [Postman / 接口调试](https://www.postman.com/downloads/)
