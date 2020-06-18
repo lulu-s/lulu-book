@@ -2,7 +2,7 @@
 
 
 * [碎片问题](#碎片问题)
-    * [1. 解决使用css3的rotate，出现锯齿化的问题](#1-解决使用css3的rotate-出现锯齿化的问题)
+    * [1. 解决使用 css3 的 rotate ，出现锯齿化的问题](#1-解决使用-css3-的-rotate出现锯齿化的问题)
     * [2. 解决 Three.js 缩放时以整个浏览器为单位](#2-解决-threejs-缩放时以整个浏览器为单位)
     * [3. Three.js 由 3d 场景坐标转换成 2d 屏幕坐标](#3-threejs-由-3d-场景坐标转换成-2d-屏幕坐标)
     * [4. div 做的 button 点击出现选中蓝框](#4-div-做的-button-点击出现选中蓝框)
@@ -102,7 +102,7 @@
 
 ## 碎片问题
 
-### 1. 解决使用css3的rotate，出现锯齿化的问题。
+### 1. 解决使用 css3 的 rotate，出现锯齿化的问题。
   ```css
     -webkit-backface-visibility: hidden;
   ```
