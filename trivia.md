@@ -28,6 +28,8 @@
     * [24. js 正则表达式提取汉字和去掉汉字](#24-js-正则表达式提取汉字和去掉汉字)
     * [25. js 实现 canvas 保存图片并下载到本地](#25-js-实现-canvas-保存图片并下载到本地)
     * [26. js 实现文本的语音朗读](#26-js-实现文本的语音朗读)
+    * [27. 校验是否为中文](27-校验是否为中文)
+    * [28. 鼠标 / 手指位置转换 canvas 坐标](28-鼠标-手指位置转换-canvas-坐标)
     
 * [Node](#Node)  
     * [1. express 接收 post 请求参数](#1-express-接收-post-请求参数)
@@ -583,6 +585,53 @@ div或者button的样式里面加上
 </html>
 ```
 参考: http://www.oicqzone.com/pc/2019061324570.html
+
+
+### 27. 校验是否为中文
+```javascript
+    if (/^[\u4e00-\u9fa5]+$/.test(text)) {
+        return true;
+    }
+```
+
+### 28. 鼠标 / 手指位置转换 canvas 坐标
+```javascript
+    // 伪代码
+    canvas.addEventListener("touchstart", function (e) {
+        ifSelected(e);
+    });
+
+    canvas.addEventListener("click", function (e) {
+        ifSelected(e);
+    });
+
+    function ifSelected(e) {
+        coord = coordinate(e);
+        // 循环查看 点击位置对应的物体 并对点击物体进行选中
+    }
+
+    // 鼠标 转换 canvas坐标
+    var rect = null;
+    function coordinate(e) {
+        // 画布的大小
+        if (!rect) {
+            // canvas
+            rect = canvas.getBoundingClientRect();
+        }
+        var //鼠标所在位置
+            ex = e.clientX || e.changedTouches[0].clientX,
+            ey = e.clientY || e.changedTouches[0].clientY,
+            //鼠标相对于画布的位置
+            tx = ex - rect.left - document.documentElement.clientLeft,
+            ty = ey - rect.top - document.documentElement.clientTop;
+        //鼠标坐标转换成画布坐标系
+        tx = (tx * canvas.width) / rect.width;
+        ty = (ty * canvas.height) / rect.height;
+        // console.log("原始坐标" + tx, ty);
+        return { x: tx, y: ty };
+    }
+
+```
 
 ## Node
 
