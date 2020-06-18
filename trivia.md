@@ -38,7 +38,7 @@
     * [3. Update the Pi 出错](#3-Update-the-Pi-出错)
     * [4. vue-router 导致报错 [Vue warn]: Failed to mount component: template or render function not defined.](#4-vue-router-导致报错-vue-warn-failed-to-mount-component-template-or-render-function-not-defined)
     * [5. Uncaught TypeError: a[b].target.className.indexOf is not a function](#5-uncaught-typeerror-abtargetclassnameindexof-is-not-a-function)
-    * [6. PayloadTooLargeError: request entity too larg](#6-PayloadTooLargeError: request entity too larg)
+    * [6. PayloadTooLargeError: request entity too larg](#6-payloadtoolargeerror-request-entity-too-larg)
 
 * [Mac](#mac)
     * [1. git 安装](#1-git-安装)
