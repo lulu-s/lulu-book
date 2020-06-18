@@ -4,7 +4,7 @@
 
 ### 日常记录
   * [ʚ细碎的小知识ɞ](https://github.com/lulu-s/lulu-book/blob/master/trivia.md)
-
+    * [处理各种奇葩问题](https://github.com/lulu-s/lulu-book/blob/master/trivia.md#处理各种奇葩问题)
 <br/>
 
 ### Grammer
@@ -15,11 +15,10 @@
 <br/>
 
 ### Blog
-  
   * [树莓派调试jauns(包含https证书配置)](https://github.com/lulu-s/lulu-book/blob/master/Blog/pi.md) 
 
 <br/>
 
 ### 库存
-  * taro / 小程序框架 :  https://nervjs.github.io/taro/docs/GETTING-STARTED.html
-  * Recorder / 录音  :  https://github.com/xiangyuecn/Recorder
+  * [taro / 小程序框架](https://nervjs.github.io/taro/docs/GETTING-STARTED.html)
+  * [Recorder / 录音](https://github.com/xiangyuecn/Recorder)
