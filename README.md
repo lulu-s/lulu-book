@@ -4,7 +4,7 @@
 
 ### 日常记录
   * [ʚ细碎的小知识ɞ](https://github.com/lulu-s/lulu-book/blob/master/trivia.md)
-    * [处理各种奇葩问题](https://github.com/lulu-s/lulu-book/blob/master/trivia.md#处理各种奇葩问题)
+
 <br/>
 
 ### Grammer
