@@ -5,12 +5,20 @@
 ### 日常记录
   * [ʚ细碎的小知识ɞ](https://github.com/lulu-s/lulu-book/blob/master/trivia.md)
 
-### 其他
-  * [markdown语法](https://github.com/lulu-s/lulu-book/blob/master/markdown%20grammar.md)
-  * [命令行](https://github.com/lulu-s/lulu-book/blob/master/command.md)
-  * [Arduino](https://github.com/lulu-s/lulu-book/blob/master/arduino.md)
-  * [taro](https://github.com/lulu-s/lulu-book/blob/master/taro.md)
-  * [树莓派调试jauns(包含https证书配置)](https://github.com/lulu-s/lulu-book/blob/master/pi.md) 
+<br/>
+
+### Grammer
+  * [markdown语法](https://github.com/lulu-s/lulu-book/blob/master/Grammer/markdown%20grammar.md)
+  * [命令行](https://github.com/lulu-s/lulu-book/blob/master/Grammer/command.md)
+  
+<br/>
+
+### Blog
+  * [Arduino](https://github.com/lulu-s/lulu-book/blob/master/Blog/arduino.md)
+  * [树莓派调试jauns(包含https证书配置)](https://github.com/lulu-s/lulu-book/blob/master/Blog/pi.md) 
+
+<br/>
 
 ### 库存
-  * [ʚ细碎的小知识ɞ](https://github.com/lulu-s/lulu-book/blob/master/trivia.md)
+  * taro / 小程序框架 :  https://nervjs.github.io/taro/docs/GETTING-STARTED.html
+  * Recorder / 录音  :  https://github.com/xiangyuecn/Recorder
