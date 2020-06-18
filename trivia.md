@@ -1,8 +1,8 @@
-# ʚ细碎的小知识ɞ
+# ʚ碎片知识 / 小问题ɞ
 
 
-* [处理各种奇葩问题](#处理各种奇葩问题)
-    * [1. 解决使用 css3 的 rotate 出现锯齿化的问题](#1-解决使用-css3-的-rotate出现锯齿化的问题)
+* [碎片问题](#碎片问题)
+    * [1. 解决使用css3的rotate，出现锯齿化的问题](#1-解决使用css3的rotate-出现锯齿化的问题)
     * [2. 解决 Three.js 缩放时以整个浏览器为单位](#2-解决-threejs-缩放时以整个浏览器为单位)
     * [3. Three.js 由 3d 场景坐标转换成 2d 屏幕坐标](#3-threejs-由-3d-场景坐标转换成-2d-屏幕坐标)
     * [4. div 做的 button 点击出现选中蓝框](#4-div-做的-button-点击出现选中蓝框)
@@ -15,18 +15,22 @@
     * [11. 校验手机号](#11-校验手机号)
     * [12. 修改 Three.js 背景色](#12-修改-threejs-背景色)
     * [13. 解决同时绑定单击和双击事件，会两个都执行的情况](#13-解决同时绑定单击和双击事件-会两个都执行的情况)
-    * [14. 查看 Three.js 版本](#14-查看-threejs-版本)
+    * [14. 评级组件](#14-评级组件)
     * [15. 保存 json](#15-保存-json)
     * [16. flex 像表格一样布局](#16-flex-像表格一样布局)
     * [17. 二维数组位置查询](#17-二维数组位置查询)
-    * [18. 评级组件](#18-评级组件)
-    * [19. Vue 更改对象属性不刷新页面](#19-Vue-更改对象属性不刷新页面)
-    * [20. 解决 canvas 绘制在移动端模糊的问题](#20-解决-canvas-绘制在移动端模糊的问题)
-    * [21. css 中获取 class 的第 n 个元素](#21-css-中获取-class-的第-n-个元素)
-    * [22. css 动画在结束后保持该状态不变](#22-css-动画在结束后保持该状态不变)
-    * [23. 获取 class 内的样式元素](#23-获取-class-内的样式元素)
-    * [24. 实现 blob 与 base64 互转](#24-实现-blob-与-base64-互转)
-    * [25. js 正则表达式提取汉字和去掉汉字](#25-js-正则表达式提取汉字和去掉汉字)
+    * [18. Vue 更改对象属性不刷新页面](#18-Vue-更改对象属性不刷新页面)
+    * [19. 解决 canvas 绘制在移动端模糊的问题](#19-解决-canvas-绘制在移动端模糊的问题)
+    * [20. css 中获取 class 的第 n 个元素](#20-css-中获取-class-的第-n-个元素)
+    * [21. css 动画在结束后保持该状态不变](#21-css-动画在结束后保持该状态不变)
+    * [22. 获取 class 内的样式元素](#22-获取-class-内的样式元素)
+    * [23. 实现 blob 与 base64 互转](#23-实现-blob-与-base64-互转)
+    * [24. js 正则表达式提取汉字和去掉汉字](#24-js-正则表达式提取汉字和去掉汉字)
+
+    
+* [Node](#Node)  
+    * [1. express 接收 post 请求参数](#1-express-接收-post-请求参数)
+
 
 * [bug](#bug)
     * [1. Uncaught SyntaxError: Invalid or unexpected token (javascript)](#1-uncaught-syntaxerror-invalid-or-unexpected-token-javascript)
@@ -61,6 +65,7 @@
     * [2. 查看 http 请求是否可以跨域](#2-查看-http-请求是否可以跨域)
     * [3. 文字竖排的方式](#3-文字竖排的方式)
     * [4. Data URL 格式](#4-Data-URL-格式)
+    * [5. 查看 Three.js 版本](#5-查看-threejs-版本)
 
 * [数学类](#数学类)
     * [1. 粒子画球](#1-粒子画球)
@@ -95,9 +100,9 @@
 
 
 
-## 处理各种奇葩问题
+## 碎片问题
 
-### 1. 解决使用 css3 的 rotate，出现锯齿化的问题。
+### 1. 解决使用css3的rotate，出现锯齿化的问题。
   ```css
     -webkit-backface-visibility: hidden;
   ```
@@ -308,8 +313,17 @@ div或者button的样式里面加上
 ```
 参考：https://www.hangge.com/blog/cache/detail_1794.html
 
-### 14. 查看 Three.js 版本
-在浏览器中按F12，打开开发版输入 `THREE.REVISION`
+
+### 14. 评级组件
+```javascript
+    // "★★★★★☆☆☆☆☆".slice(5 - rate, 10 - rate)
+    // 9.2 3.4 先 / 2 后四舍五入
+    const rate = Math.round(v.rate / 2)
+    v.rataDisplay = "★★★★★☆☆☆☆☆".slice(5 - rate, 10 - rate)
+```
+参考：https://www.zhihu.com/question/46943112/answer/113583615
+
+
 
 ### 15. 保存 json
 ```javascript
@@ -361,23 +375,14 @@ div或者button的样式里面加上
     }
 ```
 
-### 18. 评级组件
-```javascript
-    // "★★★★★☆☆☆☆☆".slice(5 - rate, 10 - rate)
-    // 9.2 3.4 先 / 2 后四舍五入
-    const rate = Math.round(v.rate / 2)
-    v.rataDisplay = "★★★★★☆☆☆☆☆".slice(5 - rate, 10 - rate)
-```
-参考：https://www.zhihu.com/question/46943112/answer/113583615
 
-
-### 19. Vue 更改对象属性不刷新页面
+### 18. Vue 更改对象属性不刷新页面
 ```
     this.$set(target, projectName, value)
 ```
 参考： https://cn.vuejs.org/v2/guide/reactivity.html#%E5%AF%B9%E4%BA%8E%E6%95%B0%E7%BB%84
 
-### 20. 解决 canvas 绘制在移动端模糊的问题
+### 19. 解决 canvas 绘制在移动端模糊的问题
 根据移动端的物理像素，放大 canvas 画布，使 1个 canvas 像素和 1个物理像素相等
 ```javascript
     let canvas = document.getElementById('canvas');
@@ -395,7 +400,7 @@ div或者button的样式里面加上
 参考： https://juejin.im/post/5cbdda7bf265da036504fb46
 
 
-### 21. css 中获取 class 的第 n 个元素
+### 20. css 中获取 class 的第 n 个元素
 ```css
     .poem_replace:nth-of-type(1) {
         bottom: 4.5rem;
@@ -408,7 +413,7 @@ div或者button的样式里面加上
 * https://blog.csdn.net/hh1197787867/article/details/82182069
 * MDN: https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-of-type
 
-### 22. css 动画在结束后保持该状态不变
+### 21. css 动画在结束后保持该状态不变
 增加 forwards 参数
 ```css
     .line_1 {
@@ -419,7 +424,7 @@ div或者button的样式里面加上
 * https://blog.csdn.net/lp2659359879/article/details/52523888
 * MDN： https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-fill-mode
 
-### 23. 获取 class 内的样式元素
+### 22. 获取 class 内的样式元素
 ```js
     // 获取 class 内的样式元素
     export function getStyle(obj, attr) {
@@ -439,7 +444,7 @@ div或者button的样式里面加上
 ```
 参考：https://blog.csdn.net/dragoo1/article/details/48153391
 
-### 24. 实现 blob 与 base64 互转
+### 23. 实现 blob 与 base64 互转
 ```javascript
     /**
      * base64  to blob二进制
@@ -483,7 +488,7 @@ div或者button的样式里面加上
 参考： https://www.cnblogs.com/dcb3688/p/4608062.html
 
 
-### 25. js 正则表达式提取汉字和去掉汉字
+### 24. js 正则表达式提取汉字和去掉汉字
 ```javascript
     //只提取汉字  
     function GetChinese(strValue) {  
@@ -506,6 +511,47 @@ div或者button的样式里面加上
 ```
 参考： https://blog.csdn.net/yelin042/article/details/76982683
 
+
+## Node
+
+### 1. express 接收 post 请求参数
+```javascript
+    // 伪代码
+    // 安装依赖：npm install body-parser express --save-dev
+    var express = require("express");
+    var bodyParser = require('body-parser');//解析, 用req.body获取post参数
+    var app = express();
+        app.use(bodyParser.json());
+        app.use(bodyParser.urlencoded({extended: false}));
+
+    app.post("/test",function(req,res){
+        console.log(req.body.test);
+        res.send({hello:'world'});
+    })
+
+    app.listen(port, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
+    });
+
+    let url = "http://hostname:port"
+    // 前端请求
+    fetch(url + "/test", {
+        method: 'POST',
+        mode: 'cors',// 避免cors攻击
+        crossDomain: true,
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            test: "test"
+        })
+    })
+    .then(response => response.text())
+    .then(res => {
+        console.log(res)
+    })
+    .catch(err => console.log("err : ", err));
+```
 
 ## bug
 
@@ -771,6 +817,10 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
 参考： 
 * 原作者： https://www.cnblogs.com/hustskyking/p/data-uri.html 
 * https://www.cnblogs.com/dcb3688/p/4608062.html
+
+
+### 5. 查看 Three.js 版本
+在浏览器中按F12，打开开发版输入 `THREE.REVISION`
 
 ## 数学类
 

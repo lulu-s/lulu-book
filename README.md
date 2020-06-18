@@ -3,7 +3,7 @@
 <br/>
 
 ### 日常记录
-  * [ʚ细碎的小知识ɞ](https://github.com/lulu-s/lulu-book/blob/master/trivia.md)
+  * [ʚ碎片知识 / 小问题ɞ](https://github.com/lulu-s/lulu-book/blob/master/trivia.md)
 
 <br/>
 
