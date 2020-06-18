@@ -32,8 +32,8 @@
     * [1. Uncaught SyntaxError: Invalid or unexpected token (javascript)](#1-uncaught-syntaxerror-invalid-or-unexpected-token-javascript)
     * [2. unable to access 'https://github.com/': OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443. (Github)](#2-unable-to-access-httpsgithubcom-openssl-ssl_connect-ssl_error_syscall-in-connection-to-githubcom443-github)
     * [3. Update the Pi 出错](#3-Update-the-Pi-出错)
-    * [4. vue-router 导致报错 [Vue warn]: Failed to mount component: template or render function not defined.](#4-vue-router-导致报错-Vue-warn-Failed-to-mount-component-template-or-render-function-not-defined)
-    * [5. Uncaught TypeError: a[b].target.className.indexOf is not a function](#5-Uncaught-TypeError-a[b]-target-className-indexOf-is-not-a-function)
+    * [4. vue-router 导致报错 [Vue warn]: Failed to mount component: template or render function not defined.](#4-vue-router-导致报错-vue-warn-failed-to-mount-component-template-or-render-function-not-defined)
+    * [5. Uncaught TypeError: a[b].target.className.indexOf is not a function](#5-uncaught-typeerror-abtargetclassnameindexof-is-not-a-function)
 
 * [Mac](#mac)
     * [1. git 安装](#1-git-安装)
