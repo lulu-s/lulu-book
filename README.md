@@ -10,11 +10,12 @@
 ### Grammer
   * [markdown语法](https://github.com/lulu-s/lulu-book/blob/master/Grammer/markdown%20grammar.md)
   * [命令行](https://github.com/lulu-s/lulu-book/blob/master/Grammer/command.md)
-  
+  * [Arduino](https://github.com/lulu-s/lulu-book/blob/master/Grammer/arduino.md)
+
 <br/>
 
 ### Blog
-  * [Arduino](https://github.com/lulu-s/lulu-book/blob/master/Blog/arduino.md)
+  
   * [树莓派调试jauns(包含https证书配置)](https://github.com/lulu-s/lulu-book/blob/master/Blog/pi.md) 
 
 <br/>
