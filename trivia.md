@@ -375,8 +375,23 @@ div或者button的样式里面加上
 ```
     this.$set(target, projectName, value)
 ```
+参考： https://cn.vuejs.org/v2/guide/reactivity.html#%E5%AF%B9%E4%BA%8E%E6%95%B0%E7%BB%84
 
 ### 20. 解决 canvas 绘制在移动端模糊的问题
+根据移动端的物理像素，放大 canvas 画布，使 1个 canvas 像素和 1个物理像素相等
+```javascript
+    let canvas = document.getElementById('canvas');
+    let ctx = canvas.getContext('2d');
+    let dpr = window.devicePixelRatio; // 假设 dpr 为2
+    // 获取 css 的宽高
+    let { width: cssWidth, height: cssHeight } = canvas.getBoundingClientRect();
+    // 根据 dpr，扩大 canvas 画布的像素，使 1个 canvas 像素和 1个物理像素相等
+    canvas.width = dpr * cssWidth;
+    canvas.height = dpr * cssHeight;
+    // 由于画布扩大，canvas 的坐标系也跟着扩大，如果按照原先的坐标系绘图内容会缩小
+    // 所以需要将绘制比例放大
+    ctx.scale(dpr,dpr);
+```
 参考： https://juejin.im/post/5cbdda7bf265da036504fb46
 
 
@@ -394,12 +409,15 @@ div或者button的样式里面加上
 * MDN: https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-of-type
 
 ### 22. css 动画在结束后保持该状态不变
+增加 forwards 参数
 ```css
     .line_1 {
         animation: line_width_to_enter 1s ease forwards;
     }
 ```
-参考：https://blog.csdn.net/lp2659359879/article/details/52523888
+参考：
+* https://blog.csdn.net/lp2659359879/article/details/52523888
+* MDN： https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-fill-mode
 
 ### 23. 获取 class 内的样式元素
 ```js
