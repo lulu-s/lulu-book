@@ -255,6 +255,23 @@ div或者button的样式里面加上
             return v.toString(16);
         });
     }
+
+    //_nanoid 
+    /**
+     * Minified by jsDelivr using UglifyJS v3.1.10.
+     * Original file: /npm/nano-id@1.1.0/index.js
+     * 
+     * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
+    */
+    var alphanumeric = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+        nanoId = function (n) {
+            null == n && (n = 10);
+            for (var a = "", r = 0; r < n; ++r) a += alphanumeric[Math.floor(Math.random() * alphanumeric.length)];
+            return a
+        };
+    nanoId.verify = function (n) {
+        return "string" == typeof n && /^[a-zA-Z0-9]+$/.test(n)
+    };
 ```
 参考：https://www.jianshu.com/p/04ee4396edc3
 
