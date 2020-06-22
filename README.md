@@ -19,8 +19,10 @@
 
 <br/>
 
-### 库存
+### 插件 / 有用的库存
   * [taro / 小程序框架](https://nervjs.github.io/taro/docs/GETTING-STARTED.html)
   * [Recorder / 录音](https://github.com/xiangyuecn/Recorder)
   * [md5 / 签名](https://www.npmjs.com/package/md5)
   * [Postman / 接口调试](https://www.postman.com/downloads/)
+  * [konger / 日语转换汉语读法](https://github.com/Jon-Millent/konger)
+  * [AR粒子系统](https://github.com/IdeaSpaceVR/aframe-particle-system-component)

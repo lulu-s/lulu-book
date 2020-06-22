@@ -30,7 +30,7 @@
     * [26. js 实现文本的语音朗读](#26-js-实现文本的语音朗读)
     * [27. 校验是否为中文](#27-校验是否为中文)
     * [28. 鼠标 / 手指位置转换 canvas 坐标](#28-鼠标--手指位置转换-canvas-坐标)
-    * [29. 移动端软键盘弹起](#29-移动端软键盘弹起)
+   
     
 * [Node](#Node)  
     * [1. express 接收 post 请求参数](#1-express-接收-post-请求参数)
@@ -64,6 +64,7 @@
     * [4. ios 键盘弹起，body 拉长，关闭键盘页面不回弹](#4-ios键盘弹起-body拉长-关闭键盘页面不回弹)
     * [5. 修改苹果默认的工具栏和菜单栏](#5-修改苹果默认的工具栏和菜单栏)
     * [6. 阻止下拉滑动的效果（橡皮筋效果）](#6-阻止下拉滑动的效果橡皮筋效果)
+    * [7. 软键盘弹起](#7-软键盘弹起)
 
 * [常识性知识点](#常识性知识点)
     * [1. 影子 DOM](#1-影子dom)
@@ -651,21 +652,7 @@ div或者button的样式里面加上
 
 ```
 
-### 29. 移动端软键盘弹起
-140是一个预估值的阀值，用来排除其他的resize操作。仅resize的高度差大于140时，才被识别为软键盘交互，否则不是。如浏览器的工具栏、搜索栏的隐藏，window的窗口页会有一个较小的变化。
-```javascript
-    var winHeight = window.innerHeight;
-    window.addEventListener("resize", ()=>{
-        var thisHeight = window.innerHeight;
-        if ( winHeight - thisHeight > 140 ) {
-            //键盘弹出
-        } else {
-            //键盘收起
-        }
-    })
-    
-```
-参考： https://www.cnblogs.com/wangyihong/p/7514304.html
+
 
 ## Node
 
@@ -941,6 +928,22 @@ div或者button的样式里面加上
         e.preventDefault(); //阻止默认的处理方式(阻止下拉滑动的效果)
     }, {passive: false}); //passive 参数不能省略，用来兼容ios和android
 ```
+
+### 7. 移动端软键盘弹起
+140是一个预估值的阀值，用来排除其他的resize操作。仅resize的高度差大于140时，才被识别为软键盘交互，否则不是。如浏览器的工具栏、搜索栏的隐藏，window的窗口页会有一个较小的变化。
+```javascript
+    var winHeight = window.innerHeight;
+    window.addEventListener("resize", ()=>{
+        var thisHeight = window.innerHeight;
+        if ( winHeight - thisHeight > 140 ) {
+            //键盘弹出
+        } else {
+            //键盘收起
+        }
+    })
+    
+```
+参考： https://www.cnblogs.com/wangyihong/p/7514304.html
 
 ## 常识性知识点
 
