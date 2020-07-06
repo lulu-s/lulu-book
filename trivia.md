@@ -43,6 +43,7 @@
     * [4. vue-router 导致报错 [Vue warn]: Failed to mount component: template or render function not defined.](#4-vue-router-导致报错-vue-warn-failed-to-mount-component-template-or-render-function-not-defined)
     * [5. Uncaught TypeError: a[b].target.className.indexOf is not a function](#5-uncaught-typeerror-abtargetclassnameindexof-is-not-a-function)
     * [6. PayloadTooLargeError: request entity too larg](#6-payloadtoolargeerror-request-entity-too-larg)
+    * [7. Could not resolve host: github.com](#7-Could-not-resolve-host: github.com)
 
 * [Mac](#mac)
     * [1. git 安装](#1-git-安装)
@@ -749,6 +750,19 @@ div或者button的样式里面加上
     app.use(bodyParser.urlencoded({'limit': '10mb',extended: true}));
 ```
 参考：https://github.com/apostrophecms/apostrophe/issues/1291
+
+### 7. Could not resolve host: github.com
+```
+    git config --global http.proxy http://127.0.0.1:1080
+    git config --global https.proxy https://127.0.0.1:1080
+    git config --global --unset http.proxy
+    git config --global --unset https.proxy
+
+    npm config delete proxy
+```
+参考：
+* https://github.com/desktop/desktop/issues/2789
+* https://gist.github.com/laispace/666dd7b27e9116faece6
 
 ## Mac
 
