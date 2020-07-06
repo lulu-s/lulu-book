@@ -43,8 +43,8 @@
     * [4. vue-router 导致报错 [Vue warn]: Failed to mount component: template or render function not defined.](#4-vue-router-导致报错-vue-warn-failed-to-mount-component-template-or-render-function-not-defined)
     * [5. Uncaught TypeError: a[b].target.className.indexOf is not a function](#5-uncaught-typeerror-abtargetclassnameindexof-is-not-a-function)
     * [6. PayloadTooLargeError: request entity too larg](#6-payloadtoolargeerror-request-entity-too-larg)
-    * [7. Could not resolve host: github.com](#7-Could-not-resolve-host: github.com)
-    * [8. ping baidu.com 不通](#7-Could-not-resolve-host: github.com)
+    * [7. Could not resolve host: github.com](#7-could-not-resolve-host-githubcom)
+    * [8. ping baidu.com 不通](#8-ping-baiducom-不通)
     * [9. npm i 卡住](#9-npm-i-卡住)
 
 * [Mac](#mac)
@@ -771,9 +771,17 @@ div或者button的样式里面加上
 2. 查看 DNS 是否修改成功 `cat /etc/resolv.conf`
 3. (Mac) 再次尝试 `nslookup baidu.com`
 
+参考：
+* https://osxdaily.com/2011/06/03/get-dns-server-ip-command-line-mac-os-x/
+* https://superuser.com/questions/258151/how-do-i-check-what-dns-server-im-using-on-mac-os-x
+
 ### 9. npm i 卡住
 1. 检查DNS
 2. 配置 npm 源： `npm config get registry https://registry.npm.taobao.org/`
+
+参考：
+* https://juejin.im/post/5d8eeb2de51d4578200cc968
+* https://stackoverflow.com/questions/16873973/npm-install-hangs/39376187
 
 ## Mac
 
