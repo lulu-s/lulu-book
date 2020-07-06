@@ -44,6 +44,8 @@
     * [5. Uncaught TypeError: a[b].target.className.indexOf is not a function](#5-uncaught-typeerror-abtargetclassnameindexof-is-not-a-function)
     * [6. PayloadTooLargeError: request entity too larg](#6-payloadtoolargeerror-request-entity-too-larg)
     * [7. Could not resolve host: github.com](#7-Could-not-resolve-host: github.com)
+    * [8. ping baidu.com 不通](#7-Could-not-resolve-host: github.com)
+    * [9. npm i 卡住](#9-npm-i-卡住)
 
 * [Mac](#mac)
     * [1. git 安装](#1-git-安装)
@@ -763,6 +765,15 @@ div或者button的样式里面加上
 参考：
 * https://github.com/desktop/desktop/issues/2789
 * https://gist.github.com/laispace/666dd7b27e9116faece6
+
+### 8. ping baidu.com 不通
+1. 调整 DNS 为 `114, 114, 114, 114` 和 `8, 8, 8, 8`
+2. 查看 DNS 是否修改成功 `cat /etc/resolv.conf`
+3. (Mac) 再次尝试 `nslookup baidu.com`
+
+### 9. npm i 卡住
+1. 检查DNS
+2. 配置 npm 源： `npm config get registry https://registry.npm.taobao.org/`
 
 ## Mac
 
