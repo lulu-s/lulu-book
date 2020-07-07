@@ -1191,6 +1191,12 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
 ```
 参考： https://blog.csdn.net/tanghw/article/details/49793531
 
+
+### 6. 计算亮点之间的距离
+公式： `Math.sqrt( Math.pow(center.x - x, 2) + Math.pow(center.y - y, 2), 2 )`
+参考：https://blog.csdn.net/weixin_40099554/article/details/77873738
+
+
 ## 小程序
 
 ### 1. 换行（标签必须是 `<text>` ?）
