@@ -1,4 +1,4 @@
 # 🌈 测试demo
 
 
-* [DeviceMotionEvent](https://lulu-s.github.io/lulu-book/demo/deviceMotion.html)
+* [DeviceMotionEvent](https://lulu-s.github.io/lulu-book/Demo/deviceMotion.html)
