@@ -13,6 +13,7 @@
   * [Arduino](https://github.com/lulu-s/lulu-book/blob/master/Grammer/arduino.md)
 
 <br/>
+<br/>
 
 ### 📐 Blog
   * [树莓派调试jauns(包含https证书配置)](https://github.com/lulu-s/lulu-book/blob/master/Blog/pi.md) 
@@ -25,7 +26,7 @@
 <br/>
 
 
-### 🌈 [测试demo](https://github.com/lulu-s/lulu-book/blob/master/Demo/README.md)
+### 🌈 测试demo
 * [DeviceMotionEvent](https://lulu-s.github.io/lulu-book/Demo/deviceMotion.html)
 <br/>
 
