@@ -7,6 +7,10 @@
 
 <br/>
 
+
+### 🌈 [测试demo](https://github.com/lulu-s/lulu-book/blob/master/demo/README.md)
+* [DeviceMotionEvent](https://lulu-s.github.io/lulu-book/demo/deviceMotion.html)
+
 ### Grammer
   * [markdown语法](https://github.com/lulu-s/lulu-book/blob/master/Grammer/markdown%20grammar.md)
   * [命令行](https://github.com/lulu-s/lulu-book/blob/master/Grammer/command.md)
