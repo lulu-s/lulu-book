@@ -1,6 +1,6 @@
 ## 🌸博客自留地，记载学习过程中的小知识、小问题~~🌸
 
-<br/><br/><br/>
+<br/><br/>
 
 
 
@@ -29,7 +29,7 @@
 
 
 ## 🌈 测试demo
-* [DeviceMotionEvent](https://lulu-s.github.io/lulu-book/Demo/deviceMotion.html)
+* [DeviceMotionEvent](https://lulu-s.github.io/lulu-book/demo/deviceMotion.html)
 <br/>
 
 
