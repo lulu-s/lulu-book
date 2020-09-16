@@ -28,9 +28,6 @@
 <br/>
 
 
-## 🌈 测试demo
-* [DeviceMotionEvent](https://lulu-s.github.io/lulu-book/demo/deviceMotion.html)
-<br/>
 
 
 ## 🍙 插件 / 有用的库存
