@@ -18,4 +18,4 @@
     ctx.stroke();
     ctx.restore();
 ```
-![线条光辉流动](https://github.com/lulu-s/lulu-book/blob/master/assets/%E5%A4%B4%E5%83%8F.jpg "百度")
+![线条光辉流动](https://https://github.com/lulu-s/lulu-book/blob/master/assets/%E7%BA%BF%E6%9D%A1%E5%85%89%E8%BE%89%E6%B5%81%E5%8A%A8.mov "线条光辉流动")
