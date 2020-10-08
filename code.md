@@ -9,7 +9,7 @@
     animated_grd = ctx.createLinearGradient(0, 0, canvas.width, 0);
     animated_grd.addColorStop(Math.max(0, q - 0.1), 'black');
     animated_grd.addColorStop(q, `rgba(${op}, ${op}, ${op}, 0.5)`);
-    animated_grd.addColorStop(Math.min(1, q + 0.1) ,'black');
+    animated_grd.addColorStop(Math.min(1, q + 0.1), 'black');
     ctx.save();
     ctx.globalCompositeOperation = "lighter";
     ctx.strokeStyle = animated_grd
