@@ -127,11 +127,11 @@ ___
 图片和链接的使用方法一样，唯一区别在于要在开头加一个!，如果不加!就会变成链接。
 ### 行内式图片
 
-![头像](https://github.com/lulu-s/lulu-book/blob/master/%E5%A4%B4%E5%83%8F.jpg "百度")
+![头像](https://github.com/lulu-s/lulu-book/blob/master/assets/%E5%A4%B4%E5%83%8F.jpg "百度")
 
 ### 参数式图片
 
-[头像]: https://github.com/lulu-s/lulu-book/blob/master/%E5%A4%B4%E5%83%8F.jpg "Github"
+[头像]: https://github.com/lulu-s/lulu-book/blob/master/assets/%E5%A4%B4%E5%83%8F.jpg "Github"
 ![头像]
 
 ## 代码块
