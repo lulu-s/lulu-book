@@ -9,15 +9,15 @@
     * [6. 字符串去符号](#6-字符串去符号)
 * [Canvas](#Canvas)
     * [1. 线条光辉流动](#1-线条光辉流动)
-    * [2. 根据已知点，画曲线，返回点，使用 lineTo 连接](#2-根据已知点-画曲线-返回点-使用-lineTo-连接)
+    * [2. 根据已知点，画贝塞尔曲线，返回点，使用 lineTo 连接](#2-根据已知点画贝塞尔曲线返回点使用-lineto-连接)
     * [3. 鼠标 转换 canvas 坐标](#3-鼠标-转换-canvas-坐标)
 * [Node](#Node)
-    * [1. 静态文件夹 / 静态页面](#1-静态文件夹-静态页面)
+    * [1. 静态文件夹 / 静态页面](#1-静态文件夹--静态页面)
     * [2. 跨域](#2-跨域)
-    * [3. bodyParser解析, 用 req.body 获取 post 参数](#3-bodyParser解析-用-req.body-获取-post-参数)
+    * [3. bodyParser解析, 用 req.body 获取 post 参数](#3-bodyparser解析-用-reqbody-获取-post-参数)
     * [4. 搭建服务器及提示](#4-搭建服务器及提示)
 * [优质代码块（汇总）](#优质代码块-汇总)
-    * [1. loop 循环, looperStart 开启循环模式, eased 递增](#1-loop-循环-looperStart-开启循环模式-eased-递增)
+    * [1. loop 循环, looperStart 开启循环模式, eased 递增](#1-loop-循环-looperstart-开启循环模式-eased-递增)
     * [2. noise](#2-noise)
 
 
@@ -115,7 +115,8 @@
 
 ## Canvas
 
-### 1. 线条光辉流动 [video](https://github.com/lulu-s/lulu-book/blob/master/assets/%E7%BA%BF%E6%9D%A1%E5%85%89%E8%BE%89%E6%B5%81%E5%8A%A8.mov)
+### 1. 线条光辉流动
+* [video](https://github.com/lulu-s/lulu-book/blob/master/assets/%E7%BA%BF%E6%9D%A1%E5%85%89%E8%BE%89%E6%B5%81%E5%8A%A8.mov)
 ```js
     var q = (Date.now() / 1000 * 0.2) % 1.0;
     var op = Math.floor((1 - Math.pow(1 - 2 * q, 2)) * 255);
@@ -133,7 +134,7 @@
     ctx.restore();
 ```
 
-### 2. 根据已知点，画曲线，返回点，使用 lineTo 连接
+### 2. 根据已知点，画贝塞尔曲线，返回点，使用 lineTo 连接
 ```js
     // 使用 getCurvePoints(point, 0.5, 10, false)
     export function getCurvePoints(points, tension, numOfSeg, close) {
