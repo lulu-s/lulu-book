@@ -2,7 +2,8 @@
 
 <br/><br/>
 
-
+## Code
+  * [ʚ代码块ɞ](https://github.com/lulu-s/lulu-book/blob/master/code.md)
 
 ## 🍂 日常记录
   * [ʚ碎片知识 / 小问题ɞ](https://github.com/lulu-s/lulu-book/blob/master/trivia.md)
