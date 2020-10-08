@@ -1,5 +1,8 @@
 # 🌙 代码块
 
+* [util代码块](https://github.com/lulu-s/lulu-book/blob/master/assets/ao.js)
+* [node代码块](https://github.com/lulu-s/lulu-book/blob/master/assets/node.js)
+
 * [Javascript](#Javascript)
     * [1. 千位分隔符](#1-千位分隔符)
     * [2. 转换日期](#2-转换日期)
