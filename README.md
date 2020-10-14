@@ -39,3 +39,4 @@
   * [Postman / 接口调试](https://www.postman.com/downloads/)
   * [konger / 日语转换汉语读法](https://github.com/Jon-Millent/konger)
   * [AR粒子系统](https://github.com/IdeaSpaceVR/aframe-particle-system-component)
+  * [中文翻译成拼音](https://www.npmjs.com/package/chinese-to-pinyin)
