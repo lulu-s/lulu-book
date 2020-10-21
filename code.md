@@ -7,6 +7,7 @@
     * [4. 校验手机号](#4-校验手机号)
     * [5. 提取汉字](#5-提取汉字)
     * [6. 字符串去符号](#6-字符串去符号)
+    * [7. fetch 循环](#7-fetch-循环)
 * [Canvas](#Canvas)
     * [1. 线条光辉流动](#1-线条光辉流动)
     * [2. 根据已知点，画贝塞尔曲线，返回点，使用 lineTo 连接](#2-根据已知点画贝塞尔曲线返回点使用-lineto-连接)
@@ -112,6 +113,29 @@
         return str.replace(/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\。|\，|\？|\！|\、|\；|\：]/g, ""); 
     }
 ```
+
+### 7. fetch 循环 [ref](https://www.coder.work/article/3878138)
+```js
+fetch(API_URL_DIARY)
+    .then(response => response.json())
+    .then(data => {
+        console.log("old", data);
+        return data;
+    })
+    .then(async data => {
+        await Promise.all(data.map((e, index, array) => {
+            return fetch(API_URL_FOOD_DETAILS + e.foodid)
+                .then(response => response.json())
+                .then(data => {
+                    array[index] = {...e, ...data};
+                    console.log("update");
+                })
+        }));
+
+        console.log("new", data)
+    });
+```
+
 
 ## Canvas
 
