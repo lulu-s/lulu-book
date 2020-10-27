@@ -12,11 +12,13 @@
     * [1. 线条光辉流动](#1-线条光辉流动)
     * [2. 根据已知点，画贝塞尔曲线，返回点，使用 lineTo 连接](#2-根据已知点画贝塞尔曲线返回点使用-lineto-连接)
     * [3. 鼠标 转换 canvas 坐标](#3-鼠标-转换-canvas-坐标)
+    * [4. 下载 canvas 图片](#4-下载-canvas-图片)
 * [Node](#Node)
     * [1. 静态文件夹 / 静态页面](#1-静态文件夹--静态页面)
     * [2. 跨域](#2-跨域)
     * [3. bodyParser解析, 用 req.body 获取 post 参数](#3-bodyparser解析-用-reqbody-获取-post-参数)
     * [4. 搭建服务器及提示](#4-搭建服务器及提示)
+    * [5. socket.io 基本用法](#5-socketio-基本用法)
 * [优质代码块（汇总）](#优质代码块-汇总)
     * [1. loop 循环, looperStart 开启循环模式, eased 递增](#1-loop-循环-looperstart-开启循环模式-eased-递增)
     * [2. noise](#2-noise)
@@ -277,6 +279,14 @@ fetch(API_URL_DIARY)
     }
 ```
 
+### 4. 下载 canvas 图片
+```js
+    var a = document.createElement('a');
+    a.href = canvas.toDataURL("image/JPEG", 0.5) // image/png
+    a.download = canvas
+    a.dataset.downloadurl = ["image/JPEG", a.download, a.href].join(':');
+    a.click();
+```
 
 ## Node
 
@@ -318,6 +328,36 @@ fetch(API_URL_DIARY)
     });
 ```
 
+### 5. socket.io 基本用法
+* 后台
+```js
+    const hostname = "localhost";
+    const port = 3000;
+    const express = require('express');
+    const app = express();
+    const server = require('http').Server(app);
+    const io = require('socket.io')(server);
+
+    io.on('connection', (socket) => {
+        io.emit("move", Math.random());
+
+        socket.on("path", (target) => {
+            console.log(target);
+        })
+    })
+    server.listen(port, () => {
+        console.log(`Server running at http://${hostname}:${port}/`);
+    });
+```
+* 前端
+```js
+    import io from 'socket.io-client';
+    const socket = io(":3000");
+
+    socket.on("x", (target) => {
+        console.log('x', target);
+    })
+```
 
 ## 优质代码块（汇总）
 
