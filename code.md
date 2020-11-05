@@ -1,5 +1,6 @@
 # 🌙 代码块 [链接1](https://github.com/lulu-s/lulu-book/blob/master/assets/ao.js) [链接2](https://github.com/lulu-s/lulu-book/blob/master/assets/node.js)
 
+* [部署方法]
 * [Javascript](#Javascript)
     * [1. 千位分隔符](#1-千位分隔符)
     * [2. 转换日期](#2-转换日期)
@@ -22,6 +23,90 @@
 * [优质代码块（汇总）](#优质代码块-汇总)
     * [1. loop 循环, looperStart 开启循环模式, eased 递增](#1-loop-循环-looperstart-开启循环模式-eased-递增)
     * [2. noise](#2-noise)
+
+
+## 部署方法
+
+### 1. 打开谷歌浏览器 
+* index.bat
+```shell
+    cd C:\Program Files (x86)\Google\Chrome\Application 
+    chrome.exe --user-data-dir --disable-direct-composition http://localhost:1234
+```
+
+### 2. 谷歌浏览器全屏
+* index.bat
+```
+    start main.vbs
+```
+
+* main.vbs
+```
+    Set WshShell = WScript.CreateObject("WScript.Shell")
+
+    WScript.Sleep 3000
+    WshShell.SendKeys "{F11}"
+    WScript.Sleep 1000
+    WshShell.SendKeys "^r"
+```
+
+### 3. 自动启动
+1. 进入c盘 → emerge（电脑名）→ 地址栏手敲  \AppData → Roaming → Microsoft → Windows「开始」菜单 → 程序 → 启动
+2. 将 启动文件夹 生成快捷方式到桌面
+3. 将 run.bat 移动到 启动文件夹快捷方式 内
+
+### 4. 关闭锁屏
+* 关闭屏幕保护程序
+    1. 打开 系统偏好设置 → 桌面与屏幕保护程序 → 修改闲置时间为永不
+* 关闭节能模式（window不用进行此步骤）
+    1. 打开 系统偏好设置 → 节能 → 修改为永不关闭显示器
+
+### 5. cnpm
+```
+    npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+
+## electron 
+
+### 1. 允许浏览器自动播放
+```js
+    const electron = require('electron')
+    const {
+        app,
+        BrowserWindow
+    } = require('electron')
+    app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required');
+```
+
+### 2. 加载本地文件 file///
+```js
+    const { app, BrowserWindow, protocol } = require('electron')
+
+    function createWindow() {
+        const win = new BrowserWindow({
+            width: 5120,
+            height: 2160,
+            webPreferences: {
+                nodeIntegration: true,
+                webSecurity: false
+            },
+            // frame: false,
+            // kiosk: true,
+            webSecurity: false
+        })
+        
+
+        win.loadURL('http://localhost:1234/index.html')
+        // win.loadURL('http://localhost:1234/index.html#production')
+    }
+
+    app.whenReady().then(() => {
+    protocol.registerFileProtocol('file', (request, callback) => {
+        const pathname = decodeURI(request.url.replace('file:///', ''));
+        callback(pathname);
+    });
+    }).then(createWindow)
+```
 
 
 ## Javascript
@@ -136,6 +221,25 @@ fetch(API_URL_DIARY)
 
         console.log("new", data)
     });
+```
+
+### 8. 冒泡排序
+```js
+    // 冒泡排序(从小到大)
+    function bubbleSort(arr) {
+        var len = arr.length;
+        for (var i = 0; i < len; i++) {
+            for (var j = 0; j < len - 1 - i; j++) {
+                if (arr[j] > arr[j+1]) {        //相邻元素两两对比
+                    var temp = arr[j+1];        //元素交换
+                    arr[j+1] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+    bubbleSort(logo)
 ```
 
 
