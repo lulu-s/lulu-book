@@ -242,6 +242,15 @@ fetch(API_URL_DIARY)
     bubbleSort(logo)
 ```
 
+### 9. 正则表达式获取两个字符之间的字符串信息
+```
+    var re = new RegExp("(?</).*(?=.)");
+    re.exec("/234234.")[0]
+```
+* 参考：
+    1. https://blog.csdn.net/weixin_34137799/article/details/91367185?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control
+    2. https://www.cnblogs.com/whaozl/p/5462865.html
+
 
 ## Canvas
 
