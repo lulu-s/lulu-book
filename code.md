@@ -27,27 +27,35 @@
 
 ## 部署方法
 
-### 1. 打开谷歌浏览器 
-* index.bat
+### 1. 谷歌浏览器全屏
+* 方法1
+    * index.bat
+    ```shell
+        cd C:\Program Files (x86)\Google\Chrome\Application 
+        chrome.exe --user-data-dir --disable-direct-composition http://localhost:1234
+    ```
+
+    * main.vbs
+    ```shell
+        Set WshShell = WScript.CreateObject("WScript.Shell")
+
+        WScript.Sleep 3000
+        WshShell.SendKeys "{F11}"
+        WScript.Sleep 1000
+        WshShell.SendKeys "^r"
+    ```
+* 方法2 - 推荐
 ```shell
-    cd C:\Program Files (x86)\Google\Chrome\Application 
-    chrome.exe --user-data-dir --disable-direct-composition http://localhost:1234
+    cd ./根目录
+    start /min http-server -p 1234
+    "C:\Program Files\Google\Chrome\Application\chrome.exe" --app=http://localhost:1234  --kiosk
 ```
 
-### 2. 谷歌浏览器全屏
-* index.bat
-```
-    start main.vbs
-```
+### 2. url保存本地，双击打开，文件存储为`filename.url` [参考](https://stackoverflow.com/questions/14256010/save-webpage-as-a-url-file-and-open-with-chrome)
 
-* main.vbs
-```
-    Set WshShell = WScript.CreateObject("WScript.Shell")
-
-    WScript.Sleep 3000
-    WshShell.SendKeys "{F11}"
-    WScript.Sleep 1000
-    WshShell.SendKeys "^r"
+```shell
+    [InternetShortcut]
+    URL=http://http://stackoverflow.com/
 ```
 
 ### 3. 自动启动

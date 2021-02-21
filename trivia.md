@@ -98,10 +98,10 @@
 * [linux](#linux)
     * [1. raspberry pi (树莓派) 清华源](#1-raspberry-pi-(树莓派)-清华源)
     * [2. nodejs 最新版本下载 (Debian)](#2-nodejs-最新版本下载-(Debian))
+    * [3. bat delay](#3-bat-delay)
 
 * [WScript](#WScript)
     * [1. VB脚本](#1-VB脚本)
-
 
 * [Electron](#Electron)
     * [1. 窗口全屏退出快捷键](#1-窗口全屏退出快捷键)
@@ -1504,6 +1504,23 @@ Page({
 ```
 参考：https://github.com/nodesource/distributions/blob/master/README.md
 
+### 3. bat delay
+
+> 在批处理文件中进行睡眠的正确方法是使用timeoutWindows 2000中引入的命令。
+
+* 等待29到30秒之间的某个时间：
+```
+timeout /t 30
+```
+* 如果用户按任意键，超时将被中断；但是，该命令还接受可选的switch /nobreak，它有效地忽略了用户可能按下的任何命令，但显式的除外CTRL-C：
+```
+timeout /t 30 /nobreak
+```
+* 此外，如果您不希望命令在屏幕上显示其倒计时，则可以将其输出重定向到NUL：
+```
+timeout /t 30 /nobreak > NUL
+```
+参考：https://serverfault.com/questions/432322/how-to-sleep-in-a-batch-file
 
 
 ## WScript
