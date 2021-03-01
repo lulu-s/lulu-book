@@ -30,6 +30,7 @@
     * [26. js 实现文本的语音朗读](#26-js-实现文本的语音朗读)
     * [27. 校验是否为中文](#27-校验是否为中文)
     * [28. 鼠标 / 手指位置转换 canvas 坐标](#28-鼠标--手指位置转换-canvas-坐标)
+    * [29. 删除数组中的某个元素](#29-删除数组中的某个元素)
    
     
 * [Node](#Node)  
@@ -654,6 +655,25 @@ div或者button的样式里面加上
     }
 
 ```
+
+### 29. 删除数组中的某个元素
+```js
+Array.prototype.remove = function (from, to) {
+    var rest = this.slice((to || from) + 1 || this.length);
+    this.length = from < 0 ? this.length + from : from;
+    return this.push.apply(this, rest);
+};
+
+// 移除数组中的第二项
+array.remove(1);
+// 移除数组中的倒数第二项
+array.remove(-2);
+// 移除数组中的第二项和第三项（从第二项开始，删除2个元素）
+array.remove(1,2);
+// 移除数组中的最后一项和倒数第二项（数组中的最后两项）
+array.remove(-2,-1);
+```
+参考：http://caibaojian.com/js-splice-element.html
 
 
 

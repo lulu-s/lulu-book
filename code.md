@@ -74,6 +74,9 @@
     npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```
 
+### 6. 谷歌浏览器不能下载的替代方法
+参考：https://support.google.com/chrome/answer/95346?visit_id=637499032867344818-2691531643&hl=zh-Hans&rd=2#install_win_offline&zippy=
+
 ## electron 
 
 ### 1. 允许浏览器自动播放
