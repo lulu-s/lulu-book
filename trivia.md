@@ -1649,7 +1649,7 @@ timeout /t 30 /nobreak
 ```
 
 * 此外，如果您不希望命令在屏幕上显示其倒计时，则可以将其输出重定向到NUL：
-```
+```bat
 timeout /t 30 /nobreak > NUL
 ```
 参考：https://serverfault.com/questions/38318/better-way-to-wait-a-few-seconds-in-a-bat-file/432309
