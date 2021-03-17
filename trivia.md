@@ -1,37 +1,54 @@
 # ʚ碎片知识 / 小问题ɞ
 
 
-* [碎片问题 (js / css / html / three / vue)](#碎片问题)
+
+
+* [未知分区](#未知分区)
+    * [1. 影子 DOM](#1-影子dom)
+    * [2. 查看 http 请求是否可以跨域](#2-查看-http-请求是否可以跨域)
+    * [3. Data URL 格式](#3-Data-URL-格式)
+
+* [JavaScript](#JavaScript) 
+    * [1. js 对象去重](#1-js-对象去重)
+    * [2. js 保留两位小数](#2-js-保留两位小数)
+    * [3. radio 取消选中并能再次选中](#3-radio-取消选中并能再次选中)
+    * [4. 生成 uuid](#4-生成-uuid)
+    * [5. 校验手机号](#5-校验手机号)
+    * [6. 解决同时绑定单击和双击事件，会两个都执行的情况](#6-解决同时绑定单击和双击事件-会两个都执行的情况)
+    * [7. 评级组件](#7-评级组件)
+    * [8. 保存 json](#8-保存-json)
+    * [9. 二维数组位置查询](#9-二维数组位置查询)
+    * [10. 获取 class 内的样式元素](#10-获取-class-内的样式元素)
+    * [11. 实现 blob 与 base64 互转](#11-实现-blob-与-base64-互转)
+    * [12. js 正则表达式提取汉字和去掉汉字](#12-js-正则表达式提取汉字和去掉汉字)
+    * [13. js 实现文本的语音朗读](#13-js-实现文本的语音朗读)
+    * [14. 校验是否为中文](#14-校验是否为中文)
+    * [15. 删除数组中的某个元素](#15-删除数组中的某个元素)
+
+* [CSS](#CSS)  
     * [1. 解决使用 css3 的 rotate ，出现锯齿化的问题](#1-解决使用-css3-的-rotate出现锯齿化的问题)
-    * [2. 解决 Three.js 缩放时以整个浏览器为单位](#2-解决-threejs-缩放时以整个浏览器为单位)
-    * [3. Three.js 由 3d 场景坐标转换成 2d 屏幕坐标](#3-threejs-由-3d-场景坐标转换成-2d-屏幕坐标)
-    * [4. div 做的 button 点击出现选中蓝框](#4-div-做的-button-点击出现选中蓝框)
-    * [5. 去掉 span 标签的间距](#5-去掉-span-标签的间距)
-    * [6. js 对象去重](#6-js-对象去重)
-    * [7. js 保留两位小数](#7-js-保留两位小数)
-    * [8. 修改 placeholder 默认颜色](#8-修改-placeholder-默认颜色)
-    * [9. radio 取消选中并能再次选中](#9-radio-取消选中并能再次选中)
-    * [10. 生成 uuid](#10-生成-uuid)
-    * [11. 校验手机号](#11-校验手机号)
-    * [12. 修改 Three.js 背景色](#12-修改-threejs-背景色)
-    * [13. 解决同时绑定单击和双击事件，会两个都执行的情况](#13-解决同时绑定单击和双击事件-会两个都执行的情况)
-    * [14. 评级组件](#14-评级组件)
-    * [15. 保存 json](#15-保存-json)
-    * [16. flex 像表格一样布局](#16-flex-像表格一样布局)
-    * [17. 二维数组位置查询](#17-二维数组位置查询)
-    * [18. Vue 更改对象属性不刷新页面](#18-Vue-更改对象属性不刷新页面)
-    * [19. 解决 canvas 绘制在移动端模糊的问题](#19-解决-canvas-绘制在移动端模糊的问题)
-    * [20. css 中获取 class 的第 n 个元素](#20-css-中获取-class-的第-n-个元素)
-    * [21. css 动画在结束后保持该状态不变](#21-css-动画在结束后保持该状态不变)
-    * [22. 获取 class 内的样式元素](#22-获取-class-内的样式元素)
-    * [23. 实现 blob 与 base64 互转](#23-实现-blob-与-base64-互转)
-    * [24. js 正则表达式提取汉字和去掉汉字](#24-js-正则表达式提取汉字和去掉汉字)
-    * [25. js 实现 canvas 保存图片并下载到本地](#25-js-实现-canvas-保存图片并下载到本地)
-    * [26. js 实现文本的语音朗读](#26-js-实现文本的语音朗读)
-    * [27. 校验是否为中文](#27-校验是否为中文)
-    * [28. 鼠标 / 手指位置转换 canvas 坐标](#28-鼠标--手指位置转换-canvas-坐标)
-    * [29. 删除数组中的某个元素](#29-删除数组中的某个元素)
-   
+    * [2. div 做的 button 点击出现选中蓝框](#2-div-做的-button-点击出现选中蓝框)
+    * [3. 去掉 span 标签的间距](#3-去掉-span-标签的间距)
+    * [4. 修改 placeholder 默认颜色](#4-修改-placeholder-默认颜色)
+    * [5. flex 像表格一样布局](#5-flex-像表格一样布局)
+    * [6. css 中获取 class 的第 n 个元素](#6-css-中获取-class-的第-n-个元素)
+    * [7. css 动画在结束后保持该状态不变](#7-css-动画在结束后保持该状态不变)
+    * [8. 文字竖排的方式](#8-文字竖排的方式)
+
+* [Vue](#Vue)  
+    * [1. Vue 更改对象属性不刷新页面](#1-Vue-更改对象属性不刷新页面)
+
+* [Three.js](#Threejs)  
+    * [1. 解决 Three.js 缩放时以整个浏览器为单位](#1-解决-threejs-缩放时以整个浏览器为单位)
+    * [2. Three.js 由 3d 场景坐标转换成 2d 屏幕坐标](#2-threejs-由-3d-场景坐标转换成-2d-屏幕坐标)
+    * [3. 修改 Three.js 背景色](#3-修改-threejs-背景色)
+    * [4. 查看 Three.js 版本](#4-查看-threejs-版本)
+
+* [Canvas](#Canvas)
+    * [1. 解决 canvas 绘制在移动端模糊的问题](#1-解决-canvas-绘制在移动端模糊的问题)
+    * [2. js 实现 canvas 保存图片并下载到本地](#2-js-实现-canvas-保存图片并下载到本地)
+    * [3. 鼠标 / 手指位置转换 canvas 坐标](#3-鼠标--手指位置转换-canvas-坐标)
+    * [4. canvas arc 绘制圆角矩形](#4-canvas-arc-绘制圆角矩形)
     
 * [Node](#Node)  
     * [1. express 接收 post 请求参数](#1-express-接收-post-请求参数)
@@ -70,19 +87,13 @@
     * [6. 阻止下拉滑动的效果（橡皮筋效果）](#6-阻止下拉滑动的效果橡皮筋效果)
     * [7. 软键盘弹起](#7-软键盘弹起)
 
-* [常识性知识点](#常识性知识点)
-    * [1. 影子 DOM](#1-影子dom)
-    * [2. 查看 http 请求是否可以跨域](#2-查看-http-请求是否可以跨域)
-    * [3. 文字竖排的方式](#3-文字竖排的方式)
-    * [4. Data URL 格式](#4-Data-URL-格式)
-    * [5. 查看 Three.js 版本](#5-查看-threejs-版本)
-
 * [数学类](#数学类)
     * [1. 粒子画球](#1-粒子画球)
     * [2. 计算圆柱贴图比例](#2-计算圆柱贴图比例)
     * [3. 计算图像缩放比例](#3-计算图像缩放比例)
     * [4. 分页](#4-分页)
-    * [5. canvas arc 绘制圆角矩形](#5-canvas-arc-绘制圆角矩形)
+    * [5. 计算两点之间的距离](#5-计算两点之间的距离)
+    
 
 * [小程序](#小程序)
     * [1. 换行（标签必须是 `<text>` ?）](#1-换行标签必须是-text-)
@@ -112,63 +123,53 @@
 
 
 
-## 碎片问题
+## 未知分区
 
-### 1. 解决使用 css3 的 rotate，出现锯齿化的问题。
-  ```css
-    -webkit-backface-visibility: hidden;
-  ```
-参考：https://code.i-harness.com/zh-TW/q/630f7b
+### 1. 影子 DOM
 
-### 2. 解决 Three.js 缩放时以整个浏览器为单位。
-  ```css
-    body {
-        overflow: hidden;
-    }
-    canvas {
-        display: block; /* fix necessary to remove space at bottom of canvas */
-    }
-  ```
-参考：https://stackoverflow.com/questions/10425310/three-js-full-screen-issue
+Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡中检查影子DOM子树，就如同你检查普通的DOM树一样，所有想要做的东西都可一通过这个特性完美解决：<br>
 
-### 3. Three.js 由 3d 场景坐标转换成 2d 屏幕坐标
-  ```javascript
-    // 首先需要通过某个场景组Group里面的模型的位置坐标，不输入具体坐标则为该组内位置坐标全部转换 group.localToWorld()
-    var pos = group.localToWorld( new three.Vector3(x, y, z) );
-    
-    // 然后通过THREE.Vector3的project方法，逆转相机来求出二维坐标，或全部 pos.project( camera );
-    var vector = new three.Vector3( pos.x, pos.y, pos.z ).project( camera );
+1. 进入开发者模式按F1进入设置
+2. 在Preferences选项卡中的Elements中把Show user agent shadow DOM前的复选框勾上（并没有找到原文所说的Genral所以按照网上的其他文章重写了这个步骤）
+3. 重启开发者工具
 
-    // 返回的是一个二维向量，我们可以通过获取的坐标计算出当前点距离显示平面左上角的像素距离。
-    vector.x = ( vector.x + 1) * w / 2;
-    vector.y = - ( vector.y - 1) * h / 2;
-  ```
-参考：<br>
-  * https://blog.csdn.net/qq_30100043/article/details/80798791
-  * https://codeday.me/bug/20190328/844841.html
 
-### 4. div 做的 button 点击出现选中蓝框
-div或者button的样式里面加上
-```css
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+### 2. 查看 http 请求是否可以跨域
+* 1. 找到 `浏览器 - 开发者工具 - network - 随便选择某个文件，查看Headers - Response Headers`
+* 2. 有 `Access-Control-Allow-Origin：*` 或者 * 为与请求源相同的地址。即服务器支持浏览器跨域访问。
+* 3. 若不包含需修改服务器端，允许cors。如不能修改，需要在本地 node 搭中间件 或 使用 nginx
+
+参考： https://blog.csdn.net/gdp12315/article/details/66479524
+
+
+### 3. Data URL 格式
+> Data URI 的格式: `data:[<mime type>][;charset=<charset>][;base64],<encoded data>`
+
+* 第一部分是 data: 协议头，它标识这个内容为一个 data URI 资源。
+* 第二部分是 MIME 类型，表示这串内容的展现方式，比如：text/plain，则以文本类型展示，image/jpeg，以 jpeg 图片形式展示，同样，客户端也会以这个 MIME 类型来解析数据。
+* 第三部分是编码设置，默认编码是 charset=US-ASCII, 即数据部分的每个字符都会自动编码为 %xx，关于编码的测试，可以在浏览器地址框输入分别输入下面两串内容，查看效果：
 ```
-参考：https://www.iteye.com/blog/yigang-2235539
-
-### 5. 去掉 span 标签的间距
-将span转成块级标签，父元素字体大小设置为0，再设置span字体大小
-```css
-    .show_msg {
-        font-size: 0px;
-    }
-
-    .show_msg > span {
-        display: inline-block;
-        font-size: 40px;
-    }
+    // output: ä½ å¥½ -> 使用默认的编码展示，故乱码
+    data:text/html,你好  
+    // output: 你好 -> 使用 UTF-8 展示
+    data:text/html;charset=UTF-8,你好 
+    // output: 浣犲ソ -> 使用 gbk 展示（浏览器默认编码 UTF-8，故乱码）
+    data:text/html;charset=gbk,你好 
+    // output: 你好 -> UTF-8 编码，内容先使用 base64 解码，然后展示
+    data:text/html;charset=UTF-8;base64,5L2g5aW9 
 ```
-参考：https://blog.csdn.net/u014627807/article/details/79961951
+* 第四部分是 base64 编码设定，这是一个可选项，base64 编码中仅包含 0-9,a-z,A-Z,+,/,=，其中 = 是用来编码补白的。
+* 最后一部分为这个 Data URI 承载的内容，它可以是纯文本编写的内容，也可以是经过 base64编码 的内容。
 
-### 6. js 对象去重
+参考： 
+* 原作者： https://www.cnblogs.com/hustskyking/p/data-uri.html 
+* https://www.cnblogs.com/dcb3688/p/4608062.html
+
+
+
+## JavaScript
+
+### 1. js 对象去重
 ```javascript
     var obj = [
             {year: '2013-2014', term: '1'},
@@ -189,7 +190,7 @@ div或者button的样式里面加上
 ```
 参考：https://blog.csdn.net/longzhoufeng/article/details/78224205
 
-### 7. js 保留两位小数
+### 2. js 保留两位小数
 以下处理结果会四舍五入:
 ```javascript
     var num = 2.446242342;
@@ -205,31 +206,7 @@ div或者button的样式里面加上
 ```
 参考：https://www.runoob.com/w3cnote/javascript-two-decimal.html
 
-### 8. 修改 placeholder 默认颜色
-```css
-    :-moz-placeholder { 
-        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-        color: #fff;  
-    }
-
-    ::-moz-placeholder { /* Mozilla Firefox 19+ */
-        color: #fff;
-    }
-
-    input:-ms-input-placeholder,
-    textarea:-ms-input-placeholder {
-        color: #fff;
-    }
-
-    input::-webkit-input-placeholder,
-    textarea::-webkit-input-placeholder {
-        color: #fff;
-    }
-
-```
-参考：http://www.bbs0101.com/archives/116.html
-
-### 9. radio 取消选中并能再次选中
+### 3. radio 取消选中并能再次选中
 ```javascript
     var old = null; //用来保存原来的对象
 
@@ -254,7 +231,7 @@ div或者button的样式里面加上
 ```
 参考：https://blog.csdn.net/tutian2000/article/details/80256757
 
-### 10. 生成 uuid
+### 4. 生成 uuid
 ```javascript
     export function guid() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -282,7 +259,7 @@ div或者button的样式里面加上
 ```
 参考：https://www.jianshu.com/p/04ee4396edc3
 
-### 11. 校验手机号
+### 5. 校验手机号
 ```javascript
     export function isPoneAvailable(tel) {
         var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
@@ -294,16 +271,7 @@ div或者button的样式里面加上
     }
 ```
 
-### 12. 修改 Three.js 背景色
-```javascript
-    renderer.setClearColor('rgb(135,206,250)',1.0);
-	renderer.setClearColor(0xffffff,1.0);
-	renderer.setClearColor('#428bca',1.0);
-	renderer.setClearColor('rgba(135,206,250,0.5)',1.0);
-```
-参考： https://blog.csdn.net/cc_fys/article/details/72649916
-
-### 13. 解决同时绑定单击和双击事件，会两个都执行的情况
+### 6. 解决同时绑定单击和双击事件，会两个都执行的情况
 ```javascript
     //单击延时触发
     var clickTimeId;
@@ -343,7 +311,7 @@ div或者button的样式里面加上
 参考：https://www.hangge.com/blog/cache/detail_1794.html
 
 
-### 14. 评级组件
+### 7. 评级组件
 ```javascript
     // "★★★★★☆☆☆☆☆".slice(5 - rate, 10 - rate)
     // 9.2 3.4 先 / 2 后四舍五入
@@ -354,33 +322,13 @@ div或者button的样式里面加上
 
 
 
-### 15. 保存 json
+### 8. 保存 json
 ```javascript
     // 在谷歌 - 开发者工具 - console中输入以下内容 - Store as global variable - 保存
     JSON.stringify(temp1, 4, "\t")
 ```
 
-### 16. flex 像表格一样布局
-```
-    .parent {
-        width: 100%;
-        height: 150px;
-        display: flex;
-        flex-flow: row wrap;
-        align-content: flex-start;
-   }
-
-   .child {
-        box-sizing: border-box;
-        background-color: white;
-        flex: 0 0 33%;
-        height: 50px;
-        border: 1px solid red;
-   }
-```
-参考： https://blog.csdn.net/webEvelement/article/details/82850370
-
-### 17. 二维数组位置查询
+### 9. 二维数组位置查询
 ```javascript
     // 获取二维数组目标下标
     getArrIndex(arr, ti, tj){
@@ -405,55 +353,7 @@ div或者button的样式里面加上
 ```
 
 
-### 18. Vue 更改对象属性不刷新页面
-```
-    this.$set(target, projectName, value)
-```
-参考： https://cn.vuejs.org/v2/guide/reactivity.html#%E5%AF%B9%E4%BA%8E%E6%95%B0%E7%BB%84
-
-### 19. 解决 canvas 绘制在移动端模糊的问题
-根据移动端的物理像素，放大 canvas 画布，使 1个 canvas 像素和 1个物理像素相等
-```javascript
-    let canvas = document.getElementById('canvas');
-    let ctx = canvas.getContext('2d');
-    let dpr = window.devicePixelRatio; // 假设 dpr 为2
-    // 获取 css 的宽高
-    let { width: cssWidth, height: cssHeight } = canvas.getBoundingClientRect();
-    // 根据 dpr，扩大 canvas 画布的像素，使 1个 canvas 像素和 1个物理像素相等
-    canvas.width = dpr * cssWidth;
-    canvas.height = dpr * cssHeight;
-    // 由于画布扩大，canvas 的坐标系也跟着扩大，如果按照原先的坐标系绘图内容会缩小
-    // 所以需要将绘制比例放大
-    ctx.scale(dpr,dpr);
-```
-参考： https://juejin.im/post/5cbdda7bf265da036504fb46
-
-
-### 20. css 中获取 class 的第 n 个元素
-```css
-    .poem_replace:nth-of-type(1) {
-        bottom: 4.5rem;
-    }
-    .poem_replace:nth-of-type(2) {
-        bottom: 1.5rem;
-    }
-```
-参考： 
-* https://blog.csdn.net/hh1197787867/article/details/82182069
-* MDN: https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-of-type
-
-### 21. css 动画在结束后保持该状态不变
-增加 forwards 参数
-```css
-    .line_1 {
-        animation: line_width_to_enter 1s ease forwards;
-    }
-```
-参考：
-* https://blog.csdn.net/lp2659359879/article/details/52523888
-* MDN： https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-fill-mode
-
-### 22. 获取 class 内的样式元素
+### 10. 获取 class 内的样式元素
 ```js
     // 获取 class 内的样式元素
     export function getStyle(obj, attr) {
@@ -473,7 +373,7 @@ div或者button的样式里面加上
 ```
 参考：https://blog.csdn.net/dragoo1/article/details/48153391
 
-### 23. 实现 blob 与 base64 互转
+### 11. 实现 blob 与 base64 互转
 ```javascript
     /**
      * base64  to blob二进制
@@ -517,7 +417,7 @@ div或者button的样式里面加上
 参考： https://www.cnblogs.com/dcb3688/p/4608062.html
 
 
-### 24. js 正则表达式提取汉字和去掉汉字
+### 12. js 正则表达式提取汉字和去掉汉字
 ```javascript
     //只提取汉字  
     function GetChinese(strValue) {  
@@ -540,31 +440,8 @@ div或者button的样式里面加上
 ```
 参考： https://blog.csdn.net/yelin042/article/details/76982683
 
-### 25. js 实现 canvas 保存图片并下载到本地
-```javascript
-    function exportCanvasAsPNG(id, fileName) {
 
-        var canvasElement = document.getElementById(id);
-
-        var MIME_TYPE = "image/png";
-
-        var imgURL = canvasElement.toDataURL(MIME_TYPE);
-
-        var dlLink = document.createElement('a');
-        dlLink.download = fileName;
-        dlLink.href = imgURL;
-        dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
-
-        document.body.appendChild(dlLink);
-        dlLink.click();
-        document.body.removeChild(dlLink);
-    }
-```
-参考：
-* https://www.jianshu.com/p/1707a45198c5
-* (三种)： https://blog.csdn.net/wogieni/article/details/97416465
-
-### 26. js 实现文本的语音朗读
+### 13. js 实现文本的语音朗读
 ```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -612,14 +489,251 @@ div或者button的样式里面加上
 参考: http://www.oicqzone.com/pc/2019061324570.html
 
 
-### 27. 校验是否为中文
+### 14. 校验是否为中文
 ```javascript
     if (/^[\u4e00-\u9fa5]+$/.test(text)) {
         return true;
     }
 ```
 
-### 28. 鼠标 / 手指位置转换 canvas 坐标
+
+### 15. 删除数组中的某个元素
+```js
+Array.prototype.remove = function (from, to) {
+    var rest = this.slice((to || from) + 1 || this.length);
+    this.length = from < 0 ? this.length + from : from;
+    return this.push.apply(this, rest);
+};
+
+// 移除数组中的第二项
+array.remove(1);
+// 移除数组中的倒数第二项
+array.remove(-2);
+// 移除数组中的第二项和第三项（从第二项开始，删除2个元素）
+array.remove(1,2);
+// 移除数组中的最后一项和倒数第二项（数组中的最后两项）
+array.remove(-2,-1);
+```
+参考：http://caibaojian.com/js-splice-element.html
+
+
+
+## CSS
+
+### 1. 解决使用 css3 的 rotate，出现锯齿化的问题。
+  ```css
+    -webkit-backface-visibility: hidden;
+  ```
+参考：https://code.i-harness.com/zh-TW/q/630f7b
+
+
+### 2. div 做的 button 点击出现选中蓝框
+div或者button的样式里面加上
+```css
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+```
+参考：https://www.iteye.com/blog/yigang-2235539
+
+### 3. 去掉 span 标签的间距
+将span转成块级标签，父元素字体大小设置为0，再设置span字体大小
+```css
+    .show_msg {
+        font-size: 0px;
+    }
+
+    .show_msg > span {
+        display: inline-block;
+        font-size: 40px;
+    }
+```
+参考：https://blog.csdn.net/u014627807/article/details/79961951
+
+### 4. 修改 placeholder 默认颜色
+```css
+    :-moz-placeholder { 
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: #fff;  
+    }
+
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: #fff;
+    }
+
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        color: #fff;
+    }
+
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        color: #fff;
+    }
+
+```
+参考：http://www.bbs0101.com/archives/116.html
+
+
+### 5. flex 像表格一样布局
+```
+    .parent {
+        width: 100%;
+        height: 150px;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: flex-start;
+   }
+
+   .child {
+        box-sizing: border-box;
+        background-color: white;
+        flex: 0 0 33%;
+        height: 50px;
+        border: 1px solid red;
+   }
+```
+参考： https://blog.csdn.net/webEvelement/article/details/82850370
+
+
+
+
+
+### 6. css 中获取 class 的第 n 个元素
+```css
+    .poem_replace:nth-of-type(1) {
+        bottom: 4.5rem;
+    }
+    .poem_replace:nth-of-type(2) {
+        bottom: 1.5rem;
+    }
+```
+参考： 
+* https://blog.csdn.net/hh1197787867/article/details/82182069
+* MDN: https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-of-type
+
+### 7. css 动画在结束后保持该状态不变
+增加 forwards 参数
+```css
+    .line_1 {
+        animation: line_width_to_enter 1s ease forwards;
+    }
+```
+参考：
+* https://blog.csdn.net/lp2659359879/article/details/52523888
+* MDN： https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation-fill-mode
+
+
+### 8. 文字竖排的方式
+```css
+    p {
+        writing-mode: vertical-rl; /* 竖排 从右向左*/
+        writing-mode: vertical-lr; /* 竖排 从左向右*/
+    }
+```
+参考：
+* https://juejin.im/entry/595f0efc5188250d8b65e1e8
+* MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode
+
+
+
+## Vue
+
+### 1. Vue 更改对象属性不刷新页面
+```
+    this.$set(target, projectName, value)
+```
+参考： https://cn.vuejs.org/v2/guide/reactivity.html#%E5%AF%B9%E4%BA%8E%E6%95%B0%E7%BB%84
+
+
+
+## Three.js
+
+### 1. 解决 Three.js 缩放时以整个浏览器为单位。
+  ```css
+    body {
+        overflow: hidden;
+    }
+    canvas {
+        display: block; /* fix necessary to remove space at bottom of canvas */
+    }
+  ```
+参考：https://stackoverflow.com/questions/10425310/three-js-full-screen-issue
+
+### 2. Three.js 由 3d 场景坐标转换成 2d 屏幕坐标
+  ```javascript
+    // 首先需要通过某个场景组Group里面的模型的位置坐标，不输入具体坐标则为该组内位置坐标全部转换 group.localToWorld()
+    var pos = group.localToWorld( new three.Vector3(x, y, z) );
+    
+    // 然后通过THREE.Vector3的project方法，逆转相机来求出二维坐标，或全部 pos.project( camera );
+    var vector = new three.Vector3( pos.x, pos.y, pos.z ).project( camera );
+
+    // 返回的是一个二维向量，我们可以通过获取的坐标计算出当前点距离显示平面左上角的像素距离。
+    vector.x = ( vector.x + 1) * w / 2;
+    vector.y = - ( vector.y - 1) * h / 2;
+  ```
+参考：<br>
+  * https://blog.csdn.net/qq_30100043/article/details/80798791
+  * https://codeday.me/bug/20190328/844841.html
+
+### 3. 修改 Three.js 背景色
+```javascript
+    renderer.setClearColor('rgb(135,206,250)',1.0);
+	renderer.setClearColor(0xffffff,1.0);
+	renderer.setClearColor('#428bca',1.0);
+	renderer.setClearColor('rgba(135,206,250,0.5)',1.0);
+```
+参考： https://blog.csdn.net/cc_fys/article/details/72649916
+
+
+### 4. 查看 Three.js 版本
+在浏览器中按F12，打开开发版输入 `THREE.REVISION`
+
+
+## Canvas
+
+### 1. 解决 canvas 绘制在移动端模糊的问题
+根据移动端的物理像素，放大 canvas 画布，使 1个 canvas 像素和 1个物理像素相等
+```javascript
+    let canvas = document.getElementById('canvas');
+    let ctx = canvas.getContext('2d');
+    let dpr = window.devicePixelRatio; // 假设 dpr 为2
+    // 获取 css 的宽高
+    let { width: cssWidth, height: cssHeight } = canvas.getBoundingClientRect();
+    // 根据 dpr，扩大 canvas 画布的像素，使 1个 canvas 像素和 1个物理像素相等
+    canvas.width = dpr * cssWidth;
+    canvas.height = dpr * cssHeight;
+    // 由于画布扩大，canvas 的坐标系也跟着扩大，如果按照原先的坐标系绘图内容会缩小
+    // 所以需要将绘制比例放大
+    ctx.scale(dpr,dpr);
+```
+参考： https://juejin.im/post/5cbdda7bf265da036504fb46
+
+
+
+### 2. js 实现 canvas 保存图片并下载到本地
+```javascript
+    function exportCanvasAsPNG(id, fileName) {
+
+        var canvasElement = document.getElementById(id);
+
+        var MIME_TYPE = "image/png";
+
+        var imgURL = canvasElement.toDataURL(MIME_TYPE);
+
+        var dlLink = document.createElement('a');
+        dlLink.download = fileName;
+        dlLink.href = imgURL;
+        dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
+
+        document.body.appendChild(dlLink);
+        dlLink.click();
+        document.body.removeChild(dlLink);
+    }
+```
+参考：
+* https://www.jianshu.com/p/1707a45198c5
+* (三种)： https://blog.csdn.net/wogieni/article/details/97416465
+
+### 3. 鼠标 / 手指位置转换 canvas 坐标
 ```javascript
     // 伪代码
     canvas.addEventListener("touchstart", function (e) {
@@ -658,24 +772,40 @@ div或者button的样式里面加上
 
 ```
 
-### 29. 删除数组中的某个元素
-```js
-Array.prototype.remove = function (from, to) {
-    var rest = this.slice((to || from) + 1 || this.length);
-    this.length = from < 0 ? this.length + from : from;
-    return this.push.apply(this, rest);
-};
 
-// 移除数组中的第二项
-array.remove(1);
-// 移除数组中的倒数第二项
-array.remove(-2);
-// 移除数组中的第二项和第三项（从第二项开始，删除2个元素）
-array.remove(1,2);
-// 移除数组中的最后一项和倒数第二项（数组中的最后两项）
-array.remove(-2,-1);
+### 4. canvas arc 绘制圆角矩形
+```javascript
+    function Rect(x, y, w, h) {
+        return {x:x, y:y, width:w, height:h};
+    }
+
+    var Point = function(x, y) {
+        return {x:x, y:y};
+    };
+    
+    var rect = Rect(50, 50, 300, 200);
+
+    drawRoundedRect(rect, 25, ctx);
+
+    function drawRoundedRect(rect, r, ctx) {
+        var ptA = Point(rect.x + r, rect.y);
+        var ptB = Point(rect.x + rect.width, rect.y);
+        var ptC = Point(rect.x + rect.width, rect.y + rect.height);
+        var ptD = Point(rect.x, rect.y + rect.height);
+        var ptE = Point(rect.x, rect.y);
+        
+        ctx.beginPath();
+        
+        ctx.moveTo(ptA.x, ptA.y);
+        ctx.arcTo(ptB.x, ptB.y, ptC.x, ptC.y, r);
+        ctx.arcTo(ptC.x, ptC.y, ptD.x, ptD.y, r);
+        ctx.arcTo(ptD.x, ptD.y, ptE.x, ptE.y, r);
+        ctx.arcTo(ptE.x, ptE.y, ptA.x, ptA.y, r);
+    
+        ctx.stroke();
+    }
 ```
-参考：http://caibaojian.com/js-splice-element.html
+参考： https://blog.csdn.net/tanghw/article/details/49793531
 
 
 
@@ -733,6 +863,8 @@ array.remove(-2,-1);
     const app = express();
     app.use(cors());    
 ```
+
+
 
 ## bug
 
@@ -805,6 +937,9 @@ array.remove(-2,-1);
 * https://juejin.im/post/5d8eeb2de51d4578200cc968
 * https://stackoverflow.com/questions/16873973/npm-install-hangs/39376187
 
+
+
+
 ## Mac
 
 ### 1. git 安装
@@ -852,6 +987,8 @@ array.remove(-2,-1);
 ### 8. mac 解压 .rar 文件出现中文乱码
 1. `brew install unar`
 2. 中文（ GBK 或 GB18030 ）或简体中文（ GB 2312 或 windows，Dos ）`unar -encoding GBK 文件名.后缀名`
+
+
 
 ## Github
 
@@ -1000,61 +1137,6 @@ array.remove(-2,-1);
 ```
 参考： https://www.cnblogs.com/wangyihong/p/7514304.html
 
-## 常识性知识点
-
-### 1. 影子 DOM
-
-Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡中检查影子DOM子树，就如同你检查普通的DOM树一样，所有想要做的东西都可一通过这个特性完美解决：<br>
-
-1. 进入开发者模式按F1进入设置
-2. 在Preferences选项卡中的Elements中把Show user agent shadow DOM前的复选框勾上（并没有找到原文所说的Genral所以按照网上的其他文章重写了这个步骤）
-3. 重启开发者工具
-
-### 2. 查看 http 请求是否可以跨域
-* 1. 找到 `浏览器 - 开发者工具 - network - 随便选择某个文件，查看Headers - Response Headers`
-* 2. 有 `Access-Control-Allow-Origin：*` 或者 * 为与请求源相同的地址。即服务器支持浏览器跨域访问。
-* 3. 若不包含需修改服务器端，允许cors。如不能修改，需要在本地 node 搭中间件 或 使用 nginx
-
-参考： https://blog.csdn.net/gdp12315/article/details/66479524
-
-
-### 3. 文字竖排的方式
-```css
-    p {
-        writing-mode: vertical-rl; /* 竖排 从右向左*/
-        writing-mode: vertical-lr; /* 竖排 从左向右*/
-    }
-```
-参考：
-* https://juejin.im/entry/595f0efc5188250d8b65e1e8
-* MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode
-
-### 4. Data URL 格式
-> Data URI 的格式: `data:[<mime type>][;charset=<charset>][;base64],<encoded data>`
-
-* 第一部分是 data: 协议头，它标识这个内容为一个 data URI 资源。
-* 第二部分是 MIME 类型，表示这串内容的展现方式，比如：text/plain，则以文本类型展示，image/jpeg，以 jpeg 图片形式展示，同样，客户端也会以这个 MIME 类型来解析数据。
-* 第三部分是编码设置，默认编码是 charset=US-ASCII, 即数据部分的每个字符都会自动编码为 %xx，关于编码的测试，可以在浏览器地址框输入分别输入下面两串内容，查看效果：
-```
-    // output: ä½ å¥½ -> 使用默认的编码展示，故乱码
-    data:text/html,你好  
-    // output: 你好 -> 使用 UTF-8 展示
-    data:text/html;charset=UTF-8,你好 
-    // output: 浣犲ソ -> 使用 gbk 展示（浏览器默认编码 UTF-8，故乱码）
-    data:text/html;charset=gbk,你好 
-    // output: 你好 -> UTF-8 编码，内容先使用 base64 解码，然后展示
-    data:text/html;charset=UTF-8;base64,5L2g5aW9 
-```
-* 第四部分是 base64 编码设定，这是一个可选项，base64 编码中仅包含 0-9,a-z,A-Z,+,/,=，其中 = 是用来编码补白的。
-* 最后一部分为这个 Data URI 承载的内容，它可以是纯文本编写的内容，也可以是经过 base64编码 的内容。
-
-参考： 
-* 原作者： https://www.cnblogs.com/hustskyking/p/data-uri.html 
-* https://www.cnblogs.com/dcb3688/p/4608062.html
-
-
-### 5. 查看 Three.js 版本
-在浏览器中按F12，打开开发版输入 `THREE.REVISION`
 
 ## 数学类
 
@@ -1179,42 +1261,7 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
     array.filter((item, index) => index < limit * page && index >= limit * (page - 1))
 ```
 
-### 5. canvas arc 绘制圆角矩形
-```javascript
-    function Rect(x, y, w, h) {
-        return {x:x, y:y, width:w, height:h};
-    }
-
-    var Point = function(x, y) {
-        return {x:x, y:y};
-    };
-    
-    var rect = Rect(50, 50, 300, 200);
-
-    drawRoundedRect(rect, 25, ctx);
-
-    function drawRoundedRect(rect, r, ctx) {
-        var ptA = Point(rect.x + r, rect.y);
-        var ptB = Point(rect.x + rect.width, rect.y);
-        var ptC = Point(rect.x + rect.width, rect.y + rect.height);
-        var ptD = Point(rect.x, rect.y + rect.height);
-        var ptE = Point(rect.x, rect.y);
-        
-        ctx.beginPath();
-        
-        ctx.moveTo(ptA.x, ptA.y);
-        ctx.arcTo(ptB.x, ptB.y, ptC.x, ptC.y, r);
-        ctx.arcTo(ptC.x, ptC.y, ptD.x, ptD.y, r);
-        ctx.arcTo(ptD.x, ptD.y, ptE.x, ptE.y, r);
-        ctx.arcTo(ptE.x, ptE.y, ptA.x, ptA.y, r);
-    
-        ctx.stroke();
-    }
-```
-参考： https://blog.csdn.net/tanghw/article/details/49793531
-
-
-### 6. 计算亮点之间的距离
+### 5. 计算两点之间的距离
 公式： `Math.sqrt( Math.pow(center.x - x, 2) + Math.pow(center.y - y, 2), 2 )`
 参考：https://blog.csdn.net/weixin_40099554/article/details/77873738
 
@@ -1387,6 +1434,7 @@ Page({
 * template
 参考： https://juejin.im/post/5b64744df265da0f6d72f4d7
 
+
 ### 6. 生命周期
 ```javascript
     //index.js
@@ -1505,9 +1553,6 @@ Page({
 ```
 
 
-
-
-
 ## linux
 
 ### 1. raspberry pi (树莓派) 清华源
@@ -1545,6 +1590,7 @@ timeout /t 30 /nobreak > NUL
 参考：https://serverfault.com/questions/432322/how-to-sleep-in-a-batch-file
 
 
+
 ## WScript
 
 ### 1. VB脚本
@@ -1559,6 +1605,8 @@ timeout /t 30 /nobreak > NUL
     windows： Alt+F4
     macOS：command+Q
 ```
+
+
 ### 2. 自动点击
 ```js
     setTimeout(()=>{
@@ -1574,6 +1622,7 @@ timeout /t 30 /nobreak > NUL
         console.log("自动点击");
     }, 1000)
 ```
+
 
 ### 3. 使用 webview 显示空白
 electron >= 5 禁用了 webview标签。<br/>
