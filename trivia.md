@@ -121,7 +121,7 @@
 * [linux](#linux)
     * [1. raspberry pi (树莓派) 清华源](#1-raspberry-pi-(树莓派)-清华源)
     * [2. nodejs 最新版本下载 (Debian)](#2-nodejs-最新版本下载-(Debian))
-    * [3. bat delay](#3-bat-delay)
+    * [3. window bat delay](#3-window-bat-delay)
 
 * [WScript](#WScript)
     * [1. VB脚本](#1-VB脚本)
@@ -130,10 +130,6 @@
     * [1. 窗口全屏退出快捷键](#1-窗口全屏退出快捷键)
     * [2. 自动点击](#2-自动点击)
     * [3. 使用 webview 显示空白](#3-使用-webview-显示空白)
-
-
-* [关于部署](#-关于部署)
-    * [1. window bat delay](#1-window-bat-delay)
 
 
 
@@ -1638,24 +1634,25 @@ Page({
 ```
 参考：https://github.com/nodesource/distributions/blob/master/README.md
 
-### 3. bat delay
 
-> 在批处理文件中进行睡眠的正确方法是使用timeoutWindows 2000中引入的命令。
+### 3. window bat delay
+> 正确的方法是使用timeoutWindows 2000中引入的命令。
 
-* 等待29到30秒之间的某个时间：
-```
+* 等待30秒
+```bat
 timeout /t 30
 ```
-* 如果用户按任意键，超时将被中断；但是，该命令还接受可选的switch /nobreak，它有效地忽略了用户可能按下的任何命令，但显式的除外CTRL-C：
-```
+
+* 如果用户按下任何键，超时将被中断；否则，超时将被中断。但是，该命令还接受可选的switch /nobreak，它有效地忽略了用户可能按下的任何命令，但显式的除外CTRL-C：
+```bat
 timeout /t 30 /nobreak
 ```
+
 * 此外，如果您不希望命令在屏幕上显示其倒计时，则可以将其输出重定向到NUL：
 ```
 timeout /t 30 /nobreak > NUL
 ```
-参考：https://serverfault.com/questions/432322/how-to-sleep-in-a-batch-file
-
+参考：https://serverfault.com/questions/38318/better-way-to-wait-a-few-seconds-in-a-bat-file/432309
 
 
 ## WScript
@@ -1695,24 +1692,3 @@ timeout /t 30 /nobreak > NUL
 electron >= 5 禁用了 webview标签。<br/>
 参考：https://blog.csdn.net/i13253161183/article/details/103066984
 
-
-## 关于部署
-
-### 1. window bat delay
-> 正确的方法是使用timeoutWindows 2000中引入的命令。
-
-* 等待30秒
-```bat
-timeout /t 30
-```
-
-* 如果用户按下任何键，超时将被中断；否则，超时将被中断。但是，该命令还接受可选的switch /nobreak，它有效地忽略了用户可能按下的任何命令，但显式的除外CTRL-C：
-```bat
-timeout /t 30 /nobreak
-```
-
-* 此外，如果您不希望命令在屏幕上显示其倒计时，则可以将其输出重定向到NUL：
-```
-timeout /t 30 /nobreak > NUL
-```
-参考：https://serverfault.com/questions/38318/better-way-to-wait-a-few-seconds-in-a-bat-file/432309
