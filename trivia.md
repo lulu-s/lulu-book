@@ -6,6 +6,11 @@
     * [2. 查看 http 请求是否可以跨域](#2-查看-http-请求是否可以跨域)
     * [3. Data URL 格式](#3-Data-URL-格式)
 
+
+* [HTML](#HTML) 
+    * [1. input 输入框禁止显示历史记录](#1-input-输入框禁止显示历史记录)
+
+
 * [JavaScript](#JavaScript) 
     * [1. js 对象去重](#1-js-对象去重)
     * [2. js 保留两位小数](#2-js-保留两位小数)
@@ -23,6 +28,7 @@
     * [14. 校验是否为中文](#14-校验是否为中文)
     * [15. 删除数组中的某个元素](#15-删除数组中的某个元素)
     * [16. 图片加载失败事件](#16-图片加载失败事件)
+
     
 
 * [CSS](#CSS)  
@@ -39,6 +45,8 @@
 
 * [Vue](#Vue)  
     * [1. Vue 更改对象属性不刷新页面](#1-Vue-更改对象属性不刷新页面)
+    * [2. v-html 渲染的 dom 增加样式](#2-v-html-渲染的-dom-增加样式)
+    
 
 * [Three.js](#Threejs)  
     * [1. 解决 Three.js 缩放时以整个浏览器为单位](#1-解决-threejs-缩放时以整个浏览器为单位)
@@ -173,6 +181,14 @@ Chrome开发者工具有一个很好的特性就是你可以在Elements选项卡
 * https://www.cnblogs.com/dcb3688/p/4608062.html
 
 
+
+## HTML
+
+### 1. input 输入框禁止显示历史记录
+```html
+<input type="text" autocomplete="off" />
+```
+参考：https://blog.csdn.net/littlebearGreat/article/details/73497821
 
 ## JavaScript
 
@@ -539,6 +555,9 @@ array.remove(-2,-1);
 
 
 
+
+
+
 ## CSS
 
 ### 1. 解决使用 css3 的 rotate，出现锯齿化的问题。
@@ -683,6 +702,10 @@ div {
 ```
 参考： https://cn.vuejs.org/v2/guide/reactivity.html#%E5%AF%B9%E4%BA%8E%E6%95%B0%E7%BB%84
 
+
+### 2. v-html 渲染的 dom 增加样式
+样式标签不能加 `scoped`。否则 `v-html` 渲染样式会修改无效 <br/>
+参考：https://segmentfault.com/q/1010000013203950
 
 
 ## Three.js
