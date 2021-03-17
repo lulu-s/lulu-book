@@ -35,6 +35,7 @@
     * [7. css 动画在结束后保持该状态不变](#7-css-动画在结束后保持该状态不变)
     * [8. 文字竖排的方式](#8-文字竖排的方式)
     * [9. textarea 多行文本框禁止拖动问题解决](#9-textarea-多行文本框禁止拖动问题解决)
+    * [10. css 实现文字过长显示省略号的方法](#10-css-实现文字过长显示省略号的方法)
 
 * [Vue](#Vue)  
     * [1. Vue 更改对象属性不刷新页面](#1-Vue-更改对象属性不刷新页面)
@@ -661,6 +662,18 @@ textarea {
 }
 ```
 参考：https://blog.csdn.net/yu17310133443/article/details/73559325
+
+### 10. css 实现文字过长显示省略号的方法
+```css
+div {
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+```
+参考：https://blog.csdn.net/u012531787/article/details/18553885
+
 
 ## Vue
 
