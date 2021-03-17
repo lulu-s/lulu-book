@@ -106,6 +106,8 @@
 
 * [Electron](#Electron)
     * [1. 窗口全屏退出快捷键](#1-窗口全屏退出快捷键)
+    * [2. 自动点击](#2-自动点击)
+    * [3. 使用 webview 显示空白](#3-使用-webview-显示空白)
 
 
 
@@ -1557,3 +1559,22 @@ timeout /t 30 /nobreak > NUL
     windows： Alt+F4
     macOS：command+Q
 ```
+### 2. 自动点击
+```js
+    setTimeout(()=>{
+        let inputArgs = {
+            type: "mouseDown",
+            x: 0,
+            y: 0,
+            clickCount: 1,
+            button: 'left'
+        }
+        win.focusOnWebView();
+        win.webContents.sendInputEvent(inputArgs)
+        console.log("自动点击");
+    }, 1000)
+```
+
+### 3. 使用 webview 显示空白
+electron >= 5 禁用了 webview标签。<br/>
+参考：https://blog.csdn.net/i13253161183/article/details/103066984
