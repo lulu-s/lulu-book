@@ -1,5 +1,6 @@
 # 🌙 代码块 
-> [链接1](https://github.com/lulu-s/lulu-book/blob/master/assets/ao.js) [链接2](https://github.com/lulu-s/lulu-book/blob/master/assets/node.js)
+> [Javascript + 优质代码块](https://github.com/lulu-s/lulu-book/blob/master/assets/ao.js) 
+  [node](https://github.com/lulu-s/lulu-book/blob/master/assets/node.js)
 
 * [部署方法](#部署方法)
     * [1. 谷歌浏览器全屏](#1-谷歌浏览器全屏)
