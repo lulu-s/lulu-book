@@ -87,6 +87,28 @@ export function no_symbol(str) {
 }
 
 
+// 8.冒泡排序(从小到大)
+export function bubbleSort(arr) {
+    var len = arr.length;
+    for (var i = 0; i < len; i++) {
+        for (var j = 0; j < len - 1 - i; j++) {
+            if (arr[j] > arr[j+1]) {        //相邻元素两两对比
+                var temp = arr[j+1];        //元素交换
+                arr[j+1] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    return arr;
+}
+
+// 9. 正则表达式获取两个字符之间的字符串信息 例如 str = /234234."
+export function between(a, b, str){
+    var re = new RegExp(`(?<=${a}).*(?=${b})`);
+    return re.exec(str)[0]
+}
+
+
 // Canvas
 
 // 1. 线条光辉流动

@@ -1,4 +1,5 @@
-# 🌙 代码块 [链接1](https://github.com/lulu-s/lulu-book/blob/master/assets/ao.js) [链接2](https://github.com/lulu-s/lulu-book/blob/master/assets/node.js)
+# 🌙 代码块 
+> [链接1](https://github.com/lulu-s/lulu-book/blob/master/assets/ao.js) [链接2](https://github.com/lulu-s/lulu-book/blob/master/assets/node.js)
 
 * [部署方法](#部署方法)
     * [1. 谷歌浏览器全屏](#1-谷歌浏览器全屏)
@@ -376,9 +377,9 @@ fetch(API_URL_DIARY)
 ```
 
 ### 9. 正则表达式获取两个字符之间的字符串信息
-```
-    var re = new RegExp("(?</).*(?=.)");
-    re.exec("/234234.")[0]
+```js
+    var re = new RegExp("(?<=/).*(?=.)");
+    return re.exec("/234234.")[0]
 ```
 * 参考：
     1. https://blog.csdn.net/weixin_34137799/article/details/91367185?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control
