@@ -1,8 +1,6 @@
 # ʚ碎片知识 / 小问题ɞ
 
 
-
-
 * [未知分区](#未知分区)
     * [1. 影子 DOM](#1-影子dom)
     * [2. 查看 http 请求是否可以跨域](#2-查看-http-请求是否可以跨域)
@@ -24,6 +22,8 @@
     * [13. js 实现文本的语音朗读](#13-js-实现文本的语音朗读)
     * [14. 校验是否为中文](#14-校验是否为中文)
     * [15. 删除数组中的某个元素](#15-删除数组中的某个元素)
+    * [16. 图片加载失败事件](#16-图片加载失败事件)
+    
 
 * [CSS](#CSS)  
     * [1. 解决使用 css3 的 rotate ，出现锯齿化的问题](#1-解决使用-css3-的-rotate出现锯齿化的问题)
@@ -34,6 +34,7 @@
     * [6. css 中获取 class 的第 n 个元素](#6-css-中获取-class-的第-n-个元素)
     * [7. css 动画在结束后保持该状态不变](#7-css-动画在结束后保持该状态不变)
     * [8. 文字竖排的方式](#8-文字竖排的方式)
+    * [9. textarea 多行文本框禁止拖动问题解决](#9-textarea-多行文本框禁止拖动问题解决)
 
 * [Vue](#Vue)  
     * [1. Vue 更改对象属性不刷新页面](#1-Vue-更改对象属性不刷新页面)
@@ -64,6 +65,7 @@
     * [7. Could not resolve host: github.com](#7-could-not-resolve-host-githubcom)
     * [8. ping baidu.com 不通](#8-ping-baiducom-不通)
     * [9. npm i 卡住](#9-npm-i-卡住)
+    * [10. Duplicate keys detected: 'xxxx'. This may cause an update error](#10-Duplicate-keys-detected-xxxx-This-may-cause-an-update-error)
 
 * [Mac](#mac)
     * [1. git 安装](#1-git-安装)
@@ -119,6 +121,10 @@
     * [1. 窗口全屏退出快捷键](#1-窗口全屏退出快捷键)
     * [2. 自动点击](#2-自动点击)
     * [3. 使用 webview 显示空白](#3-使用-webview-显示空白)
+
+
+* [关于部署](#-关于部署)
+    * [1. window bat delay](#1-window-bat-delay)
 
 
 
@@ -517,6 +523,20 @@ array.remove(-2,-1);
 参考：http://caibaojian.com/js-splice-element.html
 
 
+### 16.图片加载失败事件
+```js
+<body>
+    <img src="img.png" onerror="myfunction()">
+</body>
+<script>
+    myfunction() {
+        this.src="default.png"
+    }
+</script>
+```
+参考：https://champyin.com/2018/11/26/js%E5%A6%82%E4%BD%95%E8%AF%86%E5%88%AB%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%A4%B1%E8%B4%A5/
+
+
 
 ## CSS
 
@@ -634,6 +654,13 @@ div或者button的样式里面加上
 * MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode
 
 
+### 9. textarea 多行文本框禁止拖动问题解决
+```css
+textarea {
+    resize: none;
+}
+```
+参考：https://blog.csdn.net/yu17310133443/article/details/73559325
 
 ## Vue
 
@@ -937,6 +964,10 @@ div或者button的样式里面加上
 * https://juejin.im/post/5d8eeb2de51d4578200cc968
 * https://stackoverflow.com/questions/16873973/npm-install-hangs/39376187
 
+
+### 10. Duplicate keys detected: 'xxxx'. This may cause an update error
+vue 中的 v-for 循环的 key 重复了, key 必须是唯一的 <br>
+参考：https://blog.csdn.net/Dream_xun/article/details/85064277
 
 
 
@@ -1627,3 +1658,25 @@ timeout /t 30 /nobreak > NUL
 ### 3. 使用 webview 显示空白
 electron >= 5 禁用了 webview标签。<br/>
 参考：https://blog.csdn.net/i13253161183/article/details/103066984
+
+
+## 关于部署
+
+### 1. window bat delay
+> 正确的方法是使用timeoutWindows 2000中引入的命令。
+
+* 等待30秒
+```bat
+timeout /t 30
+```
+
+* 如果用户按下任何键，超时将被中断；否则，超时将被中断。但是，该命令还接受可选的switch /nobreak，它有效地忽略了用户可能按下的任何命令，但显式的除外CTRL-C：
+```bat
+timeout /t 30 /nobreak
+```
+
+* 此外，如果您不希望命令在屏幕上显示其倒计时，则可以将其输出重定向到NUL：
+```
+timeout /t 30 /nobreak > NUL
+```
+参考：https://serverfault.com/questions/38318/better-way-to-wait-a-few-seconds-in-a-bat-file/432309

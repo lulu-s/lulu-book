@@ -1,6 +1,7 @@
 # 🌙 代码块 [链接1](https://github.com/lulu-s/lulu-book/blob/master/assets/ao.js) [链接2](https://github.com/lulu-s/lulu-book/blob/master/assets/node.js)
 
 * [部署方法]
+* [CSS](#CSS)
 * [Javascript](#Javascript)
     * [1. 千位分隔符](#1-千位分隔符)
     * [2. 转换日期](#2-转换日期)
@@ -76,6 +77,104 @@
 
 ### 6. 谷歌浏览器不能下载的替代方法
 参考：https://support.google.com/chrome/answer/95346?visit_id=637499032867344818-2691531643&hl=zh-Hans&rd=2#install_win_offline&zippy=
+
+
+## CSS
+
+### 1. css 实现 tooltip
+* html
+```html
+<div class='tool-btn' data-title="title_name" >
+```
+
+* css
+```css
+.tool-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    color: white;
+}
+
+.tool-btn {
+    width: 100%;
+    width: 50%;
+    word-wrap: break-word;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+
+    .icon {
+        padding: 2px;
+        padding-bottom: 5px;
+        font-size: 1.2em;
+    }
+
+    span {
+        display: inline-block;
+        margin-left: 10px; 
+        margin-right: 10px; 
+        // font-size: 12px;
+    }
+}
+
+
+.tool-btn:hover::before {
+    content: "";
+    position: absolute;
+    // bottom: -10px;
+    z-index: 1000;
+    width: 0;
+    border: 5px solid;
+    border-color: transparent #e4017f transparent transparent;
+    transition: all 0.4s ease;
+    transform: translate(25px, 13px);
+    pointer-events: none;
+    // opacity: 0.5;
+    animation: before_scale .3s ease forwards .05s;
+}
+
+@keyframes before_scale {
+    0% {
+        transform: translate(25px, 13px)  scale(0.4);
+        // opacity: 0.5;
+    }
+    100% {
+        transform: translate(15px, 13px)  scale(1);
+        // opacity: 1;
+    }
+}
+
+.tool-btn:hover::after {
+    content: attr(data-title);
+    position: absolute;
+    /* bottom: 0; */
+    z-index: 1100;
+    text-align: center;
+    width: max-content;
+    background: #e4017f;
+    color: #fff;
+    padding: 0 12px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 14px;
+    // font-weight: bold;
+    transition: all .4s ease;
+    transform: translate(25px, -29px);
+    border-radius: 3px;
+    pointer-events: none;
+    animation: after_scale .4s ease forwards;
+}
+
+@keyframes after_scale {
+    0% {
+        transform: translate(25px, -29px) scale(0.9);
+    }
+    100% {
+        transform: translate(25px, -29px) scale(1);
+    }
+}
+```
+
 
 ## electron 
 
