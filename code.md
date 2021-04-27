@@ -27,6 +27,7 @@
     * [7. fetch 循环](#7-fetch-循环)
     * [8. 冒泡排序](#8-冒泡排序)
     * [9. 正则表达式获取两个字符之间的字符串信息](#9-正则表达式获取两个字符之间的字符串信息)
+    * [10. 不重复的随机数组](#10.不重复的随机数组)
 
 * [Canvas](#Canvas)
     * [1. 线条光辉流动](#1-线条光辉流动)
@@ -385,6 +386,35 @@ fetch(API_URL_DIARY)
 * 参考：
     1. https://blog.csdn.net/weixin_34137799/article/details/91367185?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromBaidu-1.control
     2. https://www.cnblogs.com/whaozl/p/5462865.html
+
+### 10. 不重复的随机数组
+```js
+/**
+* 构造不重复随机数组
+* @param range [start, end] start: 开始数 end: 结束数
+* @param count 取多少个
+*/
+function rangeRam (range, count) {
+   const ramArr = [];
+   const result = [];
+
+   for (let i = range[0]; i <= range[1]; i++) {
+       ramArr.push(check_length(i));
+   }
+
+   for (; count > 0; count--) {
+       const ram = Math.floor(Math.random() * (ramArr.length - 1));
+
+       result.push(ramArr[ram]);
+
+       ramArr[ram] = ramArr[ramArr.length - 1];
+       ramArr.pop();
+   }
+
+   return result;
+};
+```
+参考： https://zhuanlan.zhihu.com/p/85614147
 
 
 ## Canvas
