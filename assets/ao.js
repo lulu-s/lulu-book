@@ -108,6 +108,32 @@ export function between(a, b, str){
     return re.exec(str)[0]
 }
 
+// 10. 不重复的随机数组
+/**
+* 构造不重复随机数组
+* @param range [start, end] start: 开始数 end: 结束数
+* @param count 取多少个
+*/
+function rangeRam (range, count) {
+    const ramArr = [];
+    const result = [];
+ 
+    for (let i = range[0]; i <= range[1]; i++) {
+        ramArr.push(check_length(i));
+    }
+ 
+    for (; count > 0; count--) {
+        const ram = Math.floor(Math.random() * (ramArr.length - 1));
+ 
+        result.push(ramArr[ram]);
+ 
+        ramArr[ram] = ramArr[ramArr.length - 1];
+        ramArr.pop();
+    }
+ 
+    return result;
+ };
+
 
 // Canvas
 
