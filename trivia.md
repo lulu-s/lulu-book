@@ -1328,6 +1328,46 @@ vue 中的 v-for 循环的 key 重复了, key 必须是唯一的 <br>
 公式： `Math.sqrt( Math.pow(center.x - x, 2) + Math.pow(center.y - y, 2), 2 )`
 参考：https://blog.csdn.net/weixin_40099554/article/details/77873738
 
+### 6. 拖拽
+```js
+var pos, current = 0, prev;
+var start_ms, end_ms;
+window.ontouchstart = function (e) {
+    start_ms = Date.now();
+    // prev = pos;
+    selected(e)
+}
+window.ontouchmove = function (e) {
+    end_ms = Date.now();
+    selected(e)
+}
+window.addEventListener("touchend", (e) => {
+    end_ms = Date.now();
+    selected(e)
+
+    // prev = pos = 0;
+})
+
+/*
+ * 用户拖拽的思路
+ * 1. 首先记录上一帧和当前帧，判定上一帧和当前帧的差，大于 + 1 ，小于 - 1
+ * 2. 将当前帧赋值给上一帧
+ * 3. 在 touchstart、touchmove、touchend 中记录开始和结束时间，用于截流以及防止点击误触
+ */
+
+function selected(e) {
+    if ((end_ms - start_ms) < 100) {
+        pos = e.changedTouches[0].clientX;
+        current += prev > pos ? -0.01 : 0.01;
+        control.abs_scroll = current / Math.PI * 2
+        prev = pos;
+    } else {
+        start_ms = Date.now();
+    }
+}
+```
+参考：来自[@Mike Luan](https://github.com/luan007)的天才思路
+
 
 ## 小程序
 
