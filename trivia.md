@@ -1329,6 +1329,11 @@ vue 中的 v-for 循环的 key 重复了, key 必须是唯一的 <br>
 参考：https://blog.csdn.net/weixin_40099554/article/details/77873738
 
 ### 6. 拖拽
+> 用户拖拽的思路
+1. 首先记录上一帧和当前帧，判定上一帧和当前帧的差，大于 + 1 ，小于 - 1
+2. 将当前帧赋值给上一帧
+3. 在 touchstart、touchmove、touchend 中记录开始和结束时间，用于截流以及防止点击误触
+
 ```js
 var pos, current = 0, prev;
 var start_ms, end_ms;
@@ -1348,12 +1353,6 @@ window.addEventListener("touchend", (e) => {
     // prev = pos = 0;
 })
 
-/*
- * 用户拖拽的思路
- * 1. 首先记录上一帧和当前帧，判定上一帧和当前帧的差，大于 + 1 ，小于 - 1
- * 2. 将当前帧赋值给上一帧
- * 3. 在 touchstart、touchmove、touchend 中记录开始和结束时间，用于截流以及防止点击误触
- */
 
 function selected(e) {
     if ((end_ms - start_ms) < 100) {
