@@ -28,6 +28,7 @@
     * [14. 校验是否为中文](#14-校验是否为中文)
     * [15. 删除数组中的某个元素](#15-删除数组中的某个元素)
     * [16. 图片加载失败事件](#16-图片加载失败事件)
+    * [17. 颜色转换 rgb 与 hex 互转](#17-颜色转换-rgb-与-hex-互转)
 
     
 
@@ -550,9 +551,75 @@ array.remove(-2,-1);
 ```
 参考：https://champyin.com/2018/11/26/js%E5%A6%82%E4%BD%95%E8%AF%86%E5%88%AB%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%A4%B1%E8%B4%A5/
 
+### 17. 颜色转换 rgb 与 hex 互转
+```js
+/*
+ *  颜色转换
+ *  var sRgb = "RGB(23, 245, 56)" , sHex = "#34538b";
+ *  var sHexColor = sRgb.colorHex();
+ *  var sRgbColor = sHex.colorRgb();
+ */
 
+//  #34538b -->  RGB(52,83,139)
+String.prototype.colorRgb = function () {
+    var sColor = this.toLowerCase();
+    //十六进制颜色值的正则表达式
+    var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
+    // 如果是16进制颜色
+    if (sColor && reg.test(sColor)) {
+        if (sColor.length === 4) {
+            var sColorNew = "#";
+            for (var i = 1; i < 4; i += 1) {
+                sColorNew += sColor.slice(i, i + 1).concat(sColor.slice(i, i + 1));
+            }
+            sColor = sColorNew;
+        }
+        //处理六位的颜色值
+        var sColorChange = [];
+        for (var i = 1; i < 7; i += 2) {
+            sColorChange.push(parseInt("0x" + sColor.slice(i, i + 2)));
+        }
+        return "RGB(" + sColorChange.join(",") + ")";
+    }
+    return sColor;
+};
 
-
+// RGB(52,83,139) -->  #34538b
+String.prototype.colorHex = function () {
+    var that = this;
+    //十六进制颜色值的正则表达式
+    var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
+    // 如果是rgb颜色表示
+    if (/^(rgb|RGB)/.test(that)) {
+        var aColor = that.replace(/(?:\(|\)|rgb|RGB)*/g, "").split(",");
+        var strHex = "#";
+        for (var i = 0; i < aColor.length; i++) {
+            var hex = Number(aColor[i]).toString(16);
+            if (hex === "0") {
+                hex += hex;
+            }
+            strHex += hex;
+        }
+        if (strHex.length !== 7) {
+            strHex = that;
+        }
+        return strHex;
+    } else if (reg.test(that)) {
+        var aNum = that.replace(/#/, "").split("");
+        if (aNum.length === 6) {
+            return that;
+        } else if (aNum.length === 3) {
+            var numHex = "#";
+            for (var i = 0; i < aNum.length; i += 1) {
+                numHex += (aNum[i] + aNum[i]);
+            }
+            return numHex;
+        }
+    }
+    return that;
+};
+```
+参考：https://www.jianshu.com/p/54ada88b85e4
 
 
 ## CSS
