@@ -44,6 +44,7 @@
     * [9. textarea 多行文本框禁止拖动问题解决](#9-textarea-多行文本框禁止拖动问题解决)
     * [10. css 实现文字过长显示省略号的方法](#10-css-实现文字过长显示省略号的方法)
     * [11. 边框边缘模仿切角](#11-边框边缘模仿切角)
+    * [12. 使用 less 实现过渡 delay 计算](#12-使用-less-实现过渡-delay-计算)
 
 * [Vue](#Vue)  
     * [1. Vue 更改对象属性不刷新页面](#1-Vue-更改对象属性不刷新页面)
@@ -775,6 +776,21 @@ div {
   border-left-color: transparent;
 }
 ```
+### 12. 使用 less 实现过渡 delay 计算
+```less
+@animation-delays: 10;
+@animation-delay-step: .5; // delay in seconds
+
+.animation-delays-loop (@i) when (@i > 0) {
+    [data-animation-step="@{i}"] {
+        @animation-delay: @i * @animation-delay-step;
+        animation-delay: ~"@{animation-delay}s";
+    }
+    .animation-delays-loop(@i - 1);
+}
+.animation-delays-loop (@animation-delays);
+```
+参考： https://stackoverflow.com/questions/42415477/animation-delays-generation-with-less
 
 
 ## Vue
