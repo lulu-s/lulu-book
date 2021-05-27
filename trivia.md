@@ -43,6 +43,7 @@
     * [8. 文字竖排的方式](#8-文字竖排的方式)
     * [9. textarea 多行文本框禁止拖动问题解决](#9-textarea-多行文本框禁止拖动问题解决)
     * [10. css 实现文字过长显示省略号的方法](#10-css-实现文字过长显示省略号的方法)
+    * [11. 边框边缘增加三角形](#11-边框边缘增加三角形)
 
 * [Vue](#Vue)  
     * [1. Vue 更改对象属性不刷新页面](#1-Vue-更改对象属性不刷新页面)
@@ -756,6 +757,24 @@ div {
 }
 ```
 参考：https://blog.csdn.net/u012531787/article/details/18553885
+
+### 11. 边框边缘增加三角形
+```css
+.cover {
+  // position: relative;
+}
+.cover::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border: 30px solid #fff;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+```
 
 
 ## Vue
