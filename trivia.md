@@ -749,6 +749,7 @@ textarea {
 参考：https://blog.csdn.net/yu17310133443/article/details/73559325
 
 ### 10. css 实现文字过长显示省略号的方法
+* 单行文本
 ```css
 div {
     width: 100px;
@@ -758,6 +759,43 @@ div {
 }
 ```
 参考：https://blog.csdn.net/u012531787/article/details/18553885
+* 多行文本
+```css
+ /* 方法1 */
+ p {
+    width: 300px;
+    overflow: hidden;
+    /*将对象作为弹性伸缩盒子模型显示*/
+    display: -webkit-box;
+    /*设置子元素排列方式*/
+    -webkit-box-orient: vertical;
+    /*设置显示的行数，多出的部分会显示为...*/
+    -webkit-line-clamp: 3;
+  }
+
+  /* 方法2 */
+  p {
+    position: relative;
+    line-height: 1.2em;
+    max-height: 3.6em;
+    width: 300px;
+    /*设置文本为两端对齐*/
+    text-align: justify;
+    overflow: hidden;
+  }
+  
+  p::after {
+    content: "...";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    /*将省略号的大小设置为1个字体大小*/
+    width: 1em;
+    /*设置背景，将最后一个字覆盖掉*/
+    background: #fff;
+  }
+```
+参考：https://www.jianshu.com/p/50bbd21c0c0f
 
 ### 11. 边框边缘模仿切角
 ```css
