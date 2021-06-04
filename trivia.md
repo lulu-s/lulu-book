@@ -45,6 +45,7 @@
     * [10. css 实现文字过长显示省略号的方法](#10-css-实现文字过长显示省略号的方法)
     * [11. 边框边缘模仿切角](#11-边框边缘模仿切角)
     * [12. 使用 less 实现过渡 delay 计算](#12-使用-less-实现过渡-delay-计算)
+    * [13. 列表上下头部 mask 遮罩](#13-列表上下头部-mask-遮罩)
 
 * [Vue](#Vue)  
     * [1. Vue 更改对象属性不刷新页面](#1-Vue-更改对象属性不刷新页面)
@@ -829,6 +830,19 @@ div {
 .animation-delays-loop (@animation-delays);
 ```
 参考： https://stackoverflow.com/questions/42415477/animation-delays-generation-with-less
+
+### 13. 列表上下头部 mask 遮罩
+```css
+ .lists {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
+}
+```
 
 
 ## Vue
