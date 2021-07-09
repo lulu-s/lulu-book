@@ -117,6 +117,7 @@
 
 ##### 1. 创建 server.csr.cnf 文件， 将文本粘贴进去，修改 CN 为自己的域名，emailAddress 为邮箱
 ```
+    // control + o 保存 control + x 退出
     $ sudo nano server.csr.cnf
 
     [req]
