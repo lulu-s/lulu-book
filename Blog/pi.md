@@ -136,7 +136,7 @@
     CN = localhost
 ```
 
-##### 2. 创建一个v3.ext文件，修改 DNS.1 为自己的域名
+##### 2. 创建一个v3.ext文件，修改 DNS.1 为自己的域名，以创建一个X509 v3证书。
 ```
     authorityKeyIdentifier=keyid,issuer
     basicConstraints=CA:FALSE
@@ -146,11 +146,29 @@
     [alt_names]
     DNS.1 = localhost
 ```
-##### 3. 创建证书密钥以localhost使用存储在其中的配置设置server.csr.cnf。该密钥存储在server.key。 <br>
+
+##### 3. (bk)创建证书密钥以localhost使用存储在其中的配置设置server.csr.cnf。该密钥存储在server.key。 <br>
      证书签名请求通过我们之前创建的根SSL证书颁发，创建出一个localhost的域名证书。输出是一个名为的证书文件server.crt。
 ```
     $ openssl req -new -sha256 -nodes -out server.csr -newkey rsa：2048 -keyout server.key -config <（cat server.csr.cnf）
     $ openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 500 -sha256 -extfile v3.ext
+```
+
+##### 3. (2021.7)创建证书密钥以localhost使用存储在其中的配置设置server.csr.cnf。该密钥存储在server.key。 <br>
+```
+    $ openssl req -new -sha256 -nodes -out server.csr -newkey rsa:2048 -keyout server.key
+```
+输入的信息，仅供参考
+> Country Name (2 letter code) []:CN <br>
+> State or Province Name (full name) []:Province <br>
+> Locality Name (eg, city) []:City <br>
+> Organization Name (eg, company) []:WIZ Technology Co. Ltd. <br>
+> Organizational Unit Name (eg, section) []:WIZ Technology Co. Ltd. <br>
+> Common Name (eg, fully qualified host name) []:emerge.systems <br>
+
+##### 4. (2021.7)证书签名请求通过我们之前创建的根SSL证书颁发，创建出一个localhost的域名证书。输出是一个名为的证书文件server.crt。 <br>
+```
+    $ openssl x509 -req -in server.csr -CA [rootCA.pem路径] -CAkey [rootCA.key路径] -CAcreateserial -out server.crt -days 500 -sha256 -extfile v3.ext
 ```
 
 #### 5. 信任域证书
