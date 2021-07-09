@@ -96,6 +96,7 @@
 #### 1. 创建根证书
 ```
     $ openssl genrsa -des3 -out rootCA.key 2048
+    $ Enter pass phrase for rootCA.key: your password
     $ openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
 ```
 输入的信息，仅供参考
@@ -169,6 +170,7 @@
 ##### 4. (2021.7)证书签名请求通过我们之前创建的根SSL证书颁发，创建出一个localhost的域名证书。输出是一个名为的证书文件server.crt。 <br>
 ```
     $ openssl x509 -req -in server.csr -CA [rootCA.pem路径] -CAkey [rootCA.key路径] -CAcreateserial -out server.crt -days 500 -sha256 -extfile v3.ext
+    $ Enter pass phrase for rootCA.key: your password
 ```
 
 #### 5. 信任域证书
