@@ -96,21 +96,15 @@
 
 ### 有序列表
 
-> 只能使用数字
+* 只能使用数字
 
-* 实际样子
-  1. hello
-  2. hi
+1. hello
+2. hi
+3. wow!
 
-* 书写格式
-  ```
-  1. hello
-  2. hi
-  ```
- 
 * 但有序列表的顺序是根据第一行的设定数来的，当书写顺序为323的时候，会按照第一行的数字3开始，依次向下顺序排列，自动校正顺序。
  > 3. hello，我是*
- > 2. hi，我是*
+ > 2. hi，我是-
  > 3. hello，我是+
 
 ### 无序列表
@@ -140,22 +134,13 @@
 > 在语句前加一个>，空格分隔。
 > ⚠️ 注意：在区块中，如中间有注释信息什么的不在引用内，要换行切换或加br标签。
 
-* 实际样子
- > hello 
+> hello  `书写格式：> hello`
 
-* 书写格式
-  ```
-    > hello 
-  ```
- 
 * 多层嵌套，看来可以无限嵌套。
- > hello
- >> hello
- >>> hello
- >>>> hello
- >>>>> hello
- >>>>>> hello
- >>>>>>> hello
+  >>>> hello
+  >>>>> hello
+  >>>>>> hello
+  >>>>>>> hello
 
 
 * 书写格式
@@ -179,46 +164,61 @@
 ***
 ___
 
+* 书写格式
+  ```
+  - - -
+  ---
+  ***
+  ___
+
+  ```
+
 
 ## 链接
 ### 行内式链接
 * 使用\[链接内容](链接地址)，实现页面内的跳转。<br>
 
-[百度](https://www.baidu.com)
-
-```
-[百度](https://www.baidu.com "百度")
-```
+[百度](https://www.baidu.com) `书写格式：[百度](https://www.baidu.com)`
 
 * 仅能增加提示信息，使用\[链接内容\](链接地址) "提示信息"。
 
-[百度](https://www.baidu.com "百度")
-
-```
-[百度](https://www.baidu.com "百度")
-```
+[百度](https://www.baidu.com "百度") `书写格式：[百度](https://www.baidu.com "百度")`
 
 ### 参数式链接
-> 就是将链接定义为参数，可以直接使用参数名，这样的好处是，当多次使用同一个链接的时候，可以省略字符。<br>
-定义参数：<br>
+* 就是将链接定义为参数，可以直接使用参数名，这样的好处是，当多次使用同一个链接的时候，可以省略字符。
+* 定义参数：
     * \[lulu]: https://github.com/lulu-s "Github" <br>
     * \[lulu]: \<https://github.com/lulu-s> "Github" <br>
-使用方式：使用的时候，需要带上方括号\[lulu\]。
+* 使用方式：使用的时候，需要带上方括号\[lulu\]。
+  * 新建链接：`书写格式：[lulu]: https://github.com/lulu-s "Github"` [lulu]: https://github.com/lulu-s "Github"
+  * 使用： `书写格式：[lulu]` [lulu]
 
-[lulu]: https://github.com/lulu-s "Github"
-
-[lulu]
 
 ## 图片
-图片和链接的使用方法一样，唯一区别在于要在开头加一个!，如果不加!就会变成链接。
+> 图片和链接的使用方法一样，唯一区别在于要在开头加一个!，如果不加!就会变成链接。
 ### 行内式图片
 
-![头像](https://github.com/lulu-s/lulu-book/blob/master/assets/%E5%A4%B4%E5%83%8F.jpg "百度")
+![头像](https://github.com/lulu-s/lulu-book/blob/master/assets/%E5%A4%B4%E5%83%8F.jpg "头像")
+
+* 书写格式
+```
+![头像](https://github.com/lulu-s/lulu-book/blob/master/assets/%E5%A4%B4%E5%83%8F.jpg)
+![头像](https://github.com/lulu-s/lulu-book/blob/master/assets/%E5%A4%B4%E5%83%8F.jpg "头像")
+```
 
 ### 参数式图片
 
-[头像]: https://github.com/lulu-s/lulu-book/blob/master/assets/%E5%A4%B4%E5%83%8F.jpg "Github"
+[头像]: https://github.com/lulu-s/lulu-book/blob/master/assets/%E5%A4%B4%E5%83%8F.jpg "头像"
 ![头像]
+
+* 书写格式
+```
+新建：
+[头像]: https://github.com/lulu-s/lulu-book/blob/master/assets/%E5%A4%B4%E5%83%8F.jpg "头像"
+
+使用：
+![头像]
+```
 
 ## 代码块
 第一种，单行用\`xxx`，类似Es6的对象扩展运算符
@@ -235,38 +235,26 @@ ___
 ```
 
 ## 删除线
-使用\~删除我~前后包裹。
+使用`~删除我~`前后包裹。 
 
 ~删除我~
 
 ## 转义
-只需要在符号前加\，多个需要转义的连在一起，在开头写一个\就行了。
+> 只需要在符号前加\，多个需要转义的连在一起，在开头写一个\就行了。因为有些符号是关键字，如果需要正常显示，就需要特殊处理。
 
-\~
+`\~` \~ <br/>
+`\[title\]` \[title\]
 
-\[title\]
 
 ## 强调
-单独的*、_为倾斜，需要前后包裹闭合，双写为加粗。
+> 单独的*、_为倾斜，需要前后包裹闭合，双写为加粗。
 
-倾斜：\*加粗我* *加粗我*
-
-     \_加粗我_ _加粗我_  
-     
-加粗：\**加粗我\** **加粗我**
-
-     \__加粗我__ __加粗我__  
-
-* 书写格式
-```
-倾斜：\*加粗我* *加粗我*
-
-     \_加粗我_ _加粗我_  
-     
-加粗：\**加粗我\** **加粗我**
-
-     \__加粗我__ __加粗我__  
-```
+* 倾斜：
+  * `*倾斜1*` *倾斜1* 
+  * `_倾斜2_` _倾斜2_
+* 加粗：
+  * `**加粗1**` **加粗1**  
+  * `__加粗2__` __加粗2__  
      
 ## 表格
 玩具  |  价格
@@ -298,12 +286,11 @@ ___
 
 
 ## 高亮
+> 利用代码块/``<br/>
+
 Hello `lulu`,Thanks you.
 
-* 书写格式
-```
-`lulu`
-```
+
 
 ## 数学公式
 汇总日期待定 <br>
