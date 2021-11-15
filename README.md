@@ -4,12 +4,12 @@
 
 
 ## 🍂 日常记录
-  * [ʚ碎片知识 / 小问题ɞ](https://github.com/lulu-s/lulu-book/blob/master/note/trivia.md)
+  * [ʚ碎片知识 / 小问题ɞ](https://github.com/lulu-s/lulu-book/blob/master/Note/trivia.md)
 
 <br/>
 
 ## 🌙 Code
-  * [ʚ代码块ɞ](https://github.com/lulu-s/lulu-book/blob/master/note/code.md)
+  * [ʚ代码块ɞ](https://github.com/lulu-s/lulu-book/blob/master/Note/code.md)
 <br/>
 
 ## 🍀 Grammer
@@ -21,7 +21,8 @@
 
 
 ## 📒 学习笔记
-  * [Arduino 学习笔记](https://github.com/lulu-s/lulu-book/blob/master/note/arduino.md)
+  * [Arduino 学习笔记](https://github.com/lulu-s/lulu-book/blob/master/Note/arduino.md)
+<br/>
 
 
 ## 📐 Blog
