@@ -20,6 +20,7 @@
     * [5. 视频帧转视频](#5-视频帧转视频)
     * [6. 透明视频转换 webm](#6-透明视频转换-webm)
     * [7. 查看视频信息](#7-查看视频信息)
+    * [8. 添加音轨](#8-添加音轨)
 * [参考链接](#-参考链接)
 
 <br/>
@@ -73,11 +74,44 @@
     ffmpeg -encoders
 ```
 
-## 使用格式
-- [ ] 待学习
+### 元信息
+构成一个视频或音频的要素，例如画面的尺寸、视频和音频的编码器、编码格式、时长、编码率等。是一种描述信息的合集。
 
-## 命令行参数详解
-- [ ] 待学习
+
+## 待整理学习到的东西
+
+### 复制流 `-c copy` 
+使 FFmpeg 对指定的流忽略解码和编码步骤，只能混合和拆包。通常用于改变所述容器的格式或修改容器的元数据，也就`转换格式`。由于不存在解码或编码，非常快，而且没有质量损失。但因为某种原因，无法在某些情况下使用。
+
+### -c / -codec
+* -c:v \[codec\]：指定视频编码器
+* -c:a \[codec\]：指定音频编码器
+
+### -preset
+指定输出的视频质量，会影响文件的生成速度，有以下几个可用值：
+* ultrafast 很快
+* superfast 超级快
+* veryfast 非常快
+* faster 更快的
+* fast 快
+* medium 中等的
+* slow 慢
+* slower 较慢的
+* veryslow 非常慢
+
+### 其他命令行参数
+* `-i filename(input)` 指定输入文件
+* `-an` 去除音频流
+* `-vn` 去除视频流
+* `-y` 不经过确认，输出时直接覆盖同名文件
+* `-n` 如果指定输出文件已经存在，不覆盖输出文件，并立刻退出
+* `-hide-banner` 去掉冗余信息，只显示元信息，比如去掉编解码执行过程的log
+
+
+
+<!-- ## 命令行参数详解 -->
+
+
 
 ## 常用命令（可直接使用）
 
@@ -124,6 +158,32 @@ ffmpeg -i input.mov -f webm -c:v libvpx -b:v 2M -acodec libvorbis -auto-alt-ref 
 ffmpeg -i input.mp4
 ```
 
+> 以下为 2021 年 11 月 进修到的
+
+### 8. 添加音轨
+将外部音频加入到当前视频，比如添加背景音乐或旁白
+```
+ffmpeg -i input.aac -i input.mp4 out.mp4
+```
+
+### 9. 裁剪
+截取原视频中的某个片段，输出为一个新视频。可以指定开始时间(start)、持续时间(duration)和结束时间(end)。
+持续时间（00:05:00）：从 00:00:01 开始剪辑持续 5 秒，到 6 秒结束。
+结束时间（00:08:00）：从 00:00:01 开始到第 8 秒的时候结束。
+
+* `-t duration` 可以是秒为单位 `hh:mm:ss[.xxx]`
+    作为输入选项的时候（在 `-i` 之前），限制从输入文件中读取数据的 duration<br/>
+    当作为输出选项是（输出文件名之前），在达到 duration 后停止写入输入文件<br/>
+    `-to`和`-t`是相互排斥的，`-t`具有优先权
+* `-ss position` 可以是秒为单位 `hh:mm:ss[.xxx]`
+* `-to position` 可以是秒为单位 `hh:mm:ss[.xxx]`
+
+```
+ffmpeg -ss [start] -i [input] -t [duration] -c copy [out]
+ffmpeg -ss [start] -i [input] -to [end] -c copy [out]
+```
+
 ## 参考链接
 * [FFmpeg 视频处理入门教程](https://www.ruanyifeng.com/blog/2020/01/ffmpeg.html)
-* [透明视频](https://stackoverflow.com/questions/48395392/ffmpeg-prores-with-alpha-to-webm-vp9-renders-grey)
+* [ffmpeg的中文文档](https://www.longqi.cf/tools/2015/02/13/ffmpegcn/)
+* [ffmpeg prores with alpha to webm vp9 renders grey](https://stackoverflow.com/questions/48395392/ffmpeg-prores-with-alpha-to-webm-vp9-renders-grey)
