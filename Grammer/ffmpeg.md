@@ -18,6 +18,7 @@
     * [3. 慢速播放](#-3-慢速播放)
     * [4. 视频转视频帧](#-4-视频转视频帧)
     * [5. 视频帧转视频](#-5-视频帧转视频)
+    * [6. 透明视频转换 webm](#-6-透明视频转换-webm)
 * [参考链接](#-参考链接)
 
 <br/>
@@ -85,8 +86,13 @@ ffmpeg -i input.mp4 -vcodec libx264 -crf 30 out.mp4
 ```
 
 ### 2. 常见视频转换 webm 格式
+* 方法1
 ```
 ffmpeg -i input.mp4 -vcodec libvpx -b:v 1M -cpu-used -8 -deadline realtime out.webm
+```
+* 方法2
+```
+ffmpeg -i input.mp4 -c:v libvpx -b:v 2M -c:a libvorbis input.webm
 ```
 
 ### 3. 慢速播放
@@ -106,5 +112,12 @@ cd ./图片文件夹
 ffmpeg -framerate 1 -pattern_type glob -i 'out*.jpg'  -c:v libx264 -pix_fmt yuv420p out.mp4
 ```
 
+### 6. 透明视频转换 webm
+导出的4444透明通道编码格式，不被浏览器支持，所以要转换成 webm。
+```
+ffmpeg -i input.mov -f webm -c:v libvpx -b:v 2M -acodec libvorbis -auto-alt-ref 0 out.webm -hide_banner
+```
+
 ## 参考链接
 * [FFmpeg 视频处理入门教程](https://www.ruanyifeng.com/blog/2020/01/ffmpeg.html)
+* [透明视频](https://stackoverflow.com/questions/48395392/ffmpeg-prores-with-alpha-to-webm-vp9-renders-grey)
