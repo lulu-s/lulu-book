@@ -17,6 +17,7 @@
   * [Markdown 语法](https://github.com/lulu-s/lulu-book/blob/master/Grammer/markdown%20grammar.md)
   * [Mac / DOS / Linux 命令行](https://github.com/lulu-s/lulu-book/blob/master/Grammer/command.md)
   * [FFmpeg 进修 + 常用命令](https://github.com/lulu-s/lulu-book/blob/master/Grammer/ffmpeg.md)
+    * [常用命令](https://github.com/lulu-s/lulu-book/blob/master/Grammer/ffmpeg.md#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E5%8F%AF%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8)
 <br/>
 
 
