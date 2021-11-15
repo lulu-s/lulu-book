@@ -5,19 +5,19 @@
 
 ## 🍂 日常记录
   * [ʚ碎片知识 / 小问题ɞ](https://github.com/lulu-s/lulu-book/blob/master/Note/trivia.md)
-
 <br/>
+
 
 ## 🌙 Code
   * [ʚ代码块ɞ](https://github.com/lulu-s/lulu-book/blob/master/Note/code.md)
 <br/>
 
+
 ## 🍀 Grammer
   * [Markdown 语法](https://github.com/lulu-s/lulu-book/blob/master/Grammer/markdown%20grammar.md)
   * [Mac / DOS / Linux 命令行](https://github.com/lulu-s/lulu-book/blob/master/Grammer/command.md)
-
+  * [FFmpeg 进修 + 常用命令](https://github.com/lulu-s/lulu-book/blob/master/Grammer/ffmpeg.md)
 <br/>
-
 
 
 ## 📒 学习笔记
