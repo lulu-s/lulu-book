@@ -19,6 +19,7 @@
     * [4. 视频转视频帧](#4-视频转视频帧)
     * [5. 视频帧转视频](#5-视频帧转视频)
     * [6. 透明视频转换 webm](#6-透明视频转换-webm)
+    * [7. 查看视频信息](#7-查看视频信息)
 * [参考链接](#-参考链接)
 
 <br/>
@@ -116,6 +117,11 @@ ffmpeg -framerate 1 -pattern_type glob -i 'out*.jpg'  -c:v libx264 -pix_fmt yuv4
 导出的4444透明通道编码格式，不被浏览器支持，所以要转换成 webm。
 ```
 ffmpeg -i input.mov -f webm -c:v libvpx -b:v 2M -acodec libvorbis -auto-alt-ref 0 out.webm -hide_banner
+```
+
+### 7. 查看视频信息
+```
+ffmpeg -i input.mp4
 ```
 
 ## 参考链接
