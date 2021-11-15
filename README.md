@@ -2,21 +2,26 @@
 
 <br/><br/>
 
-## 🌙 Code
-  * [ʚ代码块ɞ](https://github.com/lulu-s/lulu-book/blob/master/code.md)
-<br/>
 
 ## 🍂 日常记录
-  * [ʚ碎片知识 / 小问题ɞ](https://github.com/lulu-s/lulu-book/blob/master/trivia.md)
+  * [ʚ碎片知识 / 小问题ɞ](https://github.com/lulu-s/lulu-book/blob/master/note/trivia.md)
 
+<br/>
+
+## 🌙 Code
+  * [ʚ代码块ɞ](https://github.com/lulu-s/lulu-book/blob/master/note/code.md)
 <br/>
 
 ## 🍀 Grammer
-  * [markdown语法](https://github.com/lulu-s/lulu-book/blob/master/Grammer/markdown%20grammar.md)
-  * [命令行](https://github.com/lulu-s/lulu-book/blob/master/Grammer/command.md)
-  * [Arduino](https://github.com/lulu-s/lulu-book/blob/master/Grammer/arduino.md)
+  * [Markdown 语法](https://github.com/lulu-s/lulu-book/blob/master/Grammer/markdown%20grammar.md)
+  * [Mac / DOS / Linux 命令行](https://github.com/lulu-s/lulu-book/blob/master/Grammer/command.md)
 
 <br/>
+
+
+
+## 📒 学习笔记
+  * [Arduino 学习笔记](https://github.com/lulu-s/lulu-book/blob/master/note/arduino.md)
 
 
 ## 📐 Blog
