@@ -3,6 +3,9 @@
 <br/><br/>
 
 
+> [待整理文件](https://github.com/lulu-s/lulu-book/待整理.md)
+
+
 ## 🍂 日常记录
   * [ʚ碎片知识 / 小问题ɞ](https://github.com/lulu-s/lulu-book/blob/master/Note/trivia.md)
 <br/>
