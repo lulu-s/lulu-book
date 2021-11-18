@@ -14,7 +14,7 @@
 
 ### 安装步骤
 
-1. 提示：`xcode-select: error: command line tools are already installed, use "Software Update" to install updates`，`Software Update` 也无效。执行以下命令ok了
+1. 执行 `xcode-select --instal` 时候提示：`xcode-select: error: command line tools are already installed, use "Software Update" to install updates`，使用 `Software Update` 也无效。搜索了一下执行以下命令ok了
 ```
 softwareupdate --list
 ```
