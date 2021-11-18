@@ -34,6 +34,10 @@
 ```
     rmdir dirname
 ```
+6. touch 创建文件 / 隐藏文件也行
+```
+    touch ~/.zshrc
+```
 
 ### 文件
 1. open 打开文件
