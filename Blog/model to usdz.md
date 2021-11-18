@@ -7,6 +7,7 @@
 ## 将模型转 USDZ
 
 ### 方式一，使用 Apple 提供的 Python 工具包转换
+> tips: 这种方式导出的usdz好像有问题（转换后的 USDZ，动画的方向反了），也可能是我少用了某些参数的问题。
 
 ### 优点：
 1. 可以支持动画；
@@ -62,6 +63,14 @@
 0. （可选，转换FBX需要安装FBX Python SDK）下载[FBX Python SDK](https://www.autodesk.com/content/dam/autodesk/www/adn/fbx/20195/fbx20195_fbxpythonsdk_mac.pkg.tgz)
 
 
+### 方式二，使用 Reality Composer
+
+> 唯一的不好就是，还是没有解决我的问题（转换后的 USDZ，动画的方向反了），并且在预览中能发现就是转换的问题。
+
+1. 下载 [Reality Composer](https://developer.apple.com/augmented-reality/tools/) [点击下载](https://developer.apple.com/services-account/download?path=/Applications/Reality_Converter/Reality_Converter_Beta.dmg)
+2. 安装后，将模型拖拽进去，就能直接转换成 USDZ，并且还能预览！！使用体验大大升级。导出的文件直接就是 USDZ 的格式。
+
+
 
 ## 使用 model-viewer 创建 USDZ 可查看页面
 模型是在 model-viewer 官网下载的，然后用上一步转换方法转成的 USDZ。启动一个静态服务器就可以在手机上体验了。比如 `http-server`。<br/>
@@ -105,4 +114,4 @@
   * [如何使用Model-Viewer在Web上渲染3D模型](https://www.jianshu.com/p/c8e1526f97e5)
   * [Augmented Reality](https://modelviewer.dev/examples/augmentedreality/index.html#demo-container-2)
   * [model-viewer api](https://modelviewer.dev/examples/animation/index.html)
-
+ 
