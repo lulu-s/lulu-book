@@ -16,45 +16,45 @@
 
 1. 执行 `xcode-select --instal` 时候提示：`xcode-select: error: command line tools are already installed, use "Software Update" to install updates`，使用 `Software Update` 也无效。搜索了一下执行以下命令ok了
 ```
-softwareupdate --list
+    softwareupdate --list
 ```
 
 2. 安装 Command Line Tools for Xcode，执行以下命令会出现弹窗，询问是否要安装命令行工具，一直下一步就行，最后提示软件已经安装。
 ```
-xcode-select --install     
+    xcode-select --install     
 ```
 
 3. 下载 Apple USDPython 0.64 转换工具 [下载地址](https://developer.apple.com/download/all/?q=usdz)，需要登陆苹果账号，签协议成为苹果开发者。双击 pkg 安装，完成后在 usdpython 文件夹下双击打开 `USD.command`
 
 4. 用法，在 USD.command 终端内执行。
 ```
-usdzconvert someobject.obj
+    usdzconvert someobject.obj
 ```
 
 5. 创建环境变量
     * 首先移动到根目录下
     ```
-    cd /Users/<UserName>
+        cd /Users/<UserName>
     ```
     * 使用 parent working directory 检查目录是否正确
     ```
-    pwd
+        pwd
     ```
     * 查看目录内容，包括隐藏文件
     ```
-    ls -a
+        ls -a
     ```
     * 检查是否有 `.zshrc` 文件，如果有就打开 `.open ~/.zshrc`，如果没有就创建它 `touch ~/.zshrc`，然后增加环境变量，就能全局使用了。
     ```txt
-    # usdpython
-    export PATH="/Applications/usdpython/USD:$PATH"
-    export PATH="/Applications/usdpython/usdzconvert:$PATH"
-    export PYTHONPATH="/Applications/usdpython/USD/lib/python:$PYTHONPATH"
+        # usdpython
+        export PATH="/Applications/usdpython/USD:$PATH"
+        export PATH="/Applications/usdpython/usdzconvert:$PATH"
+        export PYTHONPATH="/Applications/usdpython/USD/lib/python:$PYTHONPATH"
 
-    echo "Now I can use USDPython commands here."
+        echo "Now I can use USDPython commands here."
 
-    export PYTHONPATH="/Applications/Autodesk/FBXPythonSDK/2020.0.1/lib/Python27_ub:$PYTHONPATH"
-    # usdpython end
+        export PYTHONPATH="/Applications/Autodesk/FBXPythonSDK/2020.0.1/lib/Python27_ub:$PYTHONPATH"
+        # usdpython end
     ```
     * 保存后，重启终端，检测是否成功 `usdzconvert -h`
 
