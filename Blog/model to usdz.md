@@ -100,7 +100,7 @@
 
 ## 参考文档：
   * [导出或将模型转换为USDZ_CotZero-程序员宅基地](https://www.cxyzjd.com/article/u013094476/100565690)
-  * [https://stackoverflow.com/questions/42538171/how-to-update-xcode-command-line-tools](https://stackoverflow.com/questions/42538171/how-to-update-xcode-command-line-tools)
+  * [How to update Xcode Command Line Tools?](https://stackoverflow.com/questions/42538171/how-to-update-xcode-command-line-tools)
   * [How to create USDZ file using Xcode converter?](https://stackoverflow.com/questions/50846627/how-to-create-usdz-file-using-xcode-converter)
   * [如何使用Model-Viewer在Web上渲染3D模型](https://www.jianshu.com/p/c8e1526f97e5)
   * [Augmented Reality](https://modelviewer.dev/examples/augmentedreality/index.html#demo-container-2)
