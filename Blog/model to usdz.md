@@ -62,29 +62,28 @@
 0. （可选，转换FBX需要安装FBX Python SDK）下载[FBX Python SDK](https://www.autodesk.com/content/dam/autodesk/www/adn/fbx/20195/fbx20195_fbxpythonsdk_mac.pkg.tgz)
 
 
-### 参考：
-  * [导出或将模型转换为USDZ_CotZero-程序员宅基地](https://www.cxyzjd.com/article/u013094476/100565690)
-  * [https://stackoverflow.com/questions/42538171/how-to-update-xcode-command-line-tools](https://stackoverflow.com/questions/42538171/how-to-update-xcode-command-line-tools)
-  * [How to create USDZ file using Xcode converter?](https://stackoverflow.com/questions/50846627/how-to-create-usdz-file-using-xcode-converter)
-
-
 
 ## 使用 model-viewer 创建 USDZ 可查看页面
-模型是在 model-viewer 官网下载的，然后用上一步转换方法转成的 USDZ。启动一个静态服务器就可以在手机上体验了。比如 `http-server`。
+模型是在 model-viewer 官网下载的，然后用上一步转换方法转成的 USDZ。启动一个静态服务器就可以在手机上体验了。比如 `http-server`。<br/>
+增加了动画播放、ar等相关参数。
 ```
 <!doctype html>
 <html>
 
 <head>
     <title>3D Test</title>
+    <style>
+        .model {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="holder">
-        <div id="model">
-            <model-viewer src="NeilArmstrong.glb" alt="A 3D model of a robot" auto-rotate="" camera-controls="" background-color="#455A64"
-            ar ios-src="NeilArmstrong.usdz"></model-viewer>
-        </div>
+    <div id="model">
+        <model-viewer class="model" autoplay src="test.glb" alt="A 3D model of a robot" auto-rotate=""
+            camera-controls="" background-color="#455A64" ar ios-src="test.usdz"></model-viewer>
     </div>
 
     <!-- Loads model-viewer for modern browsers -->
@@ -96,3 +95,14 @@
 
 </html>
 ```
+
+
+
+## 参考文档：
+  * [导出或将模型转换为USDZ_CotZero-程序员宅基地](https://www.cxyzjd.com/article/u013094476/100565690)
+  * [https://stackoverflow.com/questions/42538171/how-to-update-xcode-command-line-tools](https://stackoverflow.com/questions/42538171/how-to-update-xcode-command-line-tools)
+  * [How to create USDZ file using Xcode converter?](https://stackoverflow.com/questions/50846627/how-to-create-usdz-file-using-xcode-converter)
+  * [如何使用Model-Viewer在Web上渲染3D模型](https://www.jianshu.com/p/c8e1526f97e5)
+  * [Augmented Reality](https://modelviewer.dev/examples/augmentedreality/index.html#demo-container-2)
+  * [model-viewer api](https://modelviewer.dev/examples/animation/index.html)
+
