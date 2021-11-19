@@ -106,11 +106,11 @@ usdzconvert -h
 
 ### 方法四，在线转换
 
-1. [在线GLB到USDZ格式转换程序](https://products.aspose.app/3d/zh-cn/conversion/glb-to-usdz)，硬伤转换后没了贴图和动画。
+* [在线GLB到USDZ格式转换程序](https://products.aspose.app/3d/zh-cn/conversion/glb-to-usdz)，硬伤转换后没了贴图和动画。
 
-2. [Playground](https://spase.io/playground) 吹爆，这个完美的解决了我的问题
+* [Playground](https://spase.io/playground) 吹爆，这个完美的解决了我的问题
 
-3. [GLB to USDZ Online Converter](https://tools.alitasci.net/glbconverter/) 这个也很好用，并且比 `Playground` 压缩文件更小。
+* [GLB to USDZ Online Converter](https://tools.alitasci.net/glbconverter/) 这个也很好用，并且比 `Playground` 压缩文件更小。
 
 
 ## 使用 model-viewer 创建 USDZ 可查看页面（ios）
