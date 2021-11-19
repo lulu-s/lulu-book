@@ -266,5 +266,3 @@ ffmpeg -ss [start] -i [input] -to [end] -c copy [out]
 * [ffmpeg的中文文档](https://www.longqi.cf/tools/2015/02/13/ffmpegcn/)
 * [ffmpeg prores with alpha to webm vp9 renders grey](https://stackoverflow.com/questions/48395392/ffmpeg-prores-with-alpha-to-webm-vp9-renders-grey)
 
-
-> 创建时间：2021.11.15
