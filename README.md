@@ -3,9 +3,6 @@
 <br/><br/>
 
 
-> [待整理文件](https://github.com/lulu-s/lulu-book/待整理.md)
-
-
 ## 📐 Blog
   * [gltf模型转换USDZ，在ios端查看模型（AR体验）](https://github.com/lulu-s/lulu-book/blob/master/Blog/model%20convert%20usdz.md)
   * [树莓派调试jauns(包含https证书配置)](https://github.com/lulu-s/lulu-book/blob/master/Blog/pi.md) 
@@ -22,6 +19,8 @@
 
 ## 🍂 日常记录
   * [ʚ碎片知识 / 小问题ɞ](https://github.com/lulu-s/lulu-book/blob/master/Note/trivia.md)
+  * [待整理文件](https://github.com/lulu-s/lulu-book/待整理.md)
+
 <br/>
 
 
