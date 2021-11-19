@@ -82,7 +82,7 @@ tips: 这种方式导出的usdz好像有问题（转换后的 USDZ，动画的�
 
 #### 6. FBX（可选）
 转换 FBX 需要安装FBX Python SDK）下载[FBX Python SDK](https://www.autodesk.com/content/dam/autodesk/www/adn/fbx/20195/fbx20195_fbxpythonsdk_mac.pkg.tgz)
-
+<br/>
 
 ### 方式二，使用 Reality Composer
 
@@ -92,7 +92,7 @@ tips: 这种方式导出的usdz好像有问题（转换后的 USDZ，动画的�
 下载 [Reality Composer 官网](https://developer.apple.com/augmented-reality/tools/) ｜ [安装包](https://developer.apple.com/services-account/download?path=/Applications/Reality_Converter/Reality_Converter_Beta.dmg)
 #### 2. 使用
 安装后，将模型拖拽进去，就能直接转换成 USDZ，并且还能预览！！使用体验大大升级。导出的文件直接就是 USDZ 的格式。
-
+<br/>
 
 ### 方式三，使用 Kivicube AR 模型编辑器
 
@@ -103,6 +103,7 @@ tips: 这种方式导出的usdz好像有问题（转换后的 USDZ，动画的�
 
 #### 2. 使用
 安装后，直接拖拽模型文件进去查看，选择 usdz 格式导出，在 Reality Composer 中查看实际样子。
+<br/>
 
 ### 方法四，在线转换
 
@@ -111,7 +112,7 @@ tips: 这种方式导出的usdz好像有问题（转换后的 USDZ，动画的�
 * [Playground](https://spase.io/playground) 吹爆，这个完美的解决了我的问题
 
 * [GLB to USDZ Online Converter](https://tools.alitasci.net/glbconverter/) 这个也很好用，并且比 `Playground` 压缩文件更小。
-
+<br/>
 
 ## 使用 model-viewer 创建 USDZ 可查看页面（ios）
 模型是在 model-viewer 官网下载的，然后用上一步转换方法转成的 USDZ。启动一个静态服务器就可以在手机上体验了。比如 `http-server`。<br/>
