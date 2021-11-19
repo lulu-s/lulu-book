@@ -4,7 +4,7 @@
 
 
 ## 📐 Blog
-  * [gltf 模型转换 usdz，在 ios 端查看模型（AR 体验）/ 测试多种 usdz 转换方式](https://github.com/lulu-s/lulu-book/blob/master/Blog/model%20convert%20usdz.md)
+  * [模型转换 USDZ 的 N 种方法，ios 端测试 USDZ 的 AR 体验](https://github.com/lulu-s/lulu-book/blob/master/Blog/model%20convert%20usdz.md)
   * [树莓派调试jauns(包含https证书配置)](https://github.com/lulu-s/lulu-book/blob/master/Blog/pi.md) 
   
 <br/>
