@@ -10,13 +10,10 @@
 
 ## 将模型转USDZ的多种方式实测
 
-`Playground` 太好用了，是在线的，在方法四里。
-
-### 保存后的安装包
 ```
+保存后的安装包
 链接: https://pan.baidu.com/s/143SAcI7BkUqCWSucN4mlCQ 提取码: wfot
 ```
-
 
 ### 方式一，使用 Apple 提供的 Python 工具包转换
 
