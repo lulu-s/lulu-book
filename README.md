@@ -30,7 +30,7 @@
 
 ## 📐 Blog
   * [树莓派调试jauns(包含https证书配置)](https://github.com/lulu-s/lulu-book/blob/master/Blog/pi.md) 
-  * [gltf模型转换USDZ，在ios端查看模型（AR体验）](https://github.com/lulu-s/lulu-book/blob/master/Blog/model%20convert%20usdz.md)
+  * [gltf模型转换USDZ，在ios端查看模型（AR体验）](https://github.com/lulu-s/lulu-book/blob/master/Blog/model%20convert%20usdz.md) s
 
 <br/>
 

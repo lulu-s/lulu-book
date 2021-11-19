@@ -24,13 +24,13 @@ tips: 这种方式导出的usdz好像有问题（转换后的 USDZ，动画的�
 #### 1. 执行安装命令
 `xcode-select --instal` 时候提示：`xcode-select: error: command line tools are already installed, use "Software Update" to install updates`，使用 `Software Update` 也无效。搜索了一下执行以下命令ok了
 ```shell
-softwareupdate --list
+    softwareupdate --list
 ```
 
 #### 2. 安装 Command Line Tools for Xcode
 执行以下命令会出现弹窗，询问是否要安装命令行工具，一直下一步就行，最后提示软件已经安装。
 ```shell
-xcode-select --install     
+    xcode-select --install     
 ```
 
 #### 3. 下载 Apple USDPython 0.64 转换工具 
@@ -39,7 +39,7 @@ xcode-select --install
 #### 4. 用法
 在 USD.command 终端内执行。
 ```shell
-usdzconvert someobject.obj
+    usdzconvert someobject.obj
 ```
 
 #### 5. 创建环境变量
@@ -47,36 +47,36 @@ usdzconvert someobject.obj
 ##### 5.1 首先移动到根目录下
 
 ```shell
-cd /Users/<UserName>
+    cd /Users/<UserName>
 ```
 
 ##### 5.2 使用 parent working directory 检查目录是否正确
 ```shell
-pwd
+    pwd
 ```
 
 ##### 5.3 查看目录内容，包括隐藏文件
 ```shell
-ls -a
+    ls -a
 ```
 
 ##### 5.4 检查是否有 `.zshrc` 文件，如果有就打开 `.open ~/.zshrc`，如果没有就创建它 `touch ~/.zshrc`，然后增加环境变量，就能全局使用了。
 ```txt
-# usdpython
-export PATH="/Applications/usdpython/USD:$PATH"
-export PATH="/Applications/usdpython/usdzconvert:$PATH"
-export PYTHONPATH="/Applications/usdpython/USD/lib/python:$PYTHONPATH"
+    # usdpython
+    export PATH="/Applications/usdpython/USD:$PATH"
+    export PATH="/Applications/usdpython/usdzconvert:$PATH"
+    export PYTHONPATH="/Applications/usdpython/USD/lib/python:$PYTHONPATH"
 
-echo "Now I can use USDPython commands here."
+    echo "Now I can use USDPython commands here."
 
-export PYTHONPATH="/Applications/Autodesk/FBXPythonSDK/2020.0.1/lib/Python27_ub:$PYTHONPATH"
-# usdpython end
+    export PYTHONPATH="/Applications/Autodesk/FBXPythonSDK/2020.0.1/lib/Python27_ub:$PYTHONPATH"
+    # usdpython end 
 ```
 
 ##### 5.5 测试
 保存后，重启终端，检测是否成功 
 ```
-usdzconvert -h
+    usdzconvert -h
 ```
 
 
@@ -117,33 +117,33 @@ usdzconvert -h
 模型是在 model-viewer 官网下载的，然后用上一步转换方法转成的 USDZ。启动一个静态服务器就可以在手机上体验了。比如 `http-server`。<br/>
 增加了动画播放、ar等相关参数。
 ```
-<!doctype html>
-<html>
+    <!doctype html>
+    <html>
 
-<head>
-    <title>3D Test</title>
-    <style>
-        .model {
-            width: 100%;
-            height: 600px;
-        }
-    </style>
-</head>
+    <head>
+        <title>3D Test</title>
+        <style>
+            .model {
+                width: 100%;
+                height: 600px;
+            }
+        </style>
+    </head>
 
-<body>
-    <div id="model">
-        <model-viewer class="model" autoplay src="test.glb" alt="A 3D model of a robot" auto-rotate=""
-            camera-controls="" background-color="#455A64" ar ios-src="test.usdz"></model-viewer>
-    </div>
+    <body>
+        <div id="model">
+            <model-viewer class="model" autoplay src="test.glb" alt="A 3D model of a robot" auto-rotate=""
+                camera-controls="" background-color="#455A64" ar ios-src="test.usdz"></model-viewer>
+        </div>
 
-    <!-- Loads model-viewer for modern browsers -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
-    <!-- Loads model-viewer for older browsers -->
-    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+        <!-- Loads model-viewer for modern browsers -->
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+        <!-- Loads model-viewer for older browsers -->
+        <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 
-</body>
+    </body>
 
-</html>
+    </html>
 ```
 
 
@@ -158,3 +158,6 @@ usdzconvert -h
   * [Kivicube AR模型编辑器](https://www.yuque.com/kivicube/manual/kivicube-model-editor)
   * [Online GLB to USDZ Converter](https://alitasci.net/online-glb-to-usdz-converter/)
   * [What's a GLB, and what's a USDZ?](https://spase.io/blog/what-is-a-glb-usdz)
+
+
+> 创建时间：2021.11.19
