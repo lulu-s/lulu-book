@@ -6,6 +6,20 @@
 > [待整理文件](https://github.com/lulu-s/lulu-book/待整理.md)
 
 
+## 📐 Blog
+  * [gltf模型转换USDZ，在ios端查看模型（AR体验）](https://github.com/lulu-s/lulu-book/blob/master/Blog/model%20convert%20usdz.md)
+  * [树莓派调试jauns(包含https证书配置)](https://github.com/lulu-s/lulu-book/blob/master/Blog/pi.md) 
+  
+<br/>
+
+## 🍀 Grammer
+  * [FFmpeg 进修 + 常用命令](https://github.com/lulu-s/lulu-book/blob/master/Grammer/ffmpeg.md)
+  * [Mac / DOS / Linux 命令行](https://github.com/lulu-s/lulu-book/blob/master/Grammer/command.md)
+  * [Markdown 语法](https://github.com/lulu-s/lulu-book/blob/master/Grammer/markdown%20grammar.md)
+  
+<br/>
+
+
 ## 🍂 日常记录
   * [ʚ碎片知识 / 小问题ɞ](https://github.com/lulu-s/lulu-book/blob/master/Note/trivia.md)
 <br/>
@@ -16,11 +30,6 @@
 <br/>
 
 
-## 🍀 Grammer
-  * [Markdown 语法](https://github.com/lulu-s/lulu-book/blob/master/Grammer/markdown%20grammar.md)
-  * [Mac / DOS / Linux 命令行](https://github.com/lulu-s/lulu-book/blob/master/Grammer/command.md)
-  * [FFmpeg 进修 + 常用命令](https://github.com/lulu-s/lulu-book/blob/master/Grammer/ffmpeg.md)
-<br/>
 
 
 ## 📒 学习笔记
@@ -28,11 +37,6 @@
 <br/>
 
 
-## 📐 Blog
-  * [树莓派调试jauns(包含https证书配置)](https://github.com/lulu-s/lulu-book/blob/master/Blog/pi.md) 
-  * [gltf模型转换USDZ，在ios端查看模型（AR体验）](https://github.com/lulu-s/lulu-book/blob/master/Blog/model%20convert%20usdz.md) s
-
-<br/>
 
 
 ## 🚩 读书笔记
