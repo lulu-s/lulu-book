@@ -13,45 +13,43 @@
 > 啊啊啊啊啊啊啊，强烈推荐 **Playground**
 
 ### 方式一，使用 Apple 提供的 Python 工具包转换
-> tips: 这种方式导出的usdz好像有问题（转换后的 USDZ，动画的方向反了，并且导出的模型比例也有问题，转换的非常小），也可能是我少用了某些参数的问题。
 
-#### 优点：
-1. 可以支持动画；
-2. 可以支持fbx、obj、gltf、glb格式
+tips: 这种方式导出的usdz好像有问题（转换后的 USDZ，动画的方向反了，并且导出的模型比例也有问题，转换的非常小），也可能是我少用了某些参数的问题。
 
-#### 安装步骤
 
-1. 执行 `xcode-select --instal` 时候提示：`xcode-select: error: command line tools are already installed, use "Software Update" to install updates`，使用 `Software Update` 也无效。搜索了一下执行以下命令ok了
+#### 1. 执行 `xcode-select --instal` 时候提示：`xcode-select: error: command line tools are already installed, use "Software Update" to install updates`，使用 `Software Update` 也无效。搜索了一下执行以下命令ok了
 ```
     softwareupdate --list
 ```
 
-2. 安装 Command Line Tools for Xcode，执行以下命令会出现弹窗，询问是否要安装命令行工具，一直下一步就行，最后提示软件已经安装。
+#### 2. 安装 Command Line Tools for Xcode，执行以下命令会出现弹窗，询问是否要安装命令行工具，一直下一步就行，最后提示软件已经安装。
 ```
     xcode-select --install     
 ```
 
-3. 下载 Apple USDPython 0.64 转换工具 [下载地址](https://developer.apple.com/download/all/?q=usdz)，需要登陆苹果账号，签协议成为苹果开发者。双击 pkg 安装，完成后在 usdpython 文件夹下双击打开 `USD.command`
+#### 3. 下载 Apple USDPython 0.64 转换工具 [下载地址](https://developer.apple.com/download/all/?q=usdz)，需要登陆苹果账号，签协议成为苹果开发者。双击 pkg 安装，完成后在 usdpython 文件夹下双击打开 `USD.command`
 
-4. 用法，在 USD.command 终端内执行。
+#### 4. 用法，在 USD.command 终端内执行。
 ```
     usdzconvert someobject.obj
 ```
 
-5. 创建环境变量
-    * 首先移动到根目录下
+#### 5. 创建环境变量
+
+##### 首先移动到根目录下
     ```
         cd /Users/<UserName>
     ```
-    * 使用 parent working directory 检查目录是否正确
+##### 使用 parent working directory 检查目录是否正确
     ```
         pwd
     ```
-    * 查看目录内容，包括隐藏文件
+##### 查看目录内容，包括隐藏文件
     ```
         ls -a
     ```
-    * 检查是否有 `.zshrc` 文件，如果有就打开 `.open ~/.zshrc`，如果没有就创建它 `touch ~/.zshrc`，然后增加环境变量，就能全局使用了。
+##### 检查是否有 `.zshrc` 文件，如果有就打开 `.open ~/.zshrc`，如果没有就创建它 `touch ~/.zshrc`，然后增加环境变量，就能全局使用了。
+
     ```txt
         # usdpython
         export PATH="/Applications/usdpython/USD:$PATH"
@@ -63,40 +61,35 @@
         export PYTHONPATH="/Applications/Autodesk/FBXPythonSDK/2020.0.1/lib/Python27_ub:$PYTHONPATH"
         # usdpython end
     ```
-    * 保存后，重启终端，检测是否成功 `usdzconvert -h`
+##### 保存后，重启终端，检测是否成功 `usdzconvert -h`
 
 
-0. （可选，转换FBX需要安装FBX Python SDK）下载[FBX Python SDK](https://www.autodesk.com/content/dam/autodesk/www/adn/fbx/20195/fbx20195_fbxpythonsdk_mac.pkg.tgz)
+#### 6. （可选，转换FBX需要安装FBX Python SDK）下载[FBX Python SDK](https://www.autodesk.com/content/dam/autodesk/www/adn/fbx/20195/fbx20195_fbxpythonsdk_mac.pkg.tgz)
 
 
 ### 方式二，使用 Reality Composer
 
-> 唯一的不好就是，还是没有解决我的问题（转换后的 USDZ，动画的方向反了，但解决了比例的问题），并且在预览中能发现就是转换的问题。也是可以查看任何转换成功的 USDZ。
+唯一的不好就是，还是没有解决我的问题（转换后的 USDZ，动画的方向反了，但解决了比例的问题），并且在预览中能发现就是转换的问题。也是可以查看任何转换成功的 USDZ。
 
-#### 使用步骤
-
-1. 下载 [Reality Composer](https://developer.apple.com/augmented-reality/tools/) [点击下载](https://developer.apple.com/services-account/download?path=/Applications/Reality_Converter/Reality_Converter_Beta.dmg)
-2. 安装后，将模型拖拽进去，就能直接转换成 USDZ，并且还能预览！！使用体验大大升级。导出的文件直接就是 USDZ 的格式。
+#### 1. 下载 [Reality Composer](https://developer.apple.com/augmented-reality/tools/) [点击下载](https://developer.apple.com/services-account/download?path=/Applications/Reality_Converter/Reality_Converter_Beta.dmg)
+#### 2. 安装后，将模型拖拽进去，就能直接转换成 USDZ，并且还能预览！！使用体验大大升级。导出的文件直接就是 USDZ 的格式。
 
 
 ### 方式三，使用 Kivicube AR 模型编辑器
 
+在 Reality Composer 中查看没问题，但在手机端显示的时候还是有比例问题，但动画是正常播放的。
 
-> 在 Reality Composer 中查看没问题，但在手机端显示的时候还是有比例问题，但动画是正常播放的。
+#### 1. 需要到[官网](https://www.yuque.com/kivicube/manual/kivicube-model-editor)关注公众号获取下载编辑器软件。 
 
-
-#### 使用步骤
-1. 需要到[官网](https://www.yuque.com/kivicube/manual/kivicube-model-editor)关注公众号获取下载编辑器软件。 
-
-2. 安装后，直接拖拽模型文件进去查看，选择 usdz 格式导出，在 Reality Composer 中查看实际样子。
+#### 2. 安装后，直接拖拽模型文件进去查看，选择 usdz 格式导出，在 Reality Composer 中查看实际样子。
 
 ### 方法四，在线转换
 
-* [在线GLB到USDZ格式转换程序](https://products.aspose.app/3d/zh-cn/conversion/glb-to-usdz)，硬伤转换后没了贴图和动画。
+####  [在线GLB到USDZ格式转换程序](https://products.aspose.app/3d/zh-cn/conversion/glb-to-usdz)，硬伤转换后没了贴图和动画。
 
-* [Playground](https://spase.io/playground) 吹爆，这个完美的解决了我的问题
+####  [Playground](https://spase.io/playground) 吹爆，这个完美的解决了我的问题
 
-* [GLB to USDZ Online Converter](https://tools.alitasci.net/glbconverter/) 这个也很好用，并且比 `Playground` 压缩文件更小。
+####  [GLB to USDZ Online Converter](https://tools.alitasci.net/glbconverter/) 这个也很好用，并且比 `Playground` 压缩文件更小。
 
 ## 使用 model-viewer 创建 USDZ 可查看页面（ios）
 模型是在 model-viewer 官网下载的，然后用上一步转换方法转成的 USDZ。启动一个静态服务器就可以在手机上体验了。比如 `http-server`。<br/>
