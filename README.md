@@ -7,36 +7,36 @@
 
 
 ## 🍂 日常记录
-  1. [ʚ碎片知识 / 小问题ɞ](https://github.com/lulu-s/lulu-book/blob/master/Note/trivia.md)
+  * [ʚ碎片知识 / 小问题ɞ](https://github.com/lulu-s/lulu-book/blob/master/Note/trivia.md)
 <br/>
 
 
 ## 🌙 Code
-  1. [ʚ代码块ɞ](https://github.com/lulu-s/lulu-book/blob/master/Note/code.md)
+  * [ʚ代码块ɞ](https://github.com/lulu-s/lulu-book/blob/master/Note/code.md)
 <br/>
 
 
 ## 🍀 Grammer
-  1. [Markdown 语法](https://github.com/lulu-s/lulu-book/blob/master/Grammer/markdown%20grammar.md)
-  2. [Mac / DOS / Linux 命令行](https://github.com/lulu-s/lulu-book/blob/master/Grammer/command.md)
-  3. [FFmpeg 进修 + 常用命令](https://github.com/lulu-s/lulu-book/blob/master/Grammer/ffmpeg.md)
+  * [Markdown 语法](https://github.com/lulu-s/lulu-book/blob/master/Grammer/markdown%20grammar.md)
+  * [Mac / DOS / Linux 命令行](https://github.com/lulu-s/lulu-book/blob/master/Grammer/command.md)
+  * [FFmpeg 进修 + 常用命令](https://github.com/lulu-s/lulu-book/blob/master/Grammer/ffmpeg.md)
 <br/>
 
 
 ## 📒 学习笔记
-  1. [Arduino 学习笔记](https://github.com/lulu-s/lulu-book/blob/master/Note/arduino.md)
+  * [Arduino 学习笔记](https://github.com/lulu-s/lulu-book/blob/master/Note/arduino.md)
 <br/>
 
 
 ## 📐 Blog
-  1. [树莓派调试jauns(包含https证书配置)](https://github.com/lulu-s/lulu-book/blob/master/Blog/pi.md) 
-  2. [gltf模型转换USDZ，在ios端查看模型（AR体验）](https://github.com/lulu-s/lulu-book/blob/master/Blog/model%20convert%20usdz.md)
+  * [树莓派调试jauns(包含https证书配置)](https://github.com/lulu-s/lulu-book/blob/master/Blog/pi.md) 
+  * [gltf模型转换USDZ，在ios端查看模型（AR体验）](https://github.com/lulu-s/lulu-book/blob/master/Blog/model%20convert%20usdz.md)
 
 <br/>
 
 
 ## 🚩 读书笔记
-1. [CSS-SECRETS](https://github.com/lulu-s/lulu-book/tree/master/Book/CSS-SECRETS)
+* [CSS-SECRETS](https://github.com/lulu-s/lulu-book/tree/master/Book/CSS-SECRETS)
 <br/>
 
 
