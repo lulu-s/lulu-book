@@ -3,14 +3,19 @@
 
 ## 简介
 在 iOS12 及其以上，系统内置的 APP 默认支持打开 USDZ，包括 Safari 浏览器、文件、信息、邮件、新闻、备忘录，打开 USDZ 文件后，可以通过 3D 与 AR 的形式进行查看；
-
+<br/>
 
 
 ## 将模型转USDZ的多种方式实测
 
-> 以下安装包 `链接: https://pan.baidu.com/s/143SAcI7BkUqCWSucN4mlCQ 提取码: wfot`
+**Playground** 太好用了，是在线的。
 
-> 啊啊啊啊啊啊啊，强烈推荐 **Playground**
+### 保存后的安装包
+```
+链接: https://pan.baidu.com/s/143SAcI7BkUqCWSucN4mlCQ 提取码: wfot
+```
+
+<br/>
 
 ### 方式一，使用 Apple 提供的 Python 工具包转换
 
@@ -79,6 +84,8 @@ usdzconvert -h
 #### 6. FBX（可选）
 转换 FBX 需要安装FBX Python SDK）下载[FBX Python SDK](https://www.autodesk.com/content/dam/autodesk/www/adn/fbx/20195/fbx20195_fbxpythonsdk_mac.pkg.tgz)
 
+<br/>
+
 
 ### 方式二，使用 Reality Composer
 
@@ -89,6 +96,7 @@ usdzconvert -h
 #### 2. 使用
 安装后，将模型拖拽进去，就能直接转换成 USDZ，并且还能预览！！使用体验大大升级。导出的文件直接就是 USDZ 的格式。
 
+<br/>
 
 ### 方式三，使用 Kivicube AR 模型编辑器
 
@@ -100,6 +108,8 @@ usdzconvert -h
 #### 2. 使用
 安装后，直接拖拽模型文件进去查看，选择 usdz 格式导出，在 Reality Composer 中查看实际样子。
 
+<br/>
+
 ### 方法四，在线转换
 
 * 1. [在线GLB到USDZ格式转换程序](https://products.aspose.app/3d/zh-cn/conversion/glb-to-usdz)，硬伤转换后没了贴图和动画。
@@ -107,6 +117,8 @@ usdzconvert -h
 * 2. [Playground](https://spase.io/playground) 吹爆，这个完美的解决了我的问题
 
 * 3. [GLB to USDZ Online Converter](https://tools.alitasci.net/glbconverter/) 这个也很好用，并且比 `Playground` 压缩文件更小。
+
+<br/>
 
 ## 使用 model-viewer 创建 USDZ 可查看页面（ios）
 模型是在 model-viewer 官网下载的，然后用上一步转换方法转成的 USDZ。启动一个静态服务器就可以在手机上体验了。比如 `http-server`。<br/>
