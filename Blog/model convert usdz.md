@@ -1,5 +1,5 @@
 
-# gltf模型转换USDZ，在ios端查看模型（AR体验）
+# gltf 模型转换 usdz，在 ios 端查看模型（AR 体验）/ 测试多种 usdz 转换方式
 
 ## 简介
 在 iOS12 及其以上，系统内置的 APP 默认支持打开 USDZ，包括 Safari 浏览器、文件、信息、邮件、新闻、备忘录，打开 USDZ 文件后，可以通过 3D 与 AR 的形式进行查看；
