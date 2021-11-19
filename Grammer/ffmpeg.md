@@ -1,6 +1,6 @@
 # 📺 FFmpeg 进修 + 常用命令 
 
-> [FFmpeg](https://www.ffmpeg.org/)是视频处理的开源软件，适用于视频 / 音频的编解码。
+> [FFmpeg](https://www.ffmpeg.org/)是视频处理的开源软件，适用于视频 / 音频的编解码。<br/>
 > 创建时间：2020.6.18
 <br/><br/>
 
