@@ -121,6 +121,8 @@ tips: 这种方式导出的usdz好像有问题（转换后的 USDZ，动画的�
 
 * [GLB to USDZ Online Converter](https://tools.alitasci.net/glbconverter/) 这个也很好用，并且比 `Playground` 压缩文件更小。
 
+* [threejs editor](https://threejs.org/editor/) 导出的文件没有动画
+
 <br/>
 
 
@@ -157,6 +159,9 @@ tips: 这种方式导出的usdz好像有问题（转换后的 USDZ，动画的�
     </html>
 ```
 
+
+## 写在最后的话
+虽然我记载的时候还不支持当前测评的功能，但未来没准会优化。这些测试仅限于我当前使用的模型，不同的模型可能会有不同转换的要求。
 
 
 ## 参考文档：
