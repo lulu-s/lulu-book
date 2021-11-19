@@ -3,6 +3,10 @@
 
 <br/>
 
+> 创建时间：2021.11.19
+
+<br/>
+
 ## 简介
 在 iOS12 及其以上，系统内置的 APP 默认支持打开 USDZ，包括 Safari 浏览器、文件、信息、邮件、新闻、备忘录，打开 USDZ 文件后，可以通过 3D 与 AR 的形式进行查看；
 <br/><br/>
@@ -166,5 +170,3 @@ tips: 这种方式导出的usdz好像有问题（转换后的 USDZ，动画的�
   * [Online GLB to USDZ Converter](https://alitasci.net/online-glb-to-usdz-converter/)
   * [What's a GLB, and what's a USDZ?](https://spase.io/blog/what-is-a-glb-usdz)
 
-
-> 创建时间：2021.11.19
