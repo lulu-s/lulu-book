@@ -92,6 +92,7 @@ tips: 这种方式导出的usdz好像有问题（转换后的 USDZ，动画的�
 下载 [Reality Composer 官网](https://developer.apple.com/augmented-reality/tools/) ｜ [安装包](https://developer.apple.com/services-account/download?path=/Applications/Reality_Converter/Reality_Converter_Beta.dmg)
 #### 2. 使用
 安装后，将模型拖拽进去，就能直接转换成 USDZ，并且还能预览！！使用体验大大升级。导出的文件直接就是 USDZ 的格式。
+
 <br/>
 
 
@@ -104,6 +105,7 @@ tips: 这种方式导出的usdz好像有问题（转换后的 USDZ，动画的�
 
 #### 2. 使用
 安装后，直接拖拽模型文件进去查看，选择 usdz 格式导出，在 Reality Composer 中查看实际样子。
+
 <br/>
 
 
@@ -114,6 +116,7 @@ tips: 这种方式导出的usdz好像有问题（转换后的 USDZ，动画的�
 * [Playground](https://spase.io/playground) 吹爆，这个完美的解决了我的问题
 
 * [GLB to USDZ Online Converter](https://tools.alitasci.net/glbconverter/) 这个也很好用，并且比 `Playground` 压缩文件更小。
+
 <br/>
 
 
