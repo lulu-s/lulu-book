@@ -4,16 +4,22 @@
 ## 简介
 在 iOS12 及其以上，系统内置的 APP 默认支持打开 USDZ，包括 Safari 浏览器、文件、信息、邮件、新闻、备忘录，打开 USDZ 文件后，可以通过 3D 与 AR 的形式进行查看；
 
-## 将模型转 USDZ
+
+
+## 将模型转USDZ的多种方式实测
+
+> 以下安装包 `链接: https://pan.baidu.com/s/143SAcI7BkUqCWSucN4mlCQ 提取码: wfot`
+
+> 啊啊啊啊啊啊啊，强烈推荐 **Playground**
 
 ### 方式一，使用 Apple 提供的 Python 工具包转换
-> tips: 这种方式导出的usdz好像有问题（转换后的 USDZ，动画的方向反了），也可能是我少用了某些参数的问题。
+> tips: 这种方式导出的usdz好像有问题（转换后的 USDZ，动画的方向反了，并且导出的模型比例也有问题，转换的非常小），也可能是我少用了某些参数的问题。
 
-### 优点：
+#### 优点：
 1. 可以支持动画；
 2. 可以支持fbx、obj、gltf、glb格式
 
-### 安装步骤
+#### 安装步骤
 
 1. 执行 `xcode-select --instal` 时候提示：`xcode-select: error: command line tools are already installed, use "Software Update" to install updates`，使用 `Software Update` 也无效。搜索了一下执行以下命令ok了
 ```
@@ -65,14 +71,34 @@
 
 ### 方式二，使用 Reality Composer
 
-> 唯一的不好就是，还是没有解决我的问题（转换后的 USDZ，动画的方向反了），并且在预览中能发现就是转换的问题。
+> 唯一的不好就是，还是没有解决我的问题（转换后的 USDZ，动画的方向反了，但解决了比例的问题），并且在预览中能发现就是转换的问题。也是可以查看任何转换成功的 USDZ。
+
+#### 使用步骤
 
 1. 下载 [Reality Composer](https://developer.apple.com/augmented-reality/tools/) [点击下载](https://developer.apple.com/services-account/download?path=/Applications/Reality_Converter/Reality_Converter_Beta.dmg)
 2. 安装后，将模型拖拽进去，就能直接转换成 USDZ，并且还能预览！！使用体验大大升级。导出的文件直接就是 USDZ 的格式。
 
 
+### 方式三，使用 Kivicube AR 模型编辑器
 
-## 使用 model-viewer 创建 USDZ 可查看页面
+
+> 在 Reality Composer 中查看没问题，但在手机端显示的时候还是有比例问题，但动画是正常播放的。
+
+
+#### 使用步骤
+1. 需要到[官网](https://www.yuque.com/kivicube/manual/kivicube-model-editor)关注公众号获取下载编辑器软件。 
+
+2. 安装后，直接拖拽模型文件进去查看，选择 usdz 格式导出，在 Reality Composer 中查看实际样子。
+
+### 方法四，在线转换
+
+* [在线GLB到USDZ格式转换程序](https://products.aspose.app/3d/zh-cn/conversion/glb-to-usdz)，硬伤转换后没了贴图和动画。
+
+* [Playground](https://spase.io/playground) 吹爆，这个完美的解决了我的问题
+
+* [GLB to USDZ Online Converter](https://tools.alitasci.net/glbconverter/) 这个也很好用，并且比 `Playground` 压缩文件更小。
+
+## 使用 model-viewer 创建 USDZ 可查看页面（ios）
 模型是在 model-viewer 官网下载的，然后用上一步转换方法转成的 USDZ。启动一个静态服务器就可以在手机上体验了。比如 `http-server`。<br/>
 增加了动画播放、ar等相关参数。
 ```
@@ -114,4 +140,6 @@
   * [如何使用Model-Viewer在Web上渲染3D模型](https://www.jianshu.com/p/c8e1526f97e5)
   * [Augmented Reality](https://modelviewer.dev/examples/augmentedreality/index.html#demo-container-2)
   * [model-viewer api](https://modelviewer.dev/examples/animation/index.html)
- 
+  * [Kivicube AR模型编辑器](https://www.yuque.com/kivicube/manual/kivicube-model-editor)
+  * [Online GLB to USDZ Converter](https://alitasci.net/online-glb-to-usdz-converter/)
+  * [What's a GLB, and what's a USDZ?](https://spase.io/blog/what-is-a-glb-usdz)
