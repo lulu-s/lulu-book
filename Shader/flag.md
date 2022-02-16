@@ -2,7 +2,7 @@
 # 利用 shader 实现旗帜飘荡
 
 ## 效果
-[红旗](https://github.com/lulu-s/lulu-book/blob/master/assets/video/input.gif)
+![红旗](https://github.com/lulu-s/lulu-book/blob/master/assets/video/input.gif)
 
 ## 创建一个 plane
 ```js
