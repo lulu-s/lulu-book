@@ -199,7 +199,7 @@ transformed.z = sin(time * 2.0 + transformed.y) * 0.13;
 transformed.z += sin(time * 1.0 + transformed.x) * 0.13;
 ```
 
-* 叠加 noise 对 x + y 轴的律动，需要在头部引用 Noise，一些大神们写好的 [Noise 算法](https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83)
+* 叠加 noise 对 x + y 轴的律动，让律动不那么规律，需要在头部引用 Noise，一些大神们写好的 [Noise 算法](https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83)
 ```
 transformed.z += noise(vec3(transformed.y * 5.0 + time * 2.8, transformed.x * 5.0, time * 1.3)) * 0.2;
 ```
