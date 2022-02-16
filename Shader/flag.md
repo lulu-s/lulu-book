@@ -415,3 +415,4 @@ shader.fragmentShader = `
 * [ShaderChunk.js](https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderChunk.js)
 * [begin_vertex.glsl.js](https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderChunk/begin_vertex.glsl.js)
 * [output_fragment.glsl.js](https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderChunk/output_fragment.glsl.js)
+* [Mike Luan](https://github.com/luan007)
