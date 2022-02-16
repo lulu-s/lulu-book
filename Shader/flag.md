@@ -1,21 +1,23 @@
 
 # 利用 shader 实现旗帜飘荡
 
+## 效果
+[红旗](https://github.com/lulu-s/lulu-book/blob/master/assets/video/input.gif)
 
 ## 创建一个 plane
 ```js
-    const geometry = new three.PlaneGeometry(1, 1, 50, 50);
-    const material = new three.MeshPhysicalMaterial({ 
-        color: 0x665533, 
-        side: three.DoubleSide,
-        transparent: true,
-        blending: three.AdditiveBlending,
-        // roughness: 0,
-        // metalness: 0.5,
-        // envMap: shared.assets.env_warehouse.data
-        map: ao.threeLoadTexture(this.data.src)
-    });
-    const plane = new three.Mesh(geometry, material);
+const geometry = new three.PlaneGeometry(1, 1, 50, 50);
+const material = new three.MeshPhysicalMaterial({ 
+    color: 0x665533, 
+    side: three.DoubleSide,
+    transparent: true,
+    blending: three.AdditiveBlending,
+    // roughness: 0,
+    // metalness: 0.5,
+    // envMap: shared.assets.env_warehouse.data
+    map: ao.threeLoadTexture(this.data.src)
+});
+const plane = new three.Mesh(geometry, material);
 ```
 
 
@@ -35,12 +37,14 @@ var uniforms = {
 ### 使用 onBeforeCompile
 通过 onBeforeCompile 可以打印出在未执行 GPU 计算之前 shader 包含的数据。
 ```js
-    material.onBeforeCompile = (shader)=>{
-        // 处理 shader 的代码片段
-        console.log(shader)
-        // 并且需要把准备处理的数据传入到 shader 的 uniforms，不能直接赋值。比如 shader.uniforms = uniforms，因为 shader.uniforms 里还有其他变量？我也是问了这个问题才想到的，感觉当时问这个问题的自己太傻。
-        shader.uniforms.time = uniforms.time;
-    }
+material.onBeforeCompile = (shader)=>{
+    // 处理 shader 的代码片段
+    console.log(shader)
+    // 并且需要把准备处理的数据传入到 shader 的 uniforms，不能直接赋值。
+    // 比如 shader.uniforms = uniforms，因为 shader.uniforms 里还有其他变量？
+    // 我也是问了这个问题才想到的可能的答案，感觉当时问这个问题的自己太傻。
+    shader.uniforms.time = uniforms.time;
+}
 ```
 
 
@@ -139,30 +143,30 @@ void main() {
 ## 实现彩旗飘啊飘 (vertexShader)
 
 ### 前期思路
-* 1. 观察 `main()` 发现 `transformed` 是记录了最后一步坐标的变量，此时要看在哪里处理更方便。根据源码搜索，发现其在 `begin_vertex.glsl.js` 文件中，那么在 `#include <begin_vertex>` 之后处理，就是插在 获得坐标后 和 最后一步渲染 之间的最好时机。
+* 观察 `main()` 发现变量 `transformed` 记录了最后一步坐标的变量，此时要看在哪里处理更方便。通过源码搜索到在`begin_vertex.glsl.js` 文件内定义的，那么就在 `#include <begin_vertex>` 之后处理红旗飘啊飘的坐标偏移。
 
-* 2. 通过 `shader.vertexShader.split('#include <begin_vertex>')` 以 `begin_vertex` 为依据拆分两半，在中间添加需要的处理，使用 `.join('#include <begin_vertex> + 处理的代码')` 连接上下代码，再将 `#include <begin_vertex>` 插回去。通过字符串拆分的方式，代码更简洁。
+* 通过字符串拆分的方式，拆分上下文 `shader.vertexShader.split('#include <begin_vertex>')` ，使用 `.join('#include <begin_vertex> + 处理的代码')` 连接上下代码，需要将 `#include <begin_vertex>` 插回去。
 
 ### 处理的代码
-* 首先在 loop 里递增时间 time
+* 首先在 loop 里递增时间变量 time
 ```js
-requestAnimationFrame(v=>{
+requestAnimationFrame( v => {
     uniforms.time.value += 0.01;
 })
 ```
 
-* 回到 `shader` 中，通过 `+= 5` 的方式查看 plane 发生的变化，发现 plane 的 z 轴发生了偏移。
+* 回到 `shader` 中，通过 `+= 5` 的方式查看 plane 发生的变化，实现了 plane 的 z 轴偏移。
 ```glsl
 transformed.z += 5;
 ```
 
-* 旗帜的飘动就是要靠远近关系，利用 sin 测试运动轨迹
+* 旗帜的飘动要靠远近关系，利用 sin() 函数测试运动轨迹
 ```glsl
 transformed.z = sin(time);
 ```
 
-* 具体数值需要计算，并且大致的数学逻辑：``，然后根据实际情况微调。
-* 此处需要手绘图表公示
+* *此处需要手绘图表公式*
+
 * 利用 y 轴进行 sin 操作（公式: `sin(时间 * 频率 + x轴 or y轴) * 强度`）
 ```glsl
 transformed.z = sin(time * 2.0 + transformed.y) * 0.13;
@@ -172,7 +176,7 @@ transformed.z = sin(time * 2.0 + transformed.y) * 0.13;
 transformed.z += sin(time * 1.0 + transformed.x) * 0.13;
 ```
 
-* 叠加 noise 对 x + y 轴的律动，需要在头部引用 noise，一些[noise shader 算法](https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83)
+* 叠加 noise 对 x + y 轴的律动，需要在头部引用 Noise，一些大神们写好的 [Noise 算法](https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83)
 ```
 transformed.z += noise(vec3(transformed.y * 5.0 + time * 2.8, transformed.x * 5.0, time * 1.3)) * 0.2;
 ```
@@ -182,13 +186,17 @@ transformed.z += noise(vec3(transformed.y * 5.0 + time * 2.8, transformed.x * 5.
 transformed.z *= (position.y - 0.5)
 ```
 
-* 在 `vertexShader` 头部增加一个变量 `varying float displace;`，用于传输 z 轴发生的变化，根据 z 轴进行光影变化，越大越暗，越小越亮。修改以上的代码。
+* 在 `vertexShader` 头部定义一个变量 `varying float displace;`，`varying` 类型的变量可以直接传输到 `fragmentShader`，用于传输 z 轴发生的变化，根据 z 轴进行光影变化，越大越暗，越小越亮。修改以上的代码。
 ```
-displace = (position.y - 0.5) * (sin(time * 2.0 + transformed.y) * 0.13 + sin(time * 1.0 + transformed.x) * 0.13 + noise(vec3(transformed.y * 5.0 + time * 2.8, transformed.x * 5.0, time * 1.3)) * 0.2);
+displace = (position.y - 0.5) * 
+    ( sin(time * 2.0 + transformed.y) * 0.13 
+        + sin(time * 1.0 + transformed.x) * 0.13 
+        + noise(vec3(transformed.y * 5.0 + time * 2.8, transformed.x * 5.0, time * 1.3)) * 0.2
+    );
 transformed.z = displace;
 ```
 
-### 源码
+### vertexShader 源码
 ```js
 shader.vertexShader = `
     uniform float time;
@@ -231,147 +239,146 @@ shader.vertexShader = shader.vertexShader.split("#include <begin_vertex>").join(
 ## 实现伪光影效果 (fragmentShader)
 
 
-
 ### 思路
 根据 z 轴进行光影变化，越大越暗，越小越亮，并且不要暗到完全没有。
 
 ### 处理的代码
-* 1. 首先头部先引用变量 displace 
+* 首先头部先引用变量 displace 
 ```
-    varying float displace;
+varying float displace;
 ```
-* 2. 首先创建一个变量 brightness，用来接收 displace。要注意 displace 可能是负的，要进行 0 - 1 的范围限制。
+* 首先创建一个变量 brightness，用来接收 displace。要注意 displace 可能是负的，要进行 0 - 1 的范围限制。
 ```
 float brightness = max(0.0, min(1.0, 0.5 + displace * 2.0));
 ```
-* 3. 明暗强度的关系，要暗的不要全黑。对其进行最低 0.07 的限制。
+* 明暗强度的关系，要暗的不要全黑。对其进行最低 0.07 的限制。
 ```
 brightness *= 0.8 + 0.07;
 ```
-* 4. 进行强度变化，数值差异更明显，小的更小，大的更大。然后赋值给原生颜色变量。
+* 进行强度变化，数值差异更明显，小的更小，大的更大。然后赋值给原生颜色变量。
 ```
-    brightness += pow(max(displace, 0.0) * 3.0, 4.0) * 15.0;
-    gl_FragColor *= vec4(vec3(brightness), 1.0);
+brightness += pow(max(displace, 0.0) * 3.0, 4.0) * 15.0;
+gl_FragColor *= vec4(vec3(brightness), 1.0);
 ```
 
-### 源码
+### fragmentShader 源码
 ```
-    shader.fragmentShader = `
-        #define STANDARD
-        #ifdef PHYSICAL
-            #define IOR
-            #define SPECULAR
+shader.fragmentShader = `
+    #define STANDARD
+    #ifdef PHYSICAL
+        #define IOR
+        #define SPECULAR
+    #endif
+    uniform vec3 diffuse;
+    uniform vec3 emissive;
+    uniform float roughness;
+    uniform float metalness;
+    uniform float opacity;
+    varying float displace;
+    #ifdef IOR
+        uniform float ior;
+    #endif
+    #ifdef SPECULAR
+        uniform float specularIntensity;
+        uniform vec3 specularColor;
+        #ifdef USE_SPECULARINTENSITYMAP
+            uniform sampler2D specularIntensityMap;
         #endif
-        uniform vec3 diffuse;
-        uniform vec3 emissive;
-        uniform float roughness;
-        uniform float metalness;
-        uniform float opacity;
-        varying float displace;
-        #ifdef IOR
-            uniform float ior;
+        #ifdef USE_SPECULARCOLORMAP
+            uniform sampler2D specularColorMap;
         #endif
-        #ifdef SPECULAR
-            uniform float specularIntensity;
-            uniform vec3 specularColor;
-            #ifdef USE_SPECULARINTENSITYMAP
-                uniform sampler2D specularIntensityMap;
-            #endif
-            #ifdef USE_SPECULARCOLORMAP
-                uniform sampler2D specularColorMap;
-            #endif
+    #endif
+    #ifdef USE_CLEARCOAT
+        uniform float clearcoat;
+        uniform float clearcoatRoughness;
+    #endif
+    #ifdef USE_SHEEN
+        uniform vec3 sheenColor;
+        uniform float sheenRoughness;
+        #ifdef USE_SHEENCOLORMAP
+            uniform sampler2D sheenColorMap;
+        #endif
+        #ifdef USE_SHEENROUGHNESSMAP
+            uniform sampler2D sheenRoughnessMap;
+        #endif
+    #endif
+    varying vec3 vViewPosition;
+    #include <common>
+    #include <packing>
+    #include <dithering_pars_fragment>
+    #include <color_pars_fragment>
+    #include <uv_pars_fragment>
+    #include <uv2_pars_fragment>
+    #include <map_pars_fragment>
+    #include <alphamap_pars_fragment>
+    #include <alphatest_pars_fragment>
+    #include <aomap_pars_fragment>
+    #include <lightmap_pars_fragment>
+    #include <emissivemap_pars_fragment>
+    #include <bsdfs>
+    #include <cube_uv_reflection_fragment>
+    #include <envmap_common_pars_fragment>
+    #include <envmap_physical_pars_fragment>
+    #include <fog_pars_fragment>
+    #include <lights_pars_begin>
+    #include <normal_pars_fragment>
+    #include <lights_physical_pars_fragment>
+    #include <transmission_pars_fragment>
+    #include <shadowmap_pars_fragment>
+    #include <bumpmap_pars_fragment>
+    #include <normalmap_pars_fragment>
+    #include <clearcoat_pars_fragment>
+    #include <roughnessmap_pars_fragment>
+    #include <metalnessmap_pars_fragment>
+    #include <logdepthbuf_pars_fragment>
+    #include <clipping_planes_pars_fragment>
+    void main() {
+        #include <clipping_planes_fragment>
+        vec4 diffuseColor = vec4( diffuse, opacity );
+        ReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );
+        vec3 totalEmissiveRadiance = emissive;
+        #include <logdepthbuf_fragment>
+        #include <map_fragment>
+        #include <color_fragment>
+        #include <alphamap_fragment>
+        #include <alphatest_fragment>
+        #include <roughnessmap_fragment>
+        #include <metalnessmap_fragment>
+        #include <normal_fragment_begin>
+        #include <normal_fragment_maps>
+        #include <clearcoat_normal_fragment_begin>
+        #include <clearcoat_normal_fragment_maps>
+        #include <emissivemap_fragment>
+        #include <lights_physical_fragment>
+        #include <lights_fragment_begin>
+        #include <lights_fragment_maps>
+        #include <lights_fragment_end>
+        #include <aomap_fragment>
+        vec3 totalDiffuse = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse;
+        vec3 totalSpecular = reflectedLight.directSpecular + reflectedLight.indirectSpecular;
+        #include <transmission_fragment>
+        vec3 outgoingLight = totalDiffuse + totalSpecular + totalEmissiveRadiance;
+        #ifdef USE_SHEEN
+            float sheenEnergyComp = 1.0 - 0.157 * max3( material.sheenColor );
+            outgoingLight = outgoingLight * sheenEnergyComp + sheenSpecular;
         #endif
         #ifdef USE_CLEARCOAT
-            uniform float clearcoat;
-            uniform float clearcoatRoughness;
+            float dotNVcc = saturate( dot( geometry.clearcoatNormal, geometry.viewDir ) );
+            vec3 Fcc = F_Schlick( material.clearcoatF0, material.clearcoatF90, dotNVcc );
+            outgoingLight = outgoingLight * ( 1.0 - material.clearcoat * Fcc ) + clearcoatSpecular * material.clearcoat;
         #endif
-        #ifdef USE_SHEEN
-            uniform vec3 sheenColor;
-            uniform float sheenRoughness;
-            #ifdef USE_SHEENCOLORMAP
-                uniform sampler2D sheenColorMap;
-            #endif
-            #ifdef USE_SHEENROUGHNESSMAP
-                uniform sampler2D sheenRoughnessMap;
-            #endif
-        #endif
-        varying vec3 vViewPosition;
-        #include <common>
-        #include <packing>
-        #include <dithering_pars_fragment>
-        #include <color_pars_fragment>
-        #include <uv_pars_fragment>
-        #include <uv2_pars_fragment>
-        #include <map_pars_fragment>
-        #include <alphamap_pars_fragment>
-        #include <alphatest_pars_fragment>
-        #include <aomap_pars_fragment>
-        #include <lightmap_pars_fragment>
-        #include <emissivemap_pars_fragment>
-        #include <bsdfs>
-        #include <cube_uv_reflection_fragment>
-        #include <envmap_common_pars_fragment>
-        #include <envmap_physical_pars_fragment>
-        #include <fog_pars_fragment>
-        #include <lights_pars_begin>
-        #include <normal_pars_fragment>
-        #include <lights_physical_pars_fragment>
-        #include <transmission_pars_fragment>
-        #include <shadowmap_pars_fragment>
-        #include <bumpmap_pars_fragment>
-        #include <normalmap_pars_fragment>
-        #include <clearcoat_pars_fragment>
-        #include <roughnessmap_pars_fragment>
-        #include <metalnessmap_pars_fragment>
-        #include <logdepthbuf_pars_fragment>
-        #include <clipping_planes_pars_fragment>
-        void main() {
-            #include <clipping_planes_fragment>
-            vec4 diffuseColor = vec4( diffuse, opacity );
-            ReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );
-            vec3 totalEmissiveRadiance = emissive;
-            #include <logdepthbuf_fragment>
-            #include <map_fragment>
-            #include <color_fragment>
-            #include <alphamap_fragment>
-            #include <alphatest_fragment>
-            #include <roughnessmap_fragment>
-            #include <metalnessmap_fragment>
-            #include <normal_fragment_begin>
-            #include <normal_fragment_maps>
-            #include <clearcoat_normal_fragment_begin>
-            #include <clearcoat_normal_fragment_maps>
-            #include <emissivemap_fragment>
-            #include <lights_physical_fragment>
-            #include <lights_fragment_begin>
-            #include <lights_fragment_maps>
-            #include <lights_fragment_end>
-            #include <aomap_fragment>
-            vec3 totalDiffuse = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse;
-            vec3 totalSpecular = reflectedLight.directSpecular + reflectedLight.indirectSpecular;
-            #include <transmission_fragment>
-            vec3 outgoingLight = totalDiffuse + totalSpecular + totalEmissiveRadiance;
-            #ifdef USE_SHEEN
-                float sheenEnergyComp = 1.0 - 0.157 * max3( material.sheenColor );
-                outgoingLight = outgoingLight * sheenEnergyComp + sheenSpecular;
-            #endif
-            #ifdef USE_CLEARCOAT
-                float dotNVcc = saturate( dot( geometry.clearcoatNormal, geometry.viewDir ) );
-                vec3 Fcc = F_Schlick( material.clearcoatF0, material.clearcoatF90, dotNVcc );
-                outgoingLight = outgoingLight * ( 1.0 - material.clearcoat * Fcc ) + clearcoatSpecular * material.clearcoat;
-            #endif
-            #include <output_fragment>
-            float brightness = max(0.0, min(1.0, 0.5 + displace * 2.0)) * 0.8 + 0.07;
-            brightness += pow(max(displace, 0.0) * 3.0, 4.0) * 15.0;
-            gl_FragColor *= vec4(vec3(brightness), 1.0);
-            #include <tonemapping_fragment>
-            #include <encodings_fragment>
-            #include <fog_fragment>
-            #include <premultiplied_alpha_fragment>
-            #include <dithering_fragment>
-        }
-    
-    `;
+        #include <output_fragment>
+        float brightness = max(0.0, min(1.0, 0.5 + displace * 2.0)) * 0.8 + 0.07;
+        brightness += pow(max(displace, 0.0) * 3.0, 4.0) * 15.0;
+        gl_FragColor *= vec4(vec3(brightness), 1.0);
+        #include <tonemapping_fragment>
+        #include <encodings_fragment>
+        #include <fog_fragment>
+        #include <premultiplied_alpha_fragment>
+        #include <dithering_fragment>
+    }
+
+`;
 ```
 
 

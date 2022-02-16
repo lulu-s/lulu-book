@@ -492,7 +492,7 @@ String.prototype.colorHex = function () {
 ## Canvas
 
 ### 1. 线条光辉流动
-* [video](https://github.com/lulu-s/lulu-book/blob/master/assets/%E7%BA%BF%E6%9D%A1%E5%85%89%E8%BE%89%E6%B5%81%E5%8A%A8.mov)
+* [video](https://github.com/lulu-s/lulu-book/blob/master/assets/video/%E7%BA%BF%E6%9D%A1%E5%85%89%E8%BE%89%E6%B5%81%E5%8A%A8.mov)
 ```js
     var q = (Date.now() / 1000 * 0.2) % 1.0;
     var op = Math.floor((1 - Math.pow(1 - 2 * q, 2)) * 255);
