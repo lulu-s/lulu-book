@@ -2,6 +2,7 @@
 # 利用 shader 实现旗帜飘荡
 
 ## 效果
+哇 gif 慢了好几倍 [视频地址](https://github.com/lulu-s/lulu-book/blob/master/assets/video/video.mp4)
 ![红旗](https://github.com/lulu-s/lulu-book/blob/master/assets/video/input.gif)
 
 ## 创建一个 plane
