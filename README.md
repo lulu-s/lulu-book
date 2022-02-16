@@ -2,6 +2,12 @@
 
 <br/>
 
+## 🍂 日常记录 / 持续更新 （值得视奸的一块 😊）
+  * [ʚ大量碎片知识 / 小问题ɞ](https://github.com/lulu-s/lulu-book/blob/master/Note/trivia.md)
+  * [待整理文件](https://github.com/lulu-s/lulu-book/待整理.md)
+
+<br/>
+
 
 ## 📐 Blog
   * [模型转换 USDZ 的 N 种方法，ios 端测试 USDZ 的 AR 体验](https://github.com/lulu-s/lulu-book/blob/master/Blog/model%20convert%20usdz.md)
@@ -17,11 +23,6 @@
 <br/>
 
 
-## 🍂 日常记录
-  * [ʚ碎片知识 / 小问题ɞ](https://github.com/lulu-s/lulu-book/blob/master/Note/trivia.md)
-  * [待整理文件](https://github.com/lulu-s/lulu-book/待整理.md)
-
-<br/>
 
 
 ## 🌙 Code
@@ -29,6 +30,8 @@
 <br/>
 
 
+## 🎨 Shader 学习系列
+  * [利用 shader 实现旗帜飘荡](https://github.com/lulu-s/lulu-book/blob/master/Shader/flag.md)
 
 
 ## 📒 学习笔记
