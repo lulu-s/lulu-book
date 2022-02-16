@@ -5,6 +5,28 @@
 哇 gif 慢了好几倍 [视频地址](https://github.com/lulu-s/lulu-book/blob/master/assets/video/video.mp4)
 ![红旗](https://github.com/lulu-s/lulu-book/blob/master/assets/video/input.gif)
 
+
+## 目录
+* [创建一个 plane](#创建一个-plane)
+* [使用 onBeforeCompile](#使用-onbeforecompile)
+    * [创建 uniforms](#创建-uniforms)
+    * [使用 onBeforeCompile](#使用-onBeforeCompile)
+    * [展开 vertexShader 或 fragmentShader 的引用库（来源于 Mike Luan）](#展开-vertexshader-或-fragmentshader-的引用库来源于-mike-luan)
+* [shader.vertexShader 的数据是什么](#shadervertexshader-的数据是什么)
+    * [console.log(shader.vertexShader)导出的数据](#consolelogshadervertexshader导出的数据)
+    * [解析数据](#解析数据)
+* [实现彩旗飘啊飘 (vertexShader)](#实现彩旗飘啊飘-vertexshader)
+    * [前期思路](#前期思路)
+    * [代码处理的步骤](#代码处理的步骤)
+    * [vertexShader 源码](#vertexShader-源码)
+* [实现伪光影效果 (fragmentShader)](#实现伪光影效果-fragmentShader)
+    * [前期思路](#前期思路)
+    * [代码处理的步骤](#代码处理的步骤)
+    * [fragmentShader 源码](#fragmentShader-源码)
+* [引用到的链接🔗](#引用到的链接)
+
+
+
 ## 创建一个 plane
 ```js
 const geometry = new three.PlaneGeometry(1, 1, 50, 50);
@@ -148,7 +170,7 @@ void main() {
 
 * 通过字符串拆分的方式，拆分上下文 `shader.vertexShader.split('#include <begin_vertex>')` ，使用 `.join('#include <begin_vertex> + 处理的代码')` 连接上下代码，需要将 `#include <begin_vertex>` 插回去。
 
-### 处理的代码
+### 代码处理的步骤
 * 首先在 loop 里递增时间变量 time
 ```js
 requestAnimationFrame( v => {
@@ -240,10 +262,10 @@ shader.vertexShader = shader.vertexShader.split("#include <begin_vertex>").join(
 ## 实现伪光影效果 (fragmentShader)
 
 
-### 思路
+### 前期思路
 根据 z 轴进行光影变化，越大越暗，越小越亮，并且不要暗到完全没有。
 
-### 处理的代码
+### 代码处理的步骤
 * 首先头部先引用变量 displace 
 ```
 varying float displace;
@@ -387,7 +409,7 @@ shader.fragmentShader = `
 
 
 ## 引用到的链接🔗
-* [noise shader 算法](https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83)
+* [Noise 算法](https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83)
 * [Threejs](https://github.com/mrdoob/three.js)
 * [ShaderChunk](https://github.com/mrdoob/three.js/tree/master/src/renderers/shaders/ShaderChunk) 
 * [ShaderChunk.js](https://github.com/mrdoob/three.js/blob/master/src/renderers/shaders/ShaderChunk.js)
