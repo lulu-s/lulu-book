@@ -53,6 +53,7 @@
 
 
 ## 🍙 插件 / 有用的库存
+  - [canvas 礼花](https://github.com/catdad/canvas-confetti)
   - [taro / 小程序框架](https://nervjs.github.io/taro/docs/GETTING-STARTED.html)
   - [Recorder / 录音](https://github.com/xiangyuecn/Recorder)
   - [md5 / 签名](https://www.npmjs.com/package/md5)
