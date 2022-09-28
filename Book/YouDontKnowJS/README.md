@@ -1,5 +1,6 @@
-# 你不知道的Javascript（You Don't Know JS）
+# 你不知道的Javascript（上卷）
 
+本书英文名：You Don't Know JS <br/>
 
 * [作用域](#作用域)
     * [LHS](#lhs)
