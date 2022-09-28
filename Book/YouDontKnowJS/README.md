@@ -1,4 +1,4 @@
-# 你不知道的Javascript（上卷）
+# 阅读笔记：你不知道的Javascript（上卷）
 
 本书英文名：You Don't Know JS <br/>
 
