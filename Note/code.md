@@ -42,6 +42,7 @@
     * [3. bodyParser解析, 用 req.body 获取 post 参数](#3-bodyparser解析-用-reqbody-获取-post-参数)
     * [4. 搭建服务器及提示](#4-搭建服务器及提示)
     * [5. socket.io 基本用法](#5-socketio-基本用法)
+    * [6. ip](#6-ip)
 
 * [优质代码块（汇总）](#优质代码块-汇总)
     * [1. loop 循环, looperStart 开启循环模式, eased 递增](#1-loop-循环-looperstart-开启循环模式-eased-递增)
@@ -708,6 +709,13 @@ String.prototype.colorHex = function () {
         console.log('x', target);
     })
 ```
+
+### 6. ip
+```js
+const ip = require('ip');
+const hostname = ip.address() || "localhost";
+```
+
 
 ## 优质代码块（汇总）
 
