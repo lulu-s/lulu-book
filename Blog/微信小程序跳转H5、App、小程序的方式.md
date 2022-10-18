@@ -21,7 +21,7 @@
 ## 跳转小程序
 * 参考 [wx.navigateToMiniProgram](https://developers.weixin.qq.com/minigame/dev/api/navigate/wx.navigateToMiniProgram.html) 和 [navigator](https://developers.weixin.qq.com/miniprogram/dev/component/navigator.html) 和 [Taro.navigateToMiniProgram](https://docs.taro.zone/docs/apis/open-api/navigate/navigateToMiniProgram)
 ```js
-// 方式一：似乎不能用了，有哪位好心能用的话求咨询
+// 方式一：似乎不能用了，有哪位好心人能用的话求咨询
 <button @click="goMiniapp">跳转下载</button>
 
 Taro.navigateToMiniProgram({ // 我用的taro，原生用 wx.navigateToMiniProgram 就行
@@ -45,7 +45,7 @@ Taro.navigateToMiniProgram({ // 我用的taro，原生用 wx.navigateToMiniProgr
 <br/>
 
 ## 跳转App
-2021.5月开始小程序不再支持跳转到App，那要怎么跳转App呢，看了一下腾讯视频的小程序是利用客服消息发送App下载地址，感觉此方法体验甚好，就参考了很多文档实测了一下。
+2021.5月开始小程序不再支持跳转到App，那要怎么跳转App呢，看了一下腾讯视频的小程序是利用客服消息发送App下载地址，感觉此方法体验甚好，就参考了很多文档实测了一下。源地址：[关于不再提供“小程序打开App技术服务”的通知](https://developers.weixin.qq.com/community/develop/doc/000c04d94c0588744a2cf4d9c5bc09)
 
 
 ### 消息推送配置 
@@ -272,7 +272,6 @@ function sendmess(access_token, mess) {
 
 ## 参考文档
 * [微信公众平台接口调试工具](https://mp.weixin.qq.com/debug)
-* [关于不再提供“小程序打开App技术服务”的通知](https://developers.weixin.qq.com/community/develop/doc/000c04d94c0588744a2cf4d9c5bc09)
 * [小程序打怪之在线客服自动回复功能(node版)](https://juejin.cn/post/6844903864324325389)
 * [node.js微信小程序配置消息推送](https://www.cnblogs.com/z937741304/p/10364874.html)
 * [个人node代码块](https://github.com/lulu-s/lulu-book/blob/master/Note/code.md#Node)
