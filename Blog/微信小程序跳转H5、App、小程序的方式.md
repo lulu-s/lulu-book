@@ -54,7 +54,7 @@ Taro.navigateToMiniProgram({ // 我用的taro，原生用 wx.navigateToMiniProgr
 确认成功会跳转到配置页面，按需求配置即可，这里选择了安全模式 + JSON。域名填写你自己的就好。
 
 
-![消息推送配置.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/50e836f9fc1b412fb8260de8d2e472c9~tplv-k3u1fbpfcp-watermark.image?)
+![消息推送配置.png](https://github.com/lulu-s/lulu-book/blob/master/Blog/wechat/%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81%E9%85%8D%E7%BD%AE.png)
 
 
 ### Token验证
@@ -64,7 +64,7 @@ Taro.navigateToMiniProgram({ // 我用的taro，原生用 wx.navigateToMiniProgr
 👇 该图是关于返回的参数 + 如何创建 GET 请求
 
 
-![get方法.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/34189535293d4ff1a312629510f50cf1~tplv-k3u1fbpfcp-watermark.image?)
+![get方法.png](https://github.com/lulu-s/lulu-book/blob/master/Blog/wechat/get%E6%96%B9%E6%B3%95.png)
 
 **main.mjs** 根据设定好的要求，按步骤创建get方法用于接收get请求。这里使用了ES6，需要对 **package.json** 增加 `"type": "module"`。
 
@@ -255,7 +255,7 @@ function sendmess(access_token, mess) {
 
 ### 成果
 
-![完成.jpg](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2b0785b3c5e140a6af94445f37cc2d7b~tplv-k3u1fbpfcp-watermark.image?)
+![完成.jpg](https://github.com/lulu-s/lulu-book/blob/master/Blog/wechat/%E5%AE%8C%E6%88%90.jpg)
 
 
 
