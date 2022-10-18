@@ -11,7 +11,7 @@
 2. 使用 [web-view](https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html) 配置路径
 3. 如需传参通过 `?key=value` 形式一起传输，在另一端接收 URL 上的参数便可。
 ```
-<web-view :src="`https://soss-apps.emerge.ltd/apps/horizon-miniapp-copy/index.html#/?timestamp=${timestamp}`" />
+<web-view :src="`https://url/index.html#/?timestamp=${timestamp}`" />
 ```
 
 
@@ -19,12 +19,15 @@
 <br/>
 
 ## 跳转小程序
-* 通过 [wx.navigateToMiniProgram](https://developers.weixin.qq.com/minigame/dev/api/navigate/wx.navigateToMiniProgram.html)
+* 参考 [wx.navigateToMiniProgram](https://developers.weixin.qq.com/minigame/dev/api/navigate/wx.navigateToMiniProgram.html) 和 [navigator](https://developers.weixin.qq.com/miniprogram/dev/component/navigator.html) 和 [Taro.navigateToMiniProgram](https://docs.taro.zone/docs/apis/open-api/navigate/navigateToMiniProgram)
 ```js
+// 方式一：似乎不能用了，有哪位好心能用的话求咨询
+<button @click="goMiniapp">跳转下载</button>
+
 Taro.navigateToMiniProgram({ // 我用的taro，原生用 wx.navigateToMiniProgram 就行
-  appId: appId,
-  path: 'page/index/index?id=123',
-  extraData: {
+  appId: "appid",
+  path: 'page/index/index',
+  extraData: { // 传递给小程序的数据
     foo: 'bar'
   },
   envVersion: 'develop',
@@ -32,6 +35,9 @@ Taro.navigateToMiniProgram({ // 我用的taro，原生用 wx.navigateToMiniProgr
     // 打开成功
   }
 })
+
+// 方式2：可用，可以回退到自己的小程序
+<navigator target="miniProgram" open-type="navigate" 	app-id="appid" path="pages/index/index">跳转小程序</navigator>
 ```
 
 
