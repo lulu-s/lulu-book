@@ -16,6 +16,7 @@
 
 
 ## 📐 Blog
+  * [微信小程序跳转App、H5、小程序](https://github.com/lulu-s/lulu-book/blob/master/Blog/微信小程序跳转H5、App、小程序的方式.md)
   * [模型转换 USDZ 的 N 种方法，ios 端测试 USDZ 的 AR 体验](https://github.com/lulu-s/lulu-book/blob/master/Blog/model%20convert%20usdz.md)
   * [树莓派调试jauns(包含https证书配置)](https://github.com/lulu-s/lulu-book/blob/master/Blog/pi.md) 
   
@@ -25,6 +26,7 @@
   * [FFmpeg 进修 + 常用命令](https://github.com/lulu-s/lulu-book/blob/master/Grammer/ffmpeg.md)
   * [Mac / DOS / Linux 命令行](https://github.com/lulu-s/lulu-book/blob/master/Grammer/command.md)
   * [Markdown 语法](https://github.com/lulu-s/lulu-book/blob/master/Grammer/markdown%20grammar.md)
+  <!-- * [了解ES6、ES7、ES8、ES9、ES10、ES11、ES12新特性](https://github.com/lulu-s/lulu-book/blob/master/Grammer/es.md) -->
   
 <br/>
 
