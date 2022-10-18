@@ -9,24 +9,27 @@
 <br/>
 
 
-## 🎨 Shader 学习系列
-  * [利用 shader 实现旗帜飘荡](https://github.com/lulu-s/lulu-book/blob/master/Shader/flag.md)
-<br/>
-
-
 
 ## 📐 Blog
-  * [微信小程序跳转App、H5、小程序](https://github.com/lulu-s/lulu-book/blob/master/Blog/微信小程序跳转H5、App、小程序的方式.md)
+  <!-- * [了解ES6、ES7、ES8、ES9、ES10、ES11、ES12新特性](https://github.com/lulu-s/lulu-book/blob/master/Grammer/es.md) -->
+  * [微信小程序跳转App、H5、小程序](https://github.com/lulu-s/lulu-book/blob/master/Blog/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B7%B3%E8%BD%ACH5%E3%80%81App%E3%80%81%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%96%B9%E5%BC%8F.md)
   * [模型转换 USDZ 的 N 种方法，ios 端测试 USDZ 的 AR 体验](https://github.com/lulu-s/lulu-book/blob/master/Blog/model%20convert%20usdz.md)
   * [树莓派调试jauns(包含https证书配置)](https://github.com/lulu-s/lulu-book/blob/master/Blog/pi.md) 
   
 <br/>
 
+
+
+## 🎨 Shader 学习系列
+  * [利用 shader 实现旗帜飘荡](https://github.com/lulu-s/lulu-book/blob/master/Shader/flag.md)
+<br/>
+
+
 ## 🍀 Grammer
   * [FFmpeg 进修 + 常用命令](https://github.com/lulu-s/lulu-book/blob/master/Grammer/ffmpeg.md)
   * [Mac / DOS / Linux 命令行](https://github.com/lulu-s/lulu-book/blob/master/Grammer/command.md)
   * [Markdown 语法](https://github.com/lulu-s/lulu-book/blob/master/Grammer/markdown%20grammar.md)
-  <!-- * [了解ES6、ES7、ES8、ES9、ES10、ES11、ES12新特性](https://github.com/lulu-s/lulu-book/blob/master/Grammer/es.md) -->
+  
   
 <br/>
 
