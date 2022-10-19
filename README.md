@@ -16,7 +16,12 @@
   * [模型转换 USDZ 的 N 种方法，ios 端测试 USDZ 的 AR 体验](https://github.com/lulu-s/lulu-book/blob/master/Blog/model%20convert%20usdz.md)
   * [树莓派调试jauns(包含https证书配置)](https://github.com/lulu-s/lulu-book/blob/master/Blog/pi.md) 
   
+
 <br/>
+
+
+## Three.js 重修计划
+
 
 
 
@@ -45,6 +50,7 @@
 
 ## 📒 学习笔记
   * [Arduino 学习笔记](https://github.com/lulu-s/lulu-book/blob/master/Note/arduino.md)
+  * [扫盲行动](https://github.com/lulu-s/lulu-book/blob/master/Note/literacy-list.md)
 <br/>
 
 
