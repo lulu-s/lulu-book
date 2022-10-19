@@ -276,9 +276,3 @@ function sendmess(access_token, mess) {
 * [node.js微信小程序配置消息推送](https://www.cnblogs.com/z937741304/p/10364874.html)
 * [个人node代码块](https://github.com/lulu-s/lulu-book/blob/master/Note/code.md#Node)
 
-
-
-
-____________________
-欢迎指点和讨论👏 
-我的全部输出 👉 [github](https://github.com/lulu-s/lulu-book)
