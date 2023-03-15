@@ -68,6 +68,10 @@ struct ReflectedLight {
 
 // … 省略N
 
+ReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3(0.0) );
+
+// … 省略N
+
     reflectedLight.totalIrradiance += irradiance;
 
 // … 省略N
