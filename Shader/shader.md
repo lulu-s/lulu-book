@@ -13,7 +13,9 @@
     vec4 map_or_group = mix(map_group, maps, is_map); // (group or map)
     vec4 result = mix(map_or_group, map_main, is_main); // (group or map) or main
 ```
-*  参考：https://juejin.cn/post/7056422478863826980
+参考：
+* https://juejin.cn/post/7056422478863826980
+* https://thebookofshaders.com/glossary/?search=mix
 
 
 ### 2. 根据阳光改变，日夜渲染不同贴图 / map or 发光贴图 (frag.glsl)
