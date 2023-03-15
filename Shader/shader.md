@@ -9,6 +9,7 @@
     vec4 map_group = texture2D( t_map_group, vUv );
     vec4 map_main = texture2D( t_map_main, vUv );
 
+    // is_map ? 1.0 : 0.0 == is_map
     vec4 map_or_group = mix(map_group, maps, is_map); // (group or map)
     vec4 result = mix(map_or_group, map_main, is_main); // (group or map) or main
 ```
