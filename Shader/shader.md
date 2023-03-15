@@ -1,5 +1,42 @@
 # Shader 碎片知识
 
+### 前置
+
+```
+    import frag_glsl from "./frag.glsl"
+    ...
+    mats.onBeforeCompile = (mat) => {
+        console.log(threeExpandShaderIncludes(mat.fragmentShader));
+        mat.fragmentShader = frag_glsl;
+        mat.uniforms = {
+            ...mat.uniforms,
+            ...uniforms
+        }
+    }
+
+    ...
+   function threeExpandShaderIncludes(s) {
+        const includePattern = /^[ \t]*#include +<([\w\d./]+)>/gm;
+        function resolveIncludes(string) {
+
+            return string.replace(includePattern, includeReplacer);
+
+        }
+        function includeReplacer(match, include) {
+            const string = ShaderChunk[include];
+
+            if (string === undefined) {
+
+                throw new Error('Can not resolve #include <' + include + '>');
+
+            }
+            return resolveIncludes(string);
+        }
+        return resolveIncludes(s);
+    }
+
+```
+
 ### 1. 切换map (frag.glsl)
 ```
     vec4 maps = texture2D( t_map, vUv );
