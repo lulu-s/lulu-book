@@ -15,6 +15,7 @@
     }
 
     ...
+    import {ShaderChunk} from "three";
    function threeExpandShaderIncludes(s) {
         const includePattern = /^[ \t]*#include +<([\w\d./]+)>/gm;
         function resolveIncludes(string) {
