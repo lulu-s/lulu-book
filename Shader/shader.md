@@ -1,7 +1,4 @@
-# Shader
-
-
-
+# Shader 碎片知识
 
 ### 1. 切换map (frag.glsl)
 ```
