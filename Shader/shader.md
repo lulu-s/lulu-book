@@ -63,16 +63,16 @@ struct ReflectedLight {
     vec3 directSpecular;
     vec3 indirectDiffuse;
     vec3 indirectSpecular;
-    vec3 totalIrradiance;
+    vec3 totalIrradiance; // 新增总的阳光计算
 };
 
 // … 省略N
 
-ReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3(0.0) );
+ReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3(0.0) ); // 结构体初始化增个变量
 
 // … 省略N
 
-    reflectedLight.totalIrradiance += irradiance;
+    reflectedLight.totalIrradiance += irradiance; // 计算总阳光
 
 // … 省略N
 
@@ -85,6 +85,11 @@ ReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 
 // n *= 13.0;
 
 float n = 1.0;
+
+// 总的发光 黑夜完全使用发光贴图 为 1 ，白天使用map 发光贴图为 0
+// 总阳光参数专为 0 ～ 1 的值进行计算
+// min(1.0, max(0.0, 1.0 - reflectedLight.totalIrradiance.r)) 
+
 totalEmissiveRadiance = n * emissiveColor.rgb * min(1.0, max(0.0, 1.0 - reflectedLight.totalIrradiance.r)) ;  // 动态切换使用 * t_mode + totalEmissiveRadiance.rgb * (1.0 - t_mode);
 
 
