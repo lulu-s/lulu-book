@@ -95,3 +95,21 @@ totalEmissiveRadiance = n * emissiveColor.rgb * min(1.0, max(0.0, 1.0 - reflecte
 
 vec3 outgoingLight = totalDiffuse + totalSpecular + totalEmissiveRadiance;
 ```
+
+
+### 3. 世界坐标 + uv
+```
+varying vec4 u_pos;
+varying vec2 u_vUv;
+...
+
+void main(){ 
+    u_vUv = uv;
+    ...
+	vec4 t_worldPosition = vec4( transformed, 1.0 );
+	t_worldPosition = modelMatrix * t_worldPosition;
+
+	u_pos = t_worldPosition;
+    ...
+}
+```
