@@ -5,6 +5,7 @@
 ## 🍂 日常记录 / 持续更新 （值得视奸的一块 😊）
   * [ʚ大量碎片知识 / 小问题ɞ](https://github.com/lulu-s/lulu-book/blob/master/Note/trivia.md)
   * [待分类的细碎知识](https://github.com/lulu-s/lulu-book/blob/master/%E5%BE%85%E6%95%B4%E7%90%86.md)
+  * [一些工具快速查找](https://github.com/lulu-s/lulu-book/blob/master/tools.md)
   * [一些工作时候沉淀的视觉方法碎片](https://github.com/lulu-s/lulu-book/blob/master/code.md)
   * [Shader 碎片知识进修 vlog](https://github.com/lulu-s/lulu-book/blob/master/Shader/shader.md)
 
